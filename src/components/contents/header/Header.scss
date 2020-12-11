@@ -1,0 +1,15 @@
+@import './../../../sass/colors';
+
+body {
+  #root {
+    header {
+      nav {
+        a {
+          img#nameLogo {
+            height: 6vh;
+          }
+        }
+      }
+    }
+  }
+}

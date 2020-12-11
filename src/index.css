@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Love-Story-Rough';
+  src: local('Love-Story-Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Microsoft-New-Tai-Lue';
+  src: local('Microsoft-New-Tai-Lue'), url(./fonts/Microsoft-New-Tai-Lue.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Microsoft-New-Tai-Lue-Bold';
+  src: local('Microsoft-New-Tai-Lue-Bold'), url(./fonts/Microsoft-New-Tai-Lue-Bold.ttf) format('truetype');
+}

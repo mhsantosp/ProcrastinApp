@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/contents/header/Header";
+import Footer from "./components/contents/footer/Footer";
+import SignOut from "./components/forms/SignOut";
+import Login from "./components/forms/Login";
 
-function App() {
+function Layout() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Header />
+
+      <main className="container-fluid main py-5">
+        <section>
+          <Login />
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default Layout;
