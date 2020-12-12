@@ -17,7 +17,7 @@ function Footer() {
             <h6 className="text-uppercase font-weight-bold">Contacto</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid contacto p-0">
-              <p><img className="ubication mr-3" src={CO} ></img> Valle de Aburrá, Antioquia, CO</p>
+              <p><img className="ubication mr-3" src={CO} alt="Colombia" /> Valle de Aburrá, Antioquia, CO</p>
               <a className="correo mb-3" href="mailto:contacto@procrastinapp.com"><i className="far fa-envelope mr-3"></i>contacto@procrastinapp.com</a>
               <a className="ruta mb-3" href="#https://www.ProcrastinApp.com" rel="noopener noreferrer"><i className="fas fa-globe mr-3"></i> www.ProcrastinApp.com</a>
             </div>
@@ -39,7 +39,7 @@ function Footer() {
       <div className="container-fluid copyright text-center py-3" >
         <p className="m-0">
           © 2020 Copyright: 
-          <a className="rutaFooter" href="#https://www.ProcrastinApp.com"> ProcrastinApp </a> 
+          <a className="rutaFooter" href="#https://www.ProcrastinApp.com" rel="noopener noreferrer"> ProcrastinApp </a> 
           <i className="fab fa-react mr-1"></i> 
           <i className="fab fa-sass ml-1"></i>
         </p>

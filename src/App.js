@@ -1,8 +1,8 @@
 import React from "react";
+import './sass/styles.scss'
 import Header from "./components/contents/header/Header";
 import Footer from "./components/contents/footer/Footer";
-import SignOut from "./components/forms/SignOut";
-import Login from "./components/forms/Login";
+import Login from "./components/forms/Login-Signup ";
 
 function Layout() {
   return (

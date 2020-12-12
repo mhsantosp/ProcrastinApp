@@ -23,6 +23,6 @@ code {
 }
 
 @font-face {
-  font-family: 'Microsoft-New-Tai-Lue-Bold';
-  src: local('Microsoft-New-Tai-Lue-Bold'), url(./fonts/Microsoft-New-Tai-Lue-Bold.ttf) format('truetype');
+  font-family: 'Microsoft New Tai Lue Bold';
+  src: local('Microsoft New Tai Lue Bold'), url(./fonts/Microsoft-New-Tai-Lue-Bold.ttf) format('truetype');
 }

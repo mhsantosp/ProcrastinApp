@@ -18,12 +18,10 @@ footer {
     }
     a:hover {
       text-decoration: none;
-      color: $sombraName;
-    }
-    a.ruta {
-      color: $colorName;
+      color: $fondoDark;
     }
     a.ruta i.fas.fa-globe {
+      color: $email;
       font-size: 1.2rem;
     }
     a.correo i.far.fa-envelope {
@@ -135,6 +133,9 @@ footer {
       }
       a.rutaFooter {
         text-decoration: none;
+      }
+      a.rutaFooter:hover {
+        color: $fondoDark;
       }
     }
   }

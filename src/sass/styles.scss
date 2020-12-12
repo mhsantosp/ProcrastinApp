@@ -1,15 +1,27 @@
-@import './colors';
+@import "./colors";
 
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-@import '@fortawesome/fontawesome-free/scss/solid';
-@import '@fortawesome/fontawesome-free/scss/regular';
-@import '@fortawesome/fontawesome-free/scss/brands';
-@import '@fortawesome/fontawesome-free/scss/v4-shims';
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
 
 body {
   background-color: $fondoLight;
-  .main {
-    margin-top: 4rem;
+  #root {
+    .layout {
+      min-height: 100vh;
+      font-weight: 400;
+      font-family: "Fira Sans", sans-serif;
+
+      label, button {
+        font-family: "Microsoft New Tai Lue Bold";
+      }
+
+      .main {
+        margin-top: 4rem;
+      }
+    }
   }
 }
