@@ -2,7 +2,8 @@ import React from "react";
 import './sass/styles.scss'
 import Header from "./components/contents/header/Header";
 import Footer from "./components/contents/footer/Footer";
-import Login from "./components/forms/Login-Signup ";
+import LoginSignup from "./components/forms/Login-Signup ";
+import Home from "./components/contents/home/Home";
 
 function Layout() {
   return (
@@ -11,7 +12,7 @@ function Layout() {
 
       <main className="container-fluid main py-5">
         <section>
-          <Login />
+          <Home />
         </section>
       </main>
 

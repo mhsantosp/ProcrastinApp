@@ -10,7 +10,7 @@ function Header() {
           <img src={logo} className="img-fluid" alt="Nombre App" loading="lazy" id="nameLogo" />
         </a>
         <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
-          <button type="button" className="btn btn-outline-primary rounded mr-2 btn-sign-up">Regístrate</button>
+          <button type="button" className="btn rounded mr-2 btn-sign-up">Regístrate</button>
           <button type="button" className="btn rounded btn-sign-in">Iniciar Sesión</button>
         </div>
       </nav>

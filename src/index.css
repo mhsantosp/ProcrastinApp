@@ -13,13 +13,13 @@ code {
 }
 
 @font-face {
-  font-family: 'Love-Story-Rough';
-  src: local('Love-Story-Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
+  font-family: 'Love Story Rough';
+  src: local('Love Story Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: 'Microsoft-New-Tai-Lue';
-  src: local('Microsoft-New-Tai-Lue'), url(./fonts/Microsoft-New-Tai-Lue.ttf) format('truetype');
+  font-family: 'Microsoft New Tai Lue';
+  src: local('Microsoft New Tai Lue'), url(./fonts/Microsoft-New-Tai-Lue.ttf) format('truetype');
 }
 
 @font-face {

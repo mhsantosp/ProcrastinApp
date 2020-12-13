@@ -1,11 +1,16 @@
 @import "./../../../sass/colors";
 
 footer {
+  hr.lineFooter {
+    border: white .1rem groove;
+  }
+
   hr.lineHR {
     width: 60px;
     margin-bottom: 24px;
     background-color: #7c4dff;
   }
+
   .contacto{
     p {
       img.ubication {

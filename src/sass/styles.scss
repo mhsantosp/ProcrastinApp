@@ -7,20 +7,22 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/brands";
 @import "@fortawesome/fontawesome-free/scss/v4-shims";
 
+html, body, #root, .layout {
+  height: 100%;
+}
+
 body {
-  background-color: $fondoLight;
   #root {
     .layout {
-      min-height: 100vh;
-      font-weight: 400;
-      font-family: "Fira Sans", sans-serif;
-
-      label, button {
-        font-family: "Microsoft New Tai Lue Bold";
-      }
+      display: flex;
+      flex-direction: column;
 
       .main {
         margin-top: 4rem;
+      }
+
+      .footer {
+        margin-top: auto;
       }
     }
   }

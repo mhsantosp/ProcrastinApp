@@ -6,6 +6,7 @@ function Footer() {
   return (
     <footer className="footer bg-white" >
       <div className="container-fluid pt-5 pb-3">
+        <hr className="lineFooter mb-4 mt-0 mx-auto" />
         <div className="row justify-content-md-around">
           <div className="col col-lg-3">
             <h6 className="text-uppercase font-weight-bold">Acerda de</h6>
