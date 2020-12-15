@@ -1,0 +1,57 @@
+.titleList{
+    color: $titleH1;
+    font-family: LoveStory;
+    text-align: left;
+    margin-left: 95px;
+}
+
+.checklistBox{
+    background-color: $fondoLight;
+    width: 300px;
+    height: 400px;
+    margin-left: 95px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 11px -3px $sombras;
+    ul{
+        margin-top: 40px;
+        li{
+            font-size: 1.1em;
+             text-align:left;
+             .checkbox{
+                 width:30px;
+                 height:30px;
+                 margin-top: 15px;
+             }
+        }
+    }
+
+}
+
+//Button Checklist
+.buttons{
+    margin-left:50px;
+.buttonsChecklist{
+    margin: 30px;
+}
+}
+//Character
+
+.characterSC{
+    background-color: $fondoDark;
+    height: 100vh;
+}
+
+.p-checklist{
+    margin-top: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-align:center;
+
+}
+
+.checklistCharacter{
+    margin-top: 50px;
+    width: 200px;
+    height: 500px;
+    margin-left: 225px;
+}
