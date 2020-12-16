@@ -1,0 +1,63 @@
+.modalHeader{
+    background-color: $fondoLight;
+    .modalTitle{
+        color: white;
+        font-family: LoveStory;
+        font-size: 1.8em;
+    }
+    .close{
+        margin-left:50px;
+    }
+}
+
+.btn-yes{
+    background-color: $fondoDark;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.btn-done{
+    background-color: $fondoDark;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.btn-yes:hover{
+    background-color: $fondoLight;
+}
+
+.btn-done:hover{
+    background-color: $fondoLight;
+}
+
+.btn-no:hover{
+    background-color: $fondoLight;
+}
+
+.btn-no{
+    background-color: $titleH1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.btn-volver{
+    background-color: $titleH1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.btn-volver:hover{
+    background-color: $fondoLight;
+}

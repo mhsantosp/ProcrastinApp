@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Modal, ModalBody, ModalFooter,  ModalHeader} from 'reactstrap'
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 
 
 export default class ButtonsChecklist extends Component {
@@ -39,29 +39,31 @@ export default class ButtonsChecklist extends Component {
             {/*Modal Borrar*/}
 
             <Modal isOpen={this.state.modalBorrar}>
-                <ModalHeader>
-                    <h3>Borrar Tarea</h3>
-                    <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                        onClick={() => this.modalBorrar()}></button>
+                <ModalHeader className="modalHeader">
+                    <div className="col">
+                        <h3 className="modalTitle">Borrar Tarea</h3>
+                        <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                            onClick={() => this.modalBorrar()}></button>
+                    </div>
                 </ModalHeader>
                 <ModalBody>
                     <p>¿Estas seguro de borrar esta tarea?</p>
                 </ModalBody>
                 <ModalFooter>
-                    <button type="button" className="btn btn-no" data-bs-dismiss="modal">No</button>
-                    <button type="button" className="btn btn-yes">Si</button>
+                    <button type="button" className="btn-no" data-bs-dismiss="modal">No</button>
+                    <button type="button" className="btn-yes">Si</button>
                 </ModalFooter>
             </Modal>
 
             {/*Modal Editar*/}
 
             <Modal isOpen={this.state.modalEditar}>
-                <ModalHeader>
-                    <h2>Editar Tarea</h2>
+                <ModalHeader className="modalHeader">
+                    <h2 className="modalTitle">Editar Tarea</h2>
                     <button
                         type="button"
                         className="btn-close"
@@ -76,19 +78,19 @@ export default class ButtonsChecklist extends Component {
                 <ModalFooter>
                     <button
                         type="button"
-                        className="btn btn-volver"
+                        className="btn-volver"
                         data-bs-dismiss="modal">Volver</button>
                     <button
                         type="button"
-                        className="btn btn-done">¡Hecho!</button>
+                        className="btn-done">¡Hecho!</button>
                 </ModalFooter>
             </Modal>
 
             {/*Modal Nueva*/}
 
             <Modal isOpen={this.state.modalNueva}>
-                <ModalHeader>
-                    <h2>Nueva Tarea</h2>
+                <ModalHeader className="modalHeader">
+                    <h2 className="modalTitle">Nueva Tarea</h2>
                     <button
                         type="button"
                         className="btn-close"
@@ -103,9 +105,9 @@ export default class ButtonsChecklist extends Component {
                 <ModalFooter>
                     <button
                         type="button"
-                        className="btn btn-volver"
+                        className="btn-volver"
                         data-bs-dismiss="modal">Volver</button>
-                    <button type="button" className="btn btn-done">¡Hecho!</button>
+                    <button type="button" className="btn-done">¡Hecho!</button>
                 </ModalFooter>
             </Modal>
 
