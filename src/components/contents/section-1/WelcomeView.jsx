@@ -1,5 +1,4 @@
 import React from 'react'
-//import SectionChecklist from '../sectionChecklist/SectionChecklist'
 import {
     BrowserRouter as Router,
     Switch,

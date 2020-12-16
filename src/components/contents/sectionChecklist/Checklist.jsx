@@ -1,4 +1,4 @@
-import React,{useState}  from 'react'
+import React, {useState} from 'react'
 
 
 export default function Checklist(props){
@@ -29,8 +29,8 @@ export default function Checklist(props){
 
     return(
         <div className="col">
-            <h2 className="titleList mt-5 text-left">Lista de Tareas</h2>
-            <div className="mt-5 checklistBox">
+            <h2 className="titleList mt-4 text-left">Lista de Tareas</h2>
+            <div className="mt-3 checklistBox">
                 <div className="col">
                 
                     <ul>

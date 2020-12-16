@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import SectionChecklist from './components/contents/sectionChecklist/SectionChecklist'
-import NewTask from './components/contents/sectionChecklist/ButtonOptions/NewTask'
+
 
 
 export default function App() {
