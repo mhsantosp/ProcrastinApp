@@ -7,10 +7,6 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/brands";
 @import "@fortawesome/fontawesome-free/scss/v4-shims";
 
-html, body, #root, .layout {
-  height: 100%;
-}
-
 body {
   #root {
     .layout {

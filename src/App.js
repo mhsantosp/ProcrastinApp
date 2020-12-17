@@ -1,22 +1,28 @@
 import React from "react";
-import './sass/styles.scss'
+import "./sass/styles.scss";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./components/contents/header/Header";
+import HomePrueba from "./components/contents/home/Home";
 import Footer from "./components/contents/footer/Footer";
-import LoginSignup from "./components/forms/Login-Signup ";
-import Home from "./components/contents/home/Home";
+import IniSecion from "./components/forms/LoginSignup";
+import Registros from "./components/forms/FormSignUp";
 
 function Layout() {
   return (
     <div className="layout">
-      <Header />
-
-      <main className="container-fluid main py-5">
-        <section>
-          <Home />
-        </section>
-      </main>
-
-      <Footer />
+      <Router>
+        <Header />
+        <main className="container-fluid main py-5">
+          <Switch>
+            <Route exact path="/" component={HomePrueba} />
+            <Route exact path="/inicio-sesion" component={IniSecion} />
+            <Route exact path="/registro-usuario" component={Registros} />
+          </Switch>
+        </main>
+        <Footer />
+      </Router>
     </div>
   );
 }
