@@ -1,3 +1,24 @@
+//Botón Nueva tarea
+
+.btn-newTask{
+    margin-left: 150px;
+    border: 3px solid $fondoDark;
+    background-color: white;
+    color: $fondoDark;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 250px;
+    height: 50px;
+}
+
+.btn-newTask:hover{
+    background-color: $fondoDark;
+    color: white;
+}
+
+//Modales
+
 .modalHeader{
     background-color: $fondoLight;
     .modalTitle{
@@ -5,8 +26,8 @@
         font-family: LoveStory;
         font-size: 1.8em;
     }
-    .close{
-        margin-left:50px;
+    .btn-close{
+        margin: -3.5rem -1.5rem -14.5rem 425px !important;
     }
 }
 
@@ -19,6 +40,10 @@
     height: 30px;
 }
 
+.btn-yes:hover{
+    background-color: $fondoLight;
+}
+
 .btn-done{
     background-color: $fondoDark;
     color: white;
@@ -28,15 +53,7 @@
     height: 30px;
 }
 
-.btn-yes:hover{
-    background-color: $fondoLight;
-}
-
 .btn-done:hover{
-    background-color: $fondoLight;
-}
-
-.btn-no:hover{
     background-color: $fondoLight;
 }
 
@@ -47,6 +64,10 @@
     border-radius: 10px;
     width: 90px;
     height: 30px;
+}
+
+.btn-no:hover{
+    background-color: $fondoLight;
 }
 
 .btn-volver{
@@ -60,4 +81,9 @@
 
 .btn-volver:hover{
     background-color: $fondoLight;
+}
+
+.input{
+    border-radius: 20px !important;
+    box-shadow: inset -4px -4px 10px 1px $titleH1;
 }

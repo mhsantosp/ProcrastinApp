@@ -17,8 +17,9 @@ export default function WelcomeView(props){
                     <div className="row buttons-1">
                         <div className="col">
                             <p className="p-WV text-center">Hacer tarea en un<br></br> tiempo determinado</p>
-                            
-                            <button className="mt-3  button-WV">Técnica Pomodoro</button>
+                            <Link to="/TecnicaPomodoro">
+                              <button className="mt-3  button-WV">Técnica Pomodoro</button>
+                            </Link>
                         </div>
                         <div className="col">
                             <p className="p-WV text-center">Organizar tu tiempo<br></br> y tareas a realizar</p>

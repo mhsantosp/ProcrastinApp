@@ -8,7 +8,7 @@
 
 .checklistBox{
     background-color: $fondoLight;
-    width: 300px;
+    width: 450px;
     height: 400px;
     margin-left: 95px;
     border-radius: 20px;
@@ -35,6 +35,37 @@
     margin: 30px;
 }
 }
+
+//Botones Editar y Borrar
+
+.btn-edit{
+    background-color:  rgb(142, 248, 142);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.btn-edit:hover{
+    background-color: rgb(115, 223, 115);
+}
+
+.btn-delete{
+    background-color: rgba(255, 101, 101, 0.911);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.btn-delete:hover{
+    background-color:rgba(218, 75, 75, 0.911);
+}
+
 //Character
 
 .characterSC{

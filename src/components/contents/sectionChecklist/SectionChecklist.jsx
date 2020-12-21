@@ -1,6 +1,6 @@
 import React from 'react'
 import Checklist from './Checklist'
-import ButtonsChecklist from './ButtonsChecklist'
+import ButtonNewTask from './ButtonNewTask'
 import Character from './Character'
 
 export default function SectionChecklist(props){
@@ -8,7 +8,7 @@ export default function SectionChecklist(props){
     <section className="row">
         <article className="col-6">
             <Checklist/>
-            <ButtonsChecklist/>
+            <ButtonNewTask/>
         </article>
         <article className="col-6 characterSC">
             <Character/>

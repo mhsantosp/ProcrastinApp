@@ -1,4 +1,4 @@
-
+import React from 'react';
 import WelcomeView from './components/contents/section-1/WelcomeView'
 import {
   BrowserRouter as Router,
@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import SectionChecklist from './components/contents/sectionChecklist/SectionChecklist'
-
+import SectionTecPomodoro from './components/contents/sectionTecPomodoro/SectionTecPomodoro';
 
 
 export default function App() {
@@ -17,6 +17,10 @@ export default function App() {
         
         <Route path="/Checklist" exact>
           <SectionChecklist/>
+        </Route>
+
+        <Route path="/TecnicaPomodoro" exact>
+          <SectionTecPomodoro/>
         </Route>
 
         <Route path="/" exact>
