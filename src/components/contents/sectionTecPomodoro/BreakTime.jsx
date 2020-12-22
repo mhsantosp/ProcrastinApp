@@ -3,22 +3,24 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import ImgRelojArena from '../../images/reloj-de-arena.png'
 
-export default function BreakTime(){
+export default function BreakTime({title, changeTime, type, time, formatTime}){
     return(
         <div>
             <div>
-                <h2 className="titleWorkTime">Tiempo de Descanso</h2>
+                <h2 className="titleWorkTime">{title}</h2>
                 <img className="imgreloj" src={ImgRelojArena} alt="Reloj de Arena"/>
             </div>
             <div className="row mt-4">
                 <div className="col-4">
-                  <button className="btn-time"><FontAwesomeIcon icon={faMinus}/> Menos Tiempo</button>
+                  <button className="btn-time"
+                  onClick={() => changeTime(-60, type)}><FontAwesomeIcon icon={faMinus}/> Menos Tiempo</button>
                 </div>
                 <div className="col-4">
-                   <h3 className="time">Time</h3>
+                   <h3 className="time">{formatTime(time)}</h3>
                 </div>
                 <div className="col-4">
-                  <button className="btn-time"><FontAwesomeIcon icon={faPlus}/> Más Tiempo</button>
+                  <button className="btn-time"
+                  onClick={() => changeTime(60, type)}><FontAwesomeIcon icon={faPlus}/> Más Tiempo</button>
                 </div>
             </div>
         </div>
