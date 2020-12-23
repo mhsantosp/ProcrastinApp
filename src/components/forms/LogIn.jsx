@@ -1,9 +1,46 @@
+import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
 
+const apiBD = 'http://api-fake-procrastin-app.vercel.app/usuarios';
+
 export default class Login extends Component {
+  constructor(props) {
+    super ()
+    console.log(props);
+  }
+  
+  state = {
+    form: {
+      username: '',
+      password: ''
+    }
+  }
+
+  handleChange = async e => {
+    await this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+    console.log(this.state.form);
+  };
+  
+  handleSubmit = async e => {
+    e.preventDefault()
+    let rta = await axios.get(`${apiBD}?correo=${this.state.form.username}&contraseña=${this.state.form.password}`)
+    if(rta.data.length > 0){
+      this.props.history.push('/registro-usuario') //Ruta de redirección
+      //alert('usuario correcto')
+    } else {
+      alert ('Usuario y/o Password incorrecto')
+    }
+    console.log(rta);
+  }
+
   render() {
     return (
       <article className="container-fluid authenticateIdentity">
@@ -11,7 +48,7 @@ export default class Login extends Component {
           <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
           <div className="form">
             <div className="form-log-in">
-              <form className="card-body">
+              <form className="card-body" onSubmit={this.handleSubmit}>
                 <div className="form-row">
                   <div className="form-group col-12">
                     <label>Usuario</label>
@@ -19,7 +56,7 @@ export default class Login extends Component {
                       <div className="input-group-prepend">
                         <div className="input-group-text"><i className="fas fa-user"></i></div>
                       </div>
-                      <input type="text" className="form-control" placeholder="Usuario" required />
+                      <input type="text" className="form-control" name="username" onChange={this.handleChange} placeholder="Usuario" required />
                     </div>
                   </div>
 
@@ -29,7 +66,7 @@ export default class Login extends Component {
                       <div className="input-group-prepend">
                         <div className="input-group-text"><i className="fas fa-user-lock"></i></div>
                       </div>
-                      <input type="password" className="form-control" placeholder="********" required />
+                      <input type="password" className="form-control" name="password" onChange={this.handleChange} placeholder="********" required />
                     </div>
                   </div>
                 </div>

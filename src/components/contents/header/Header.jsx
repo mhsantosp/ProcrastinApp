@@ -13,7 +13,7 @@ function Header() {
           <img src={logo} className="img-fluid" alt="Nombre App" loading="lazy" id="nameLogo" />
         </Link>
         <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
-          <Link className="btn rounded btn-sign-in order-2" to="/inicio-sesion" role="button" rel="noopener noreferrer">Iniciar Sesión</Link>
+          <Link className="btn rounded btn-sign-in order-2" to="/" role="button" rel="noopener noreferrer">Iniciar Sesión</Link>
           <Link className="btn rounded mr-2 btn-sign-up order-1" to="/registro-usuario" role="button" rel="noopener noreferrer">Regístrate</Link>
         </div>
       </nav>
