@@ -5,7 +5,7 @@ import './LoginSignup.scss';
 
 function FormSignUp() {
   return (
-    <article className="container-fluid">
+    <article className="container-fluid authenticateIdentity">
       <div className="card">
         <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
         <div className="form">

@@ -4,10 +4,13 @@ body {
   #root {
     header {
       nav.navbar {
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.65);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.65);
         a.navbar-brand {
+          height: 6vh;
+          padding: 0;
+          margin: 0;
           img#nameLogo {
-            height: 6vh;
+            height: 100%;
           }
         }
 
@@ -25,14 +28,19 @@ body {
             color: $fondoDark;
             border: 1px solid $fondoDark;
             line-height: 1.5;
-            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+              box-shadow 0.15s ease-in-out;
           }
 
-          a.btn-sign-up:hover, a.btn-sign-in:hover {
+          a.btn-sign-up:hover,
+          a.btn-sign-in:hover,
+          a.btn-prueba:hover {
             background-color: $fondoDark;
             color: white;
           }
-          a.btn-sign-up:focus, a.btn-sign-in:focus {
+          a.btn-sign-up:focus,
+          a.btn-sign-in:focus,
+          a.btn-prueba:focus {
             outline: none;
             box-shadow: none;
           }
