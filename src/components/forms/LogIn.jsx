@@ -1,17 +1,17 @@
-import axios from "axios";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
+import axios from "axios";
 
-const apiBD = 'http://api-fake-procrastin-app.vercel.app/usuarios';
+const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
 
 export default class Login extends Component {
   constructor(props) {
     super ()
     console.log(props);
   }
-  
+
   state = {
     form: {
       username: '',
@@ -28,10 +28,10 @@ export default class Login extends Component {
     });
     console.log(this.state.form);
   };
-  
+
   handleSubmit = async e => {
     e.preventDefault()
-    let rta = await axios.get(`${apiBD}?correo=${this.state.form.username}&contraseña=${this.state.form.password}`)
+    let rta = await axios.get(`${apiBD}?email=${this.state.form.username}&password=${this.state.form.password}`)
     if(rta.data.length > 0){
       this.props.history.push('/registro-usuario') //Ruta de redirección
       //alert('usuario correcto')
