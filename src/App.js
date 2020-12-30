@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./sass/styles.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+
+import Header from "./components/contents/header/Header";
+// import Inicio from "./components/contents/home/Home";
+import Footer from "./components/contents/footer/Footer";
+import IniSecion from "./components/forms/LogIn";
+import Registros from "./components/forms/SignUp";
+
+export default class Layout extends Component {
+  render() {
+    return (
+      <div className="layout">
+        <BrowserRouter >
+          <Header />
+          <main className="container-fluid main py-5">
+            <Switch>
+              <Route exact path="/" render= {(props) => <IniSecion {...props} />} />
+              <Route exact path="/registro-usuario" component={Registros} />
+            </Switch>
+          </main>
+          <Footer />
+        </BrowserRouter >
+      </div>
+    );
+  }
 }
 
-export default App;
+//export default Layout;
