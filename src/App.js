@@ -8,18 +8,36 @@ import Header from "./components/contents/header/Header";
 import Footer from "./components/contents/footer/Footer";
 import IniSecion from "./components/forms/LogIn";
 import Registros from "./components/forms/SignUp";
+import SectionChecklist from './components/contents/sectionChecklist/SectionChecklist'
+import SectionTecPomodoro from './components/contents/sectionTecPomodoro/SectionTecPomodoro';
+import WelcomeView from './components/contents/section-1/WelcomeView'
 
 export default class Layout extends Component {
   render() {
     return (
-      <div className="layout">
+      <div className="layout App">
         <BrowserRouter >
           <Header />
           <main className="container-fluid main py-5">
             <Switch>
-              <Route exact path="/" render= {(props) => <IniSecion {...props} />} />
+              {/* 
+              <Route exact path="/" render={(props) => <IniSecion {...props} />} />
               <Route exact path="/registro-usuario" component={Registros} />
+ */}
+              <Route path="/Checklist" exact>
+                <SectionChecklist />
+              </Route>
+
+              <Route path="/TecnicaPomodoro" exact>
+                <SectionTecPomodoro />
+              </Route>
+
+              <Route path="/" exact>
+                <WelcomeView />
+              </Route>
+
             </Switch>
+
           </main>
           <Footer />
         </BrowserRouter >
@@ -27,5 +45,3 @@ export default class Layout extends Component {
     );
   }
 }
-
-//export default Layout;

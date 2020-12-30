@@ -1,0 +1,134 @@
+.secPomodoro{
+    background-color: $fondoDark;
+    width: 100%;
+    height: 100%;
+    .titlePomodoro{
+        color: white;
+        font-family: LoveStory;
+        text-align: center;
+        font-size: 4em;
+    }
+}
+
+
+.titleWorkTime{
+    color: white;
+    font-family: LoveStory;
+    font-size: 3em;
+    margin-left: 160px;
+}
+
+.imgreloj{
+    width: 275px;
+    height: 250px;
+    margin-left: 164px;
+    margin-top: 30px;
+}
+
+.btn-time{
+    border: 2px solid white; 
+    background-color: $fondoDark;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.btn-time:hover{
+    background-color: white;
+    color: $fondoDark;
+    border: 2px solid $fondoDark;
+}
+
+.time{
+    padding-left: 65px;
+    background-color: white;
+    color: $fondoDark;
+    font-family: LoveStory;
+    font-size: 3em;
+}
+
+.textState{
+    text-align: center;
+    color: white;
+    font-family: LoveStory;
+    margin-top: 30px;
+    font-size: 6em;
+    width: 100%;
+}
+
+.time2{
+    background-color: white;
+    color: $fondoDark;
+    font-family: LoveStory;
+    font-size: 6em;
+    text-align: center;
+    
+}
+
+.buttonsTime{
+    margin-left: 300px;
+}
+
+.btnPlay{
+    border: 2px solid white; 
+    color: white;
+    background-color: $fondoDark;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+}
+
+.btnReset{
+    border: 2px solid white; 
+    color: white;
+    background-color: $fondoDark;
+    border-radius: 10px;
+    width: 250px;
+    height: 50px;
+    margin-left: 150px;
+}
+
+.btnPlay:hover{
+    background-color: white;
+    color: $fondoDark;
+    border: 2px solid $fondoDark;
+}
+
+.btnReset:hover{
+    background-color: white;
+    color: $fondoDark;
+    border: 2px solid $fondoDark;
+}
+
+@media (max-width: 500px) {
+
+    .titleWorkTime{
+        margin-top:50px ;
+      margin-left: 100px;
+    }
+
+    .imgreloj{
+        margin-left: 160px;
+    }
+
+    .time{
+        padding-left: 30px;
+    }
+
+    .buttonsTime {
+      margin-left:0px;
+    }
+
+    .btnReset{
+        width: 200px;
+        margin-left: 150px;
+        margin-top:10px;
+    }
+
+    .btnPlay{
+        width: 200px;
+        margin-left: 150px;
+    }
+  }

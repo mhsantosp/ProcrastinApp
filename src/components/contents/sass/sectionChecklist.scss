@@ -1,0 +1,89 @@
+.titleList{
+    color: $titleH1;
+    font-family: LoveStory;
+    font-size: 2.3em;
+    text-align: left;
+    margin-left: 95px;
+}
+
+.checklistBox{
+    background-color: $fondoLight;
+    width: 450px;
+    height: 400px;
+    margin-left: 95px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 11px -3px $sombras;
+    ul{
+        margin-top: 40px;
+        li{
+            font-size: 1.1em;
+             text-align:left;
+             .checkbox{
+                 width:30px;
+                 height:30px;
+                 margin-top: 15px;
+             }
+        }
+    }
+
+}
+
+//Button Checklist
+.buttons{
+    margin-left:50px;
+.buttonsChecklist{
+    margin: 30px;
+}
+}
+
+//Botones Editar y Borrar
+
+.btn-edit{
+    background-color:  rgb(142, 248, 142);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.btn-edit:hover{
+    background-color: rgb(115, 223, 115);
+}
+
+.btn-delete{
+    background-color: rgba(255, 101, 101, 0.911);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 40px;
+}
+
+.btn-delete:hover{
+    background-color:rgba(218, 75, 75, 0.911);
+}
+
+//Character
+
+.characterSC{
+    background-color: $fondoDark;
+    height: 100vh;
+}
+
+.p-checklist{
+    margin-top: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-align:center;
+
+}
+
+.checklistCharacter{
+    margin-top: 50px;
+    width: 200px;
+    height: 500px;
+    margin-left: 225px;
+}
