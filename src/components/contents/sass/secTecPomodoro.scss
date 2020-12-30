@@ -1,7 +1,7 @@
 .secPomodoro{
     background-color: $fondoDark;
     width: 100%;
-    height: 160vh;
+    height: 100%;
     .titlePomodoro{
         color: white;
         font-family: LoveStory;
@@ -19,9 +19,9 @@
 }
 
 .imgreloj{
-    width: 170px;
+    width: 275px;
     height: 250px;
-    margin-left: 220px;
+    margin-left: 164px;
     margin-top: 30px;
 }
 
@@ -55,6 +55,7 @@
     font-family: LoveStory;
     margin-top: 30px;
     font-size: 6em;
+    width: 100%;
 }
 
 .time2{
@@ -100,3 +101,34 @@
     color: $fondoDark;
     border: 2px solid $fondoDark;
 }
+
+@media (max-width: 500px) {
+
+    .titleWorkTime{
+        margin-top:50px ;
+      margin-left: 100px;
+    }
+
+    .imgreloj{
+        margin-left: 160px;
+    }
+
+    .time{
+        padding-left: 30px;
+    }
+
+    .buttonsTime {
+      margin-left:0px;
+    }
+
+    .btnReset{
+        width: 200px;
+        margin-left: 150px;
+        margin-top:10px;
+    }
+
+    .btnPlay{
+        width: 200px;
+        margin-left: 150px;
+    }
+  }

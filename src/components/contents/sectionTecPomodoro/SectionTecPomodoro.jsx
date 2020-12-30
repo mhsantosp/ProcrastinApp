@@ -5,19 +5,19 @@ import AlarmMessage from './AlarmMessage'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function SectionTecPomodoro(props) {
+export default function SectionTecPomodoro() {
 
     const [displayTime, setDisplayTime] = useState(25 * 60);
     const [breakTime, setBreakTime] = useState(5 * 60);
     const [workTime, setWorkTime] = useState(25 * 60);
     const [timerOn, setTimerOn] = useState(false);
     const [onBreak, setOnBreak] = useState(false);
-    const [breakAudio, setBreakAudio] = React.useState(new Audio('./breakAlarm.mp3'))
+    const [breakAudio, setBreakAudio] = useState(new Audio('../../images/breakAlarm.mp3'))
 
-    const playBreakSound = () => {
+   /*  const playBreakSound = () => {
         breakAudio.currentTime = 0;
         breakAudio.play();
-    }
+    } */
 
     const formatTime = (time) => {
 
@@ -32,16 +32,16 @@ export default function SectionTecPomodoro(props) {
 
     const changeTime = (amount, type) => {
         if (type == "Descanso") {
-            if (breakTime <= 60 && amount < 0) {
+            if(breakTime <= 60 && amount < 0) {
                 return;
             }
             setBreakTime((prev) => prev + amount);
-        } else {
-            if (workTime <= 60 && amount < 0) {
+        }else{
+            if(workTime <= 60 && amount < 0) {
                 return;
-            }
+            } 
             setWorkTime((prev) => prev + amount);
-            if (!timerOn) {
+            if(!timerOn) {
                 setDisplayTime(workTime + amount);
             }
         }
@@ -54,19 +54,19 @@ export default function SectionTecPomodoro(props) {
         let nextDate = new Date().getTime() + second;
         let onBreakVariable = onBreak;
 
-        if (!timerOn) {
+        if(!timerOn) {
             let interval = setInterval(() => {
 
                 date = new Date().getTime();
-                if (date > nextDate) {
+                if(date > nextDate) {
                     setDisplayTime(prev => {
-                        if (prev <= 0 && !onBreakVariable) {
-                            playBreakSound();
+                        if(prev <= 0 && !onBreakVariable) {
+                            // playBreakSound();
                             onBreakVariable = true;
                             setOnBreak(true);
                             return breakTime;
-                        } else if (prev <= 0 && onBreakVariable) {
-                            playBreakSound();
+                        }else if(prev <= 0 && onBreakVariable) {
+                            // playBreakSound();
                             onBreakVariable = false;
                             setOnBreak(false);
                             return workTime;
@@ -97,8 +97,8 @@ export default function SectionTecPomodoro(props) {
     return (
         <section className="secPomodoro">
             <h1 className="titlePomodoro pt-4">Técnica Pomodoro</h1>
-            <div className="row mt-5">
-                <div className="col-6 ml-5">
+            <div className="row col-md-12 mt-5">
+                <div className="col-lg-6 col-md-12 ml-5">
                     <WorkTime
                         title={"Tiempo de Trabajo"}
                         changeTime={changeTime}
@@ -106,7 +106,7 @@ export default function SectionTecPomodoro(props) {
                         time={workTime}
                         formatTime={formatTime} />
                 </div>
-                <div className="col-6">
+                <div className="col-lg-6 col-md-12">
                     <BreakTime
                         title={"Tiempo de Descanso"}
                         changeTime={changeTime}

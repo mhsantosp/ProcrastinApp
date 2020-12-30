@@ -1,7 +1,7 @@
 import React from 'react';
 import WelcomeView from './components/contents/section-1/WelcomeView'
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Link
@@ -11,7 +11,7 @@ import SectionTecPomodoro from './components/contents/sectionTecPomodoro/Section
 
 
 export default function App() {
-  return (<Router>
+  return (<BrowserRouter>
     <div className="App">
       <Switch>
         
@@ -31,7 +31,7 @@ export default function App() {
       
     </div>
 
-    </Router>
+    </BrowserRouter>
   );
 }
 

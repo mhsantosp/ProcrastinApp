@@ -1,28 +1,52 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import axios from 'axios'
 
 
-export default class ButtonsChecklist extends Component {
+export default function ButtonsChecklist() {
 
-    state = {
-        modalNueva: false,
+    const db = 'https://api-fake-procrastin-app.vercel.app/users'
+
+    const [isModalNewOpen, setIsModalNewOpen]= useState(false)
+
+    const [data, setData] = useState([]);
+
+    const [selectedItem, setSelectedItem] = useState({
+        tarea : ""
+    })
+
+    const handleChange = e =>{
+        const {name, value} = e.target;
+        setSelectedItem(prevState=>({
+            ...prevState,
+            [name]:value
+        }))
+
+        console.log(selectedItem)
     }
 
-    modalNueva = () => {
-        this.setState({ modalNueva: !this.state.modalNueva })
+    const peticionPost= async()=>{
+        await axios.post(db, selectedItem)
+        .then(response => {
+            setData(data.concat(response.data));
+            setIsModalNewOpen(false)
+        })
     }
 
-    render() {
+    
+    
+
+    
         return (<div>
             <div className="col mt-5 buttons">
                 <button
                     className="btn-newTask mt-4"
-                    onClick={() => this.modalNueva()}>Nueva Tarea</button>
+                    onClick={() => setIsModalNewOpen(true)}>Nueva Tarea</button>
             </div>
 
             {/*Modal Nueva*/}
 
-            <Modal isOpen={this.state.modalNueva}>
+            <Modal isOpen={isModalNewOpen}>
                 <ModalHeader className="modalHeader">
                     <div className="row">
                         <h2 className="modalTitle col">Nueva Tarea</h2>
@@ -31,20 +55,20 @@ export default class ButtonsChecklist extends Component {
                             className="btn-close col"
                             data-bs-dismiss="modal"
                             aria-label="Close"
-                            onClick={() => this.modalNueva()}></button>
+                            onClick={() => setIsModalNewOpen(false)} ></button>
                     </div>
                 </ModalHeader>
                 <ModalBody>
                     <p>Ingresa nueva tarea:</p>
-                    <input className="form-control input" type="text" />
+                    <input name="tarea" onChange={handleChange} className="form-control input" type="text" />
                 </ModalBody>
                 <ModalFooter>
                     <button
                         type="button"
                         className="btn-volver"
                         data-bs-dismiss="modal"
-                        onClick={() => this.modalNueva()}>Volver</button>
-                    <button type="button" className="btn-done">¡Hecho!</button>
+                        onClick={() => setIsModalNewOpen(false)}>Volver</button>
+                    <button type="button" onClick={peticionPost} className="btn-done">¡Hecho!</button>
                 </ModalFooter>
             </Modal>
 
@@ -52,4 +76,3 @@ export default class ButtonsChecklist extends Component {
         
         )
     }
-}

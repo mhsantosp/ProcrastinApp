@@ -8,7 +8,7 @@ import {
 import Personaje from '../../images/personajeBienvenida.png'
 
 export default function WelcomeView(props){
-    return(<Router>
+    return(
         <section className="container-fluid welcomeView">
             <h1 className="text-center mt-5 welcomeTitle">Bienvenid@ a ProcrastinApp</h1>
             <h2 className="text-center mt-5">Cuentános, ¿Qué necesitas?</h2>
@@ -43,6 +43,6 @@ export default function WelcomeView(props){
                 </div>
             </div>
         </section>
-        </Router>
+       
     )
 }
