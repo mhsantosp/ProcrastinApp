@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./sass/styles.scss";
 
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+<<<<<<< HEAD
 
 import Header from "./components/contents/header/Header";
 // import Inicio from "./components/contents/home/Home";
@@ -45,3 +46,32 @@ export default class Layout extends Component {
     );
   }
 }
+=======
+
+import Header from "./components/contents/header/Header";
+// import Inicio from "./components/contents/home/Home";
+import Footer from "./components/contents/footer/Footer";
+import IniSecion from "./components/forms/LogIn";
+import Registros from "./components/forms/SignUp";
+
+export default class Layout extends Component {
+  render() {
+    return (
+      <div className="layout">
+        <BrowserRouter >
+          <Header />
+          <main className="container-fluid main py-5">
+            <Switch>
+              <Route exact path="/" render= {(props) => <IniSecion {...props} />} />
+              <Route exact path="/registro-usuario" component={Registros} />
+            </Switch>
+          </main>
+          <Footer />
+        </BrowserRouter >
+      </div>
+    );
+  }
+}
+
+//export default Layout;
+>>>>>>> d77660492e75d5fb1508773149a6d909fdaf8846
