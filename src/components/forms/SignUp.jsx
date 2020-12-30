@@ -4,7 +4,7 @@ import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
 import axios from "axios";
 
-const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
+// const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
 
 export default class FormSignUp extends Component {
   constructor(props) {
@@ -41,11 +41,12 @@ export default class FormSignUp extends Component {
       password: this.state.form.password
     }
     axios.post('https://api-fake-procrastin-app.vercel.app/users', data)
-    .then(res => 
-      console.log(res),
-      alert ('Correcto'),
+    .then(res => {
+      console.log(res);
+      console.log(res.data);
+      alert ('Correcto');
       this.props.history.push('/')
-    )
+    })
     .catch(err => 
       console.log(err),
       alert ('Incorrecto')

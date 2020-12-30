@@ -4,7 +4,7 @@ import "./sass/styles.scss";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Header from "./components/contents/header/Header";
-import Inicio from "./components/contents/home/Home";
+// import Inicio from "./components/contents/home/Home";
 import Footer from "./components/contents/footer/Footer";
 import IniSecion from "./components/forms/LogIn";
 import Registros from "./components/forms/SignUp";
