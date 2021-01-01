@@ -7,19 +7,23 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/brands";
 @import "@fortawesome/fontawesome-free/scss/v4-shims";
 
+@import "~bootstrap/scss/bootstrap";
+
 body {
-  #root {
-    .layout {
-      display: flex;
-      flex-direction: column;
-
-      .main {
-        margin-top: 4rem;
-      }
-
-      .footer {
-        margin-top: auto;
-      }
-    }
+  main {
+    margin-top: 4rem;
+    background-color: white;
   }
+
+  main.login, main.singUp {
+    background-color: $fondoLight;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+  // .layout {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 }
