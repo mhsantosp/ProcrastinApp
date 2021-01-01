@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./sass/styles.scss";
+import '../src/components/contents/sass/styles.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+
+import Header from "./components/contents/header/Header";
+import Footer from "./components/contents/footer/Footer";
+import IniSecion from "./components/forms/LogIn";
+import Registros from "./components/forms/SignUp";
+import Home from "./components/contents/section-1/WelcomeView";
+import SectionChecklist from "./components/contents/sectionChecklist/SectionChecklist";
+import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/SectionTecPomodoro";
+
+export default class Layout extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="layout">
+          <Header />
+          <main className="container-fluid py-5">
+            <Switch>
+              <Route
+                exact
+                path="/inicio-sesion"
+                render={(props) => <IniSecion {...props} />}
+              />
+              <Route exact path="/registro-usuario" component={Registros} />
+
+              <Route path="/Checklist" exact>
+                <SectionChecklist />
+              </Route>
+
+              <Route path="/TecnicaPomodoro" exact>
+                <SectionTecPomodoro />
+              </Route>
+
+              <Route path="/" exact>
+                <Home />
+              </Route>
+            </Switch>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
-
-export default App;
