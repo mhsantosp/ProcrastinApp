@@ -20,24 +20,12 @@ export default class Layout extends Component {
           <Header />
           <main className="container-fluid py-5">
             <Switch>
-              <Route
-                exact
-                path="/inicio-sesion"
-                render={(props) => <IniSecion {...props} />}
-              />
+              <Route exact path="/inicio-sesion" render={(props) => <IniSecion {...props} />} />
               <Route exact path="/registro-usuario" component={Registros} />
-
-              <Route path="/Checklist" exact>
-                <SectionChecklist />
-              </Route>
-
-              <Route path="/TecnicaPomodoro" exact>
-                <SectionTecPomodoro />
-              </Route>
-
-              <Route path="/" exact>
-                <Home />
-              </Route>
+              
+              <Route exact path="/" component={Home} />
+              <Route exact path="/Checklist" component={SectionChecklist} />
+              <Route exact path="/TecnicaPomodoro" component={SectionTecPomodoro} />
             </Switch>
           </main>
           <Footer />
