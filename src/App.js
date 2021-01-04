@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./sass/styles.scss";
 
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-<<<<<<< HEAD
 
 import Header from "./components/contents/header/Header";
 // import Inicio from "./components/contents/home/Home";
@@ -46,7 +45,6 @@ export default class Layout extends Component {
     );
   }
 }
-=======
 
 import Header from "./components/contents/header/Header";
 // import Inicio from "./components/contents/home/Home";
@@ -74,4 +72,3 @@ export default class Layout extends Component {
 }
 
 //export default Layout;
->>>>>>> d77660492e75d5fb1508773149a6d909fdaf8846
