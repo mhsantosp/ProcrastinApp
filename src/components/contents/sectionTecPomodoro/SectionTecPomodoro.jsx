@@ -12,7 +12,7 @@ export default function SectionTecPomodoro() {
   const [workTime, setWorkTime] = useState(25 * 60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
-  const [breakAudio, setBreakAudio] = React.useState(new Audio('./breakAlarm.mp3'))
+  const [breakAudio, setBreakAudio] = React.useState(new Audio('../../images/breakAlarm.mp3'))
 
   const playBreakSound = () => {
     breakAudio.currentTime = 0;
