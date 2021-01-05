@@ -5,20 +5,6 @@
 
 footer {
   margin-top: auto;
-  background: rgba(129, 75, 228, 1);
-  background: -moz-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
-  background: -webkit-gradient(
-    left top,
-    right bottom,
-    color-stop(0%, rgba(129, 75, 228, 1)),
-    color-stop(100%, rgba(255, 0, 132, 1))
-  );
-  background: -webkit-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
-  background: linear-gradient(135deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#814be4', endColorstr='#ff0084', GradientType=1 );
-
   @include media-breakpoint-down(xl) {
     height: 328px;
   }
@@ -168,19 +154,19 @@ footer {
 
   .copyright {
     // background-color: rgba(0,0,0,0.2);
-    background: rgba(255, 61, 119, 1);
-    background: -moz-linear-gradient(-45deg, rgba(255, 61, 119, 1) 0%, rgba(134, 56, 117, 0.8) 100%);
+    background: rgba(129, 75, 228, 1);
+    background: -moz-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
     background: -webkit-gradient(
       left top,
       right bottom,
-      color-stop(0%, rgba(255, 61, 119, 1)),
-      color-stop(100%, rgba(134, 56, 117, 0.8))
+      color-stop(0%, rgba(129, 75, 228, 1)),
+      color-stop(100%, rgba(255, 0, 132, 1))
     );
-    background: -webkit-linear-gradient(-45deg, rgba(255, 61, 119, 1) 0%, rgba(134, 56, 117, 0.8) 100%);
-    background: -o-linear-gradient(-45deg, rgba(255, 61, 119, 1) 0%, rgba(134, 56, 117, 0.8) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(255, 61, 119, 1) 0%, rgba(134, 56, 117, 0.8) 100%);
-    background: linear-gradient(135deg, rgba(255, 61, 119, 1) 0%, rgba(134, 56, 117, 0.8) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3d77', endColorstr='#863875', GradientType=1 );
+    background: -webkit-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: linear-gradient(135deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#814be4', endColorstr='#ff0084', GradientType=1 );
 
     p {
       i {
