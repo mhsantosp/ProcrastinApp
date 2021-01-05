@@ -5,8 +5,8 @@ import axios from 'axios'
 
 
 export default function Checklist(props) {
-
-   const db = 'https://api-fake-procrastin-app.vercel.app/users'
+    const id_user = 1
+   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
    /*  const [user, setUser] = useState({
         id : "1",

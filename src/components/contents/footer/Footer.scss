@@ -1,0 +1,147 @@
+@import "./../../../sass/colors";
+
+footer {
+  hr.lineFooter {
+    border: white .1rem groove;
+  }
+
+  hr.lineHR {
+    width: 60px;
+    margin-bottom: 24px;
+    background-color: #7c4dff;
+  }
+
+  .contacto{
+    p {
+      img.ubication {
+        width: 1.2rem;
+      }
+    }
+    
+    a {
+      display: flex;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $fondoDark;
+    }
+    a.ruta i.fas.fa-globe {
+      color: $email;
+      font-size: 1.2rem;
+    }
+    a.correo i.far.fa-envelope {
+      color: $email;
+      font-size: 1.2rem;
+    }
+  }
+
+  .redes {
+    a {
+      display: block;
+      margin: auto;
+      font-size: 1.2rem;
+      width: max-content;
+      margin-top: 0.4rem;
+      i.fab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+      }
+
+      i.fab.fa-facebook-f {
+        color: $facebook;
+      }
+
+      i.fab.fa-twitter {
+        color: $twitter;
+      }
+      i.fab.fa-linkedin-in {
+        color: $linkedin;
+      }
+      i.fab.fa-instagram {
+        color: white;
+        border-radius: 10%;
+        background: #ffd776;
+        background: -webkit-gradient(left bottom, right top,
+          color-stop(0, #ffd776),
+          color-stop(15%, #f3a554),
+          color-stop(31%, #f15c3c),
+          color-stop(48%, #d94867),
+          color-stop(64%, #c32f87),
+          color-stop(81%, #7d63a7),
+          color-stop(100%, #5c6cb3)
+        );
+        background: linear-gradient(45deg,
+          #ffd776,
+          #f3a554 15%,
+          #f15c3c 31%,
+          #d94867 48%,
+          #c32f87 64%,
+          #7d63a7 81%,
+          #5c6cb3
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd776",endColorstr="#5c6cb3",GradientType=1);
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    a:hover i.fab {
+      color: white;
+      border-radius: 10%;
+    }
+
+    a:hover i.fab.fa-facebook-f {
+      background-color: $facebook;
+    }
+    a:hover i.fab.fa-twitter {
+      background-color: $twitter;
+    }
+    a:hover i.fab.fa-linkedin-in {
+      background-color: $linkedin;
+    }
+    a:hover i.fab.fa-instagram {
+      border-radius: 10%;
+      background: #ffd776;
+      background: -webkit-gradient(left top, right top,
+        color-stop(0, #ffd776),
+        color-stop(17%, #f3a554),
+        color-stop(36%, #f15c3c),
+        color-stop(48%, #d94867),
+        color-stop(61%, #c32f87),
+        color-stop(76%, #7d63a7),
+        color-stop(100%, #5c6cb3)
+      );
+      background: linear-gradient(90deg,
+        #ffd776 0,
+        #f3a554 17%,
+        #f15c3c 36%,
+        #d94867 48%,
+        #c32f87 61%,
+        #7d63a7 76%,
+        #5c6cb3
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd776",endColorstr="#5c6cb3",GradientType=1);
+    }
+  }
+
+  .copyright {
+    background-color: rgba(0,0,0,0.2);
+    p {
+      i {
+        color: white;
+        font-size: 1.2rem;
+      }
+      a.rutaFooter {
+        text-decoration: none;
+      }
+      a.rutaFooter:hover {
+        color: $fondoDark;
+      }
+    }
+  }
+}

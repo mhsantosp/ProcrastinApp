@@ -14,9 +14,10 @@
 .titleWorkTime{
     color: white;
     font-family: LoveStory;
-    font-size: 3em;
-    margin-left: 160px;
-}
+    text-align: center;
+    font-size: 4em;
+  }
+
 
 .imgreloj{
     width: 275px;
@@ -25,28 +26,27 @@
     margin-top: 30px;
 }
 
-.btn-time{
-    border: 2px solid white; 
-    background-color: $fondoDark;
-    font-weight: bold;
-    border-radius: 10px;
-    color: white;
-    margin-left: 40px;
-    margin-top: 15px;
+.imgreloj {
+  width: 170px;
+  height: 250px;
+  margin-left: 220px;
+  margin-top: 30px;
 }
 
-.btn-time:hover{
-    background-color: white;
-    color: $fondoDark;
-    border: 2px solid $fondoDark;
+.btn-time {
+  border: 2px solid white;
+  background-color: $fondoDark;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  margin-left: 40px;
+  margin-top: 15px;
 }
 
-.time{
-    padding-left: 65px;
-    background-color: white;
-    color: $fondoDark;
-    font-family: LoveStory;
-    font-size: 3em;
+.btn-time:hover {
+  background-color: white;
+  color: $fondoDark;
+  border: 2px solid $fondoDark;
 }
 
 .textState{
@@ -58,42 +58,49 @@
     width: 100%;
 }
 
-.time2{
-    background-color: white;
-    color: $fondoDark;
-    font-family: LoveStory;
-    font-size: 6em;
-    text-align: center;
-    
+.textState {
+  text-align: center;
+  color: white;
+  font-family: LoveStory;
+  margin-top: 30px;
+  font-size: 6em;
 }
 
-.buttonsTime{
-    margin-left: 300px;
+.time2 {
+  background-color: white;
+  color: $fondoDark;
+  font-family: LoveStory;
+  font-size: 6em;
+  text-align: center;
 }
 
-.btnPlay{
-    border: 2px solid white; 
-    color: white;
-    background-color: $fondoDark;
-    border-radius: 10px;
-    width: 300px;
-    height: 50px;
+.buttonsTime {
+  margin-left: 300px;
 }
 
-.btnReset{
-    border: 2px solid white; 
-    color: white;
-    background-color: $fondoDark;
-    border-radius: 10px;
-    width: 250px;
-    height: 50px;
-    margin-left: 150px;
+.btnPlay {
+  border: 2px solid white;
+  color: white;
+  background-color: $fondoDark;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
 }
 
-.btnPlay:hover{
-    background-color: white;
-    color: $fondoDark;
-    border: 2px solid $fondoDark;
+.btnReset {
+  border: 2px solid white;
+  color: white;
+  background-color: $fondoDark;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  margin-left: 150px;
+}
+
+.btnPlay:hover {
+  background-color: white;
+  color: $fondoDark;
+  border: 2px solid $fondoDark;
 }
 
 .btnReset:hover{

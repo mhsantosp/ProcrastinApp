@@ -1,42 +1,41 @@
-.welcomeView{
-    background-color: white;
-    .welcomeTitle{
-        color:$titleH1;
-        font-family: LoveStory;
-        font-size: 5em;
-    }
+.welcomeView {
+  background-color: white;
+  .welcomeTitle {
+    color: $titleH1;
+    font-family: LoveStory;
+    font-size: 5em;
+  }
 }
 
-.p-WV{
-    color: $texto;
-    font-family: MicrosoftTL;
-    font-size: 1.3em;
+.p-WV {
+  color: $texto;
+  font-family: MicrosoftTL;
+  font-size: 1.3em;
 }
 
-.button-WV{
-    color:white;
-    font-size: 1.1em;
-    background-color: $fondoDark;
-    box-shadow: 5px 8px 11px -3px black;
-    border: none;
-    width: 190px;
-    height:60px;
-    border-radius: 15px;
-    margin-left: 63px;
-    
+.button-WV {
+  color: white;
+  font-size: 1.1em;
+  background-color: $fondoDark;
+  box-shadow: 5px 8px 11px -3px black;
+  border: none;
+  width: 190px;
+  height: 60px;
+  border-radius: 15px;
+  margin-left: 63px;
 }
 
-.button-WV:hover{
-    background-color: $fondoLight;
-    box-shadow: 5px 8px 11px -3px $sombras;
+.button-WV:hover {
+  background-color: $fondoLight;
+  box-shadow: 5px 8px 11px -3px $sombras;
 }
 
-.buttons-2{
-    margin-left: 200px !important;
+.buttons-2 {
+  margin-left: 200px !important;
 }
 
-.character{
-    margin-top: -100px;
-    width: 200px;
-    height: 500px;
+.character {
+  margin-top: -100px;
+  width: 200px;
+  height: 500px;
 }
