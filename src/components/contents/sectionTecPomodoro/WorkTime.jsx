@@ -1,7 +1,8 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
-import ImgRelojArena from '../../images/reloj-de-arena.png'
+import ImgRelojArena from '../../images/relojdearena.gif'
+import SecTecPomodoro from './SectionTecPomodoro'
 
 export default function WorkTime({title, changeTime, type, time, formatTime}){
     return(

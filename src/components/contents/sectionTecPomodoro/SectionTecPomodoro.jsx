@@ -5,7 +5,7 @@ import AlarmMessage from './AlarmMessage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function SectionTecPomodoro(props) {
+export default function SectionTecPomodoro() {
 
   const [displayTime, setDisplayTime] = useState(25 * 60);
   const [breakTime, setBreakTime] = useState(5 * 60);

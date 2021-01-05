@@ -98,3 +98,34 @@
   color: $fondoDark;
   border: 2px solid $fondoDark;
 }
+
+@media (max-width: 500px) {
+
+    .titleWorkTime{
+        margin-top:50px ;
+      margin-left: 100px;
+    }
+
+    .imgreloj{
+        margin-left: 160px;
+    }
+
+    .time{
+        padding-left: 30px;
+    }
+
+    .buttonsTime {
+      margin-left:0px;
+    }
+
+    .btnReset{
+        width: 200px;
+        margin-left: 150px;
+        margin-top:10px;
+    }
+
+    .btnPlay{
+        width: 200px;
+        margin-left: 150px;
+    }
+  }
