@@ -33,7 +33,7 @@ export default class Login extends Component {
     e.preventDefault()
     let rta = await axios.get(`${apiBD}?email=${this.state.form.username}&password=${this.state.form.password}`)
     if (rta.data.length > 0) {
-      this.props.history.push('/') //Ruta de redirección
+      this.props.history.push('/Welcome') //Ruta de redirección
       //alert('usuario correcto')
     } else {
       alert('Usuario y/o Password incorrecto')
