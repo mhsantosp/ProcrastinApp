@@ -1,12 +1,12 @@
 @import "./../../sass/colors";
 
 main {
-  background-color: $fondoLight;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   section {
+    background-color: $fondoLight;
     article.authenticateIdentity {
       .card {
         max-width: 450px;

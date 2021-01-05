@@ -1,10 +1,25 @@
 @import "./../../../sass/colors";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 body {
   #root {
     header {
       nav.navbar {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.65);
+        @include media-breakpoint-down(xl) {
+          height: 80px;
+        }
+        @include media-breakpoint-down(lg) {
+          height: 75px;
+        }
+        @include media-breakpoint-down(md) {
+          height: 73px;
+        }
+        @include media-breakpoint-down(sm) {
+          height: 115px;
+        }
         a.navbar-brand {
           height: 6vh;
           padding: 0;
