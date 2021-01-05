@@ -1,7 +1,6 @@
 .secPomodoro{
     background-color: $fondoDark;
     width: 100%;
-    height: 100%;
     .titlePomodoro{
         color: white;
         font-family: LoveStory;
@@ -17,7 +16,6 @@
     text-align: center;
     font-size: 4em;
   }
-
 
 .imgreloj{
     width: 275px;
@@ -41,6 +39,14 @@
   color: white;
   margin-left: 40px;
   margin-top: 15px;
+}
+
+.time {
+  padding-left: 65px;
+  background-color: white;
+  color: $fondoDark;
+  font-family: LoveStory;
+  font-size: 3em;
 }
 
 .btn-time:hover {
