@@ -12,6 +12,7 @@ import Home from "./components/contents/home/Home";
 import Welcome from "./components/contents/section-1/WelcomeView";
 import SectionChecklist from "./components/contents/sectionChecklist/SectionChecklist";
 import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/SectionTecPomodoro";
+import SectionMusic from "./components/contents/sectionMusic/SectionMusic";
 
 export default class Layout extends Component {
   render() {
@@ -29,6 +30,7 @@ export default class Layout extends Component {
               <Route exact path="/" component={Welcome} />
               <Route exact path="/Checklist" component={SectionChecklist} />
               <Route exact path="/TecnicaPomodoro" component={SectionTecPomodoro} />
+              <Route exact path="/Musica" component={SectionMusic} />
             </Switch>
           </main>
           <Footer />
