@@ -13,7 +13,7 @@ import peacefulPiano from '../../images/musicImages/peacefulPiano.JPG'
 import todayTopHits from '../../images/musicImages/todayTopHits.JPG'
 
 
-export default function WelcomeView(props) {
+export default function SectionMusic(props) {
     return (
         <section className="container-fluid sectionMusic">
             <h1 className="mt-5 titleMusic">Música para ti</h1>
