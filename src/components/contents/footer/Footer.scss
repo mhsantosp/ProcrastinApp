@@ -169,15 +169,14 @@ footer {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#814be4', endColorstr='#ff0084', GradientType=1 );
 
     p {
-      i {
-        color: white;
-        font-size: 1.2rem;
-      }
+      color: white;
+      font-weight: 500;
       a.rutaFooter {
+        color: white;
         text-decoration: none;
       }
       a.rutaFooter:hover {
-        color: $fondoDark;
+        color: black;
       }
     }
   }

@@ -40,9 +40,7 @@ function Footer() {
       <div className="container-fluid copyright text-center py-3" >
         <p className="m-0">
           © 2020 Copyright: 
-          <a className="rutaFooter" href="#https://www.ProcrastinApp.com" rel="noopener noreferrer"> ProcrastinApp </a> 
-          <i className="fab fa-react mr-1"></i> 
-          <i className="fab fa-sass ml-1"></i>
+          <a className="rutaFooter" href="#https://www.ProcrastinApp.com" rel="noopener noreferrer"> ProcrastinApp </a>
         </p>
       </div>
     </footer>
