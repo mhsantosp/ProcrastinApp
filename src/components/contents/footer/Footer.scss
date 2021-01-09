@@ -1,8 +1,25 @@
 @import "./../../../sass/colors";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 footer {
+  margin-top: auto;
+  @include media-breakpoint-down(xl) {
+    height: 328px;
+  }
+  @include media-breakpoint-down(lg) {
+    height: 389px;
+  }
+  @include media-breakpoint-down(md) {
+    height: 341px;
+  }
+  @include media-breakpoint-down(sm) {
+    height: 588px;
+  }
+
   hr.lineFooter {
-    border: white .1rem groove;
+    border: white 0.1rem groove;
   }
 
   hr.lineHR {
@@ -11,13 +28,13 @@ footer {
     background-color: #7c4dff;
   }
 
-  .contacto{
+  .contacto {
     p {
       img.ubication {
         width: 1.2rem;
       }
     }
-    
+
     a {
       display: flex;
     }
@@ -64,7 +81,9 @@ footer {
         color: white;
         border-radius: 10%;
         background: #ffd776;
-        background: -webkit-gradient(left bottom, right top,
+        background: -webkit-gradient(
+          left bottom,
+          right top,
           color-stop(0, #ffd776),
           color-stop(15%, #f3a554),
           color-stop(31%, #f15c3c),
@@ -73,7 +92,8 @@ footer {
           color-stop(81%, #7d63a7),
           color-stop(100%, #5c6cb3)
         );
-        background: linear-gradient(45deg,
+        background: linear-gradient(
+          45deg,
           #ffd776,
           #f3a554 15%,
           #f15c3c 31%,
@@ -107,7 +127,9 @@ footer {
     a:hover i.fab.fa-instagram {
       border-radius: 10%;
       background: #ffd776;
-      background: -webkit-gradient(left top, right top,
+      background: -webkit-gradient(
+        left top,
+        right top,
         color-stop(0, #ffd776),
         color-stop(17%, #f3a554),
         color-stop(36%, #f15c3c),
@@ -116,7 +138,8 @@ footer {
         color-stop(76%, #7d63a7),
         color-stop(100%, #5c6cb3)
       );
-      background: linear-gradient(90deg,
+      background: linear-gradient(
+        90deg,
         #ffd776 0,
         #f3a554 17%,
         #f15c3c 36%,
@@ -130,7 +153,21 @@ footer {
   }
 
   .copyright {
-    background-color: rgba(0,0,0,0.2);
+    // background-color: rgba(0,0,0,0.2);
+    background: rgba(129, 75, 228, 1);
+    background: -moz-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: -webkit-gradient(
+      left top,
+      right bottom,
+      color-stop(0%, rgba(129, 75, 228, 1)),
+      color-stop(100%, rgba(255, 0, 132, 1))
+    );
+    background: -webkit-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    background: linear-gradient(135deg, rgba(129, 75, 228, 1) 0%, rgba(255, 0, 132, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#814be4', endColorstr='#ff0084', GradientType=1 );
+
     p {
       i {
         color: white;

@@ -9,7 +9,7 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar fixed-top bg-white justify-content-center justify-content-sm-between">
-        <Link className="navbar-brand" to="/" rel="noopener noreferrer">
+        <Link className="navbar-brand" to="/Welcome" rel="noopener noreferrer">
           <img src={logo} className="img-fluid" alt="Nombre App" loading="lazy" id="nameLogo" />
         </Link>
         <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
