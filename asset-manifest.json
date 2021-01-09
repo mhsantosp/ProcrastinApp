@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ProcrastinApp/static/css/main.d112ef9e.chunk.css",
-    "main.js": "/ProcrastinApp/static/js/main.cd737649.chunk.js",
-    "main.js.map": "/ProcrastinApp/static/js/main.cd737649.chunk.js.map",
+    "main.js": "/ProcrastinApp/static/js/main.07f58947.chunk.js",
+    "main.js.map": "/ProcrastinApp/static/js/main.07f58947.chunk.js.map",
     "runtime-main.js": "/ProcrastinApp/static/js/runtime-main.ae6ed573.js",
     "runtime-main.js.map": "/ProcrastinApp/static/js/runtime-main.ae6ed573.js.map",
     "static/js/2.49d53bbd.chunk.js": "/ProcrastinApp/static/js/2.49d53bbd.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/checklist1.51e06550.png": "/ProcrastinApp/static/media/checklist1.51e06550.png",
     "static/media/colombia.db46f6a0.svg": "/ProcrastinApp/static/media/colombia.db46f6a0.svg",
     "static/media/logo2.6812bb08.svg": "/ProcrastinApp/static/media/logo2.6812bb08.svg",
-    "static/media/logo_name_copia.5c0f53e3.svg": "/ProcrastinApp/static/media/logo_name_copia.5c0f53e3.svg",
+    "static/media/logo_name.f1b5ce46.svg": "/ProcrastinApp/static/media/logo_name.f1b5ce46.svg",
     "static/media/personajeBienvenida.ff2b1789.png": "/ProcrastinApp/static/media/personajeBienvenida.ff2b1789.png",
     "static/media/relojdearena.5f220da2.gif": "/ProcrastinApp/static/media/relojdearena.5f220da2.gif"
   },
@@ -25,6 +25,6 @@
     "static/js/runtime-main.ae6ed573.js",
     "static/js/2.49d53bbd.chunk.js",
     "static/css/main.d112ef9e.chunk.css",
-    "static/js/main.cd737649.chunk.js"
+    "static/js/main.07f58947.chunk.js"
   ]
 }
