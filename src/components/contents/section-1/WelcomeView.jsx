@@ -24,7 +24,10 @@ export default function WelcomeView(props) {
                         </div>
                         <div className="col">
                             <p className="p-WV text-center">Te damos información sobre la procrastinación</p>
-                            <button className="mt-3 button-WV">Más Información</button>
+                            <Link to="/MasInformacion">
+                                <button className="mt-3 button-WV">Más Información</button>
+                            </Link>
+
                         </div>
 
                     </div>

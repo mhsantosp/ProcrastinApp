@@ -14,6 +14,7 @@ import SectionChecklist from "./components/contents/sectionChecklist/SectionChec
 import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/SectionTecPomodoro";
 import SectionMusic from "./components/contents/sectionMusic/SectionMusic";
 import SectionPodcasts from "./components/contents/sectionPodcasts/SectionPodcasts";
+import SectionMoreInfo from "./components/contents/sectionMoreInfo/SectionMoreInfo";
 
 export default class Layout extends Component {
   render() {
@@ -33,6 +34,7 @@ export default class Layout extends Component {
               <Route exact path="/TecnicaPomodoro" component={SectionTecPomodoro} />
               <Route exact path="/Musica" component={SectionMusic} />
               <Route exact path="/Podcasts" component={SectionPodcasts} />
+              <Route exact path="/MasInformacion" component={SectionMoreInfo} />
             </Switch>
           </main>
           <Footer />
