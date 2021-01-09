@@ -5,17 +5,15 @@ import Video from "./VideoBIenvenida"
 export default class Home extends Component {
   render() {
     return (
-      <section className="container-fluid viewHome">
-        <article className="home">
+      <section className="viewHome">
+        <article className="container home">
           <h1>Bienvenid@ a ProcrastinApp</h1>
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12 col-md-5 col-lg-5">
-                <p className="text text-left">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>
-              </div>
-              <div className="col-sm-12 col-md-7 col-lg-7">
-                <Video />
-              </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-5 col-xl-6">
+              <p className="text text-left">Esta iniciativa facilita la creación de un ambiente adecuado que facilite la concentración y el cumplimiento de las labores o actividades. Esto se haría  implementando checklists y un itinerario en el que el usuario pueda organizar sus tiempos y horas respectivas para hacer sus actividades, también implementa una técnica pomodoro para controlar el tiempo de trabajos y descansos. Con el apoyo de contenidos como podcasts, música o tips crearemos un ambiente adecuado a la hora de realizar las diferentes actividades.</p>
+            </div>
+            <div className="col-sm-12 col-md-12 col-lg-7 col-xl-6">
+              <Video />
             </div>
           </div>
         </article>
