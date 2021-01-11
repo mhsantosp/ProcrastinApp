@@ -39,6 +39,7 @@ class Header extends Component {
           <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
             <Link className="btn rounded btn-sign-in order-2" to="/inicio-sesion" role="button" rel="noopener noreferrer">Iniciar Sesión</Link>
             <Link className="btn rounded mr-2 btn-sign-up order-1" to="/registro-usuario" role="button" rel="noopener noreferrer">Regístrate</Link>
+            
             <button className="btn btn-outline-danger rounded mr-2 btn-sign-up" onClick={() => this.cerrarSesion()} >Cerrar Sesión</button>
             <div className="btn btn-outline-success rounded mr-2 btn-perfil" id="perfil">
               <img src={Avatar} alt="Avatar" className="img-fluid rounded-circle avatar" />
