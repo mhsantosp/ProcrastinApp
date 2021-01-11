@@ -4,17 +4,17 @@ import CO from './../../../images/colombia.svg'
 
 function Footer() {
   return (
-    <footer className="footer bg-white" >
+    <footer className="footer bg-white d-flex align-items-end flex-column" >
       <div className="container-fluid pt-5 pb-3">
         <hr className="lineFooter mb-4 mt-0 mx-auto" />
         <div className="row justify-content-md-around">
-          <div className="col col-lg-3">
+          <div className="col col-lg-3 py-3">
             <h6 className="text-uppercase font-weight-bold">Acerda de</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <p>PROCRASTINAPP es una iniciativa para facilitar la creación de un ambiente adecuado que ayude a la concentración y el cumplimiento de las actividades diarias.</p>
           </div>
 
-          <div className="col col-lg-4">
+          <div className="col col-lg-4 py-3">
             <h6 className="text-uppercase font-weight-bold">Contacto</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid contacto p-0">
@@ -24,7 +24,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="col-md-auto">
+          <div className="col-md-auto py-3">
             <h6 className="text-uppercase font-weight-bold">Redes Sociales</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid d-flex redes p-0">
@@ -37,7 +37,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="container-fluid copyright text-center py-3" >
+      <div className="container-fluid copyright text-center mt-auto py-3" >
         <p className="m-0">
           © 2020 Copyright: 
           <a className="rutaFooter" href="#https://www.ProcrastinApp.com" rel="noopener noreferrer"> ProcrastinApp </a>

@@ -5,7 +5,7 @@ main {
   flex-direction: column;
   justify-content: center;
 
-  section {
+  section.registros {
     background-color: $fondoLight;
     article.authenticateIdentity {
       .card {
@@ -48,7 +48,7 @@ main {
                 }
                 input.form-control {
                   border: none;
-                  border-left: 1px solid;
+                  border-left: 1px solid #804BE4;
                 }
               }
 

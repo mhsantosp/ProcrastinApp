@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
 import axios from "axios";
+import Cookies from "universal-cookie";
 
 const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
+const cookies = new Cookies();
 
 export default class Login extends Component {
   constructor(props) {
@@ -32,24 +34,52 @@ export default class Login extends Component {
   handleSubmit = async e => {
     e.preventDefault()
     let rta = await axios.get(`${apiBD}?email=${this.state.form.username}&password=${this.state.form.password}`)
-    if (rta.data.length > 0) {
-      this.props.history.push('/Welcome') //Ruta de redirección
-      //alert('usuario correcto')
-    } else {
-      alert('Usuario y/o Password incorrecto')
-    }
-    console.log(rta);
+    // if (rta.data.length > 0) {
+    //   this.props.history.push('/inicio') //Ruta de redirección
+    //   console.log('usuario correcto')
+    // } else {
+    //   alert('Usuario y/o Password incorrecto')
+    // }
+    // console.log(rta);
+    .then(res => {
+      console.log(res.data);
+      return res.data;
+    })
+    .then(res => {
+      if (res.length > 0) {
+        var rta = res[0];
+        cookies.set('id', rta.id, {path:"/"});
+        cookies.set('name', rta.name, {path:"/"});
+        cookies.set('lastname', rta.lastname, {path:"/"});
+        cookies.set('email', rta.email, {path:"/"});
+        cookies.set('user', rta.user, {path:"/"});
+        alert(`Usuario correcto: Bienbenid@ ${rta.name} ${rta.lastname}`);
+        window.location.href='./inicio'; //Ruta de redirección
+      } else {
+        console.log('Usuario y/o Password incorrecto');
+        alert('Usuario y/o Password incorrecto');
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
+
+  // componentDidMount() {
+  //   if (cookies.get('user')) {
+  //     window.location.href = './inicio';
+  //   }
+  // }
 
   render() {
     return (
-      <section className="container-fluid">
+      <section className="container-fluid registros">
         <article className="authenticateIdentity">
           <div className="card">
             <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
             <div className="form">
               <div className="form-log-in">
-                <form className="card-body" onSubmit={this.handleSubmit}>
+                <form className="card-body" onSubmit={this.handleSubmit} id="form">
                   <div className="form-row">
                     <div className="form-group col-12">
                       <label>Usuario</label>
@@ -72,7 +102,7 @@ export default class Login extends Component {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn-form">Iniciar sesión</button>
+                  <button type="submit" className="btn btn-form">Iniciar sesión</button>
                 </form>
                 <div className="card-footer">
                   <p className="card-text text-right">
@@ -87,3 +117,4 @@ export default class Login extends Component {
     );
   }
 }
+// export default Login;

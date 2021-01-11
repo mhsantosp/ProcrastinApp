@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './Home.scss';
-import Video from "./VideoBIenvenida"
+import Video from "./VideoBienvenida"
 
 export default class Home extends Component {
   render() {
