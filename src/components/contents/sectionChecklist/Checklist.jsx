@@ -45,17 +45,22 @@ export default function Checklist(props) {
 
           <ul>
             {
-              data.map((item) => {
+              data.map((users) => {
+               
                 return (
+                  
                   <div className="row">
-                    <li className="col-8" key={item.id}>{item.tasks.task1}<input className="checkbox" type="checkbox" /></li>
-                    <ButtonsEditDelete />
+                    
+                    {users.tasks.map((tasks)=>
+                    <li className="col-12">{tasks.task}<input className="checkbox" type="checkbox" />
+                    <ButtonsEditDelete /></li>
+                    )}
                   </div>
                 )
               })
             }
 
-            {
+            {/* {
               data.map((item) => {
                 return (
                   <div className="row">
@@ -86,7 +91,7 @@ export default function Checklist(props) {
                   </div>
                 )
               })
-            }
+            } */}
 
             {/* <div className="row">
                   <li className="col-8">{user.tareas.tarea1}<input className="checkbox" type="checkbox" /></li>

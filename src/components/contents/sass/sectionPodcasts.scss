@@ -58,7 +58,7 @@
             border-radius: 10px;
           }
         .infoPodcast{
-            width: 56%;
+            //width: 56%;
             .podcastName{
                 font-family: MicrosoftTL;
                 font-size: 1.5em;
@@ -92,10 +92,5 @@
       display: flex;
       flex-direction: column;
     }
-    .podcast{
-        width: 100%;
-    }
-    .infoPodcast{
-        width: 111%;
-    }
+    
   }

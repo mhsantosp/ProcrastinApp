@@ -58,7 +58,7 @@
             border-radius: 10px;
           }
         .infoPlaylist{
-            width: 56%;
+            //width: 56%;
             .playlistName{
                 font-family: MicrosoftTL;
                 font-size: 1.5em;
@@ -80,10 +80,5 @@
       display: flex;
       flex-direction: column;
     }
-    .playlist{
-        width: 100%;
-    }
-    .infoPlaylist{
-        width: 111%;
-    }
+
   }
