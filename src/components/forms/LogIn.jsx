@@ -47,13 +47,13 @@ export default class Login extends Component {
     })
     .then(res => {
       if (res.length > 0) {
-        var rta = res[0];
-        cookies.set('id', rta.id, {path:"/"});
-        cookies.set('name', rta.name, {path:"/"});
-        cookies.set('lastname', rta.lastname, {path:"/"});
-        cookies.set('email', rta.email, {path:"/"});
-        cookies.set('user', rta.user, {path:"/"});
-        alert(`Usuario correcto: Bienbenid@ ${rta.name} ${rta.lastname}`);
+        var respuesta = res[0];
+        cookies.set('id', respuesta.id, {path:"/"});
+        cookies.set('name', respuesta.name, {path:"/"});
+        cookies.set('lastname', respuesta.lastname, {path:"/"});
+        cookies.set('email', respuesta.email, {path:"/"});
+        cookies.set('user', respuesta.user, {path:"/"});
+        alert(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
         window.location.href='./inicio'; //Ruta de redirección
       } else {
         console.log('Usuario y/o Password incorrecto');
@@ -106,7 +106,7 @@ export default class Login extends Component {
                 </form>
                 <div className="card-footer">
                   <p className="card-text text-right">
-                    Estas registrado? <Link to="/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
+                    No estas registrado? <Link to="/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
                   </p>
                 </div>
               </div>
