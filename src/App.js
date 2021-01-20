@@ -16,7 +16,7 @@ import SectionChecklist from "./components/contents/sectionChecklist/SectionChec
 import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/SectionTecPomodoro";
 import Somos from "./components/Somos/Somos";
 
-export default class Layout extends Component {
+export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -42,3 +42,4 @@ export default class Layout extends Component {
     );
   }
 }
+//export default App

@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
 import axios from "axios";
-import Cookies from "universal-cookie";
 
 const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
-const cookies = new Cookies();
 
 export default class Login extends Component {
   constructor(props) {
@@ -33,14 +31,14 @@ export default class Login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    let rta = await axios.get(`${apiBD}?email=${this.state.form.username}&password=${this.state.form.password}`)
-    // if (rta.data.length > 0) {
-    //   this.props.history.push('/inicio') //Ruta de redirección
-    //   console.log('usuario correcto')
-    // } else {
-    //   alert('Usuario y/o Password incorrecto')
-    // }
-    // console.log(rta);
+    let rta = await axios.get(`${apiBD}?user=${this.state.form.username}&password=${this.state.form.password}`)
+    /* if (rta.data.length > 0) {
+      this.props.history.push('/inicio') //Ruta de redirección
+      console.log('usuario correcto')
+    } else {
+      alert('Usuario y/o Password incorrecto')
+    }
+    console.log(rta); */
     .then(res => {
       console.log(res.data);
       return res.data;
@@ -48,11 +46,11 @@ export default class Login extends Component {
     .then(res => {
       if (res.length > 0) {
         var respuesta = res[0];
-        cookies.set('id', respuesta.id, {path:"/"});
-        cookies.set('name', respuesta.name, {path:"/"});
-        cookies.set('lastname', respuesta.lastname, {path:"/"});
-        cookies.set('email', respuesta.email, {path:"/"});
-        cookies.set('user', respuesta.user, {path:"/"});
+        localStorage.setItem('id', respuesta.id, {path:"/"});
+        localStorage.setItem('name', respuesta.name, {path:"/"});
+        localStorage.setItem('lastname', respuesta.lastname, {path:"/"});
+        localStorage.setItem('email', respuesta.email, {path:"/"});
+        localStorage.setItem('user', respuesta.user, {path:"/"});
         alert(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
         window.location.href='./inicio'; //Ruta de redirección
       } else {
