@@ -5,7 +5,10 @@ import axios from 'axios'
 
 export default function ButtonsChecklist() {
 
-  const db = 'https://api-fake-procrastin-app.vercel.app/users'
+  const db = `https://api-fake-procrastin-app.vercel.app/users`
+
+  let keys = Object.entries(db).length;
+  console.log('Keys', keys)
 
   const [isModalNewOpen, setIsModalNewOpen] = useState(false)
 
@@ -53,7 +56,7 @@ export default function ButtonsChecklist() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalNewOpen(false)}>X</button>
+              onClick={() => setIsModalNewOpen(false)}></button>
           </div>
         </ModalHeader>
         <ModalBody>

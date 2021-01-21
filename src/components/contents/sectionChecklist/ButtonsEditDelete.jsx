@@ -41,7 +41,7 @@ export default function ButtonsEditDelete() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalDeleteOpen(false)}>X</button>
+              onClick={() => setIsModalDeleteOpen(false)}></button>
           </div>
         </ModalHeader>
         <ModalBody>
@@ -68,7 +68,7 @@ export default function ButtonsEditDelete() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalEditOpen(false)}>X</button>
+              onClick={() => setIsModalEditOpen(false)}></button>
           </div>
         </ModalHeader>
         <ModalBody>
