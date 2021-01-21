@@ -55,23 +55,18 @@ body {
             transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
           }
 
-          a.btn-sign-up:hover,
+          a.btn-sign-in:hover,
           .btn-perfil:hover,
           a.btn-prueba:hover {
             background-color: $fondoDark;
             color: white;
           }
 
-          a.btn-sign-up:focus,
+          a.btn-sign-in:focus,
           .btn-perfil:focus,
           a.btn-prueba:focus {
             outline: none;
             box-shadow: none;
-          }
-
-          .btn-sign-up {
-            font-family: "Microsoft New Tai Lue Bold";
-            font-size: 1rem;
           }
 
           #perfil {
