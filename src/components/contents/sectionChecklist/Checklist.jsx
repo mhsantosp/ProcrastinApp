@@ -6,23 +6,22 @@ import axios from 'axios'
 
 export default function Checklist(props) {
   // const id_user = 1
-
   const db = `https://api-fake-procrastin-app.vercel.app/users`
 
-  /* const [user, setUser] = useState({
-    id: "1",
-    nombre: "Gisell Mazo",
-    correo: "gisellmazo@gmail.com",
-    usuario: "gisellmazo13",
-    contraseña: "1214743656",
-    tareas:
-    {
-      tarea1: "Hacer tarea de Historia",
-      tarea2: "Estudiar Inglés",
-      tarea3: "Ejercitarme",
-      tarea4: "Leer libro pendiente"
-    }
-  }) */
+  /*  const [user, setUser] = useState({
+       id : "1",
+       nombre : "Gisell Mazo",
+       correo : "gisellmazo@gmail.com",
+       usuario : "gisellmazo13",
+       contraseña : "1214743656",
+       tareas : 
+           {
+               tarea1 : "Hacer tarea de Historia",
+               tarea2 : "Estudiar Inglés",
+               tarea3 : "Ejercitarme",
+               tarea4 : "Leer libro pendiente"
+           }
+   }) */
 
   const [data, setData] = useState([]);
 
@@ -46,17 +45,22 @@ export default function Checklist(props) {
 
           <ul>
             {
-              data.map((item) => {
+              data.map((users) => {
+
                 return (
+
                   <div className="row">
-                    <li className="col-8" key={item.id}>{item.tasks.task1}<input className="checkbox" type="checkbox" /></li>
-                    <ButtonsEditDelete />
+
+                    {users.tasks.map((tasks) =>
+                      <li className="col-12">{tasks.task}<input className="checkbox" type="checkbox" />
+                        <ButtonsEditDelete /></li>
+                    )}
                   </div>
                 )
               })
             }
 
-            {
+            {/* {
               data.map((item) => {
                 return (
                   <div className="row">
@@ -87,7 +91,7 @@ export default function Checklist(props) {
                   </div>
                 )
               })
-            }
+            } */}
 
             {/* <div className="row">
                   <li className="col-8">{user.tareas.tarea1}<input className="checkbox" type="checkbox" /></li>

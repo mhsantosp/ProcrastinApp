@@ -13,6 +13,7 @@ export default class Login extends Component {
   }
 
   state = {
+    usuario: localStorage.getItem('user'),
     form: {
       username: '',
       password: ''
@@ -31,43 +32,29 @@ export default class Login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    let rta = await axios.get(`${apiBD}?user=${this.state.form.username}&password=${this.state.form.password}`)
-    /* if (rta.data.length > 0) {
-      this.props.history.push('/inicio') //Ruta de redirección
-      console.log('usuario correcto')
-    } else {
-      alert('Usuario y/o Password incorrecto')
-    }
-    console.log(rta); */
-    .then(res => {
-      console.log(res.data);
-      return res.data;
-    })
-    .then(res => {
-      if (res.length > 0) {
-        var respuesta = res[0];
-        localStorage.setItem('id', respuesta.id, {path:"/"});
-        localStorage.setItem('name', respuesta.name, {path:"/"});
-        localStorage.setItem('lastname', respuesta.lastname, {path:"/"});
-        localStorage.setItem('email', respuesta.email, {path:"/"});
-        localStorage.setItem('user', respuesta.user, {path:"/"});
-        alert(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
-        window.location.href='./inicio'; //Ruta de redirección
-      } else {
-        console.log('Usuario y/o Password incorrecto');
-        alert('Usuario y/o Password incorrecto');
-      }
-    })
-    .catch(err => {
-      console.log(err);
-    })
+    axios.get(`${apiBD}?user=${this.state.form.username}&password=${this.state.form.password}`)
+      .then(res => {
+        console.log(res.data);
+        return res.data;
+      })
+      .then(res => {
+        if (res.length > 0) {
+          var respuesta = res[0];
+          localStorage.setItem('id', respuesta.id, { path: "/" });
+          localStorage.setItem('name', respuesta.name, { path: "/" });
+          localStorage.setItem('lastname', respuesta.lastname, { path: "/" });
+          localStorage.setItem('email', respuesta.email, { path: "/" });
+          localStorage.setItem('user', respuesta.user, { path: "/" });
+          window.location.href = './inicio'; //Ruta de redirección
+          console.log(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
+        } else {
+          console.log('Usuario y/o Password incorrecto');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
-
-  // componentDidMount() {
-  //   if (cookies.get('user')) {
-  //     window.location.href = './inicio';
-  //   }
-  // }
 
   render() {
     return (
@@ -110,9 +97,28 @@ export default class Login extends Component {
               </div>
             </div>
           </div>
+
+          {/* Modal HTML
+          <div id="myModal" className="modal fade">
+            <div className="modal-dialog modal-confirm">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <div className="icon-box">
+                    <i className="material-icons">&#xE876;</i>
+                  </div>
+                  <h4 className="modal-title w-100">Awesome!</h4>
+                </div>
+                <div className="modal-body">
+                  <p className="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                </div>
+                <div className="modal-footer">
+                  <button className="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </article>
       </section>
     );
   }
 }
-// export default Login;

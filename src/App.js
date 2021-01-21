@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./sass/styles.scss";
 import "../src/components/contents/sass/styles.scss";
-
 import ProcrastinApp from "./components/contents/home/Home";
-// import ProcrastinApp from "./components/contents/section-1/HomePrueba";
-
 import Header from "./components/contents/header/Header";
 import IniSecion from "./components/forms/LogIn";
 import Registros from "./components/forms/SignUp";
 import Footer from "./components/contents/footer/Footer";
-
 import Home from "./components/contents/section-1/WelcomeView";
 import SectionChecklist from "./components/contents/sectionChecklist/SectionChecklist";
 import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/SectionTecPomodoro";
@@ -42,4 +38,3 @@ export default class App extends Component {
     );
   }
 }
-//export default App

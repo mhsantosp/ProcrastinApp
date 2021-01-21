@@ -19,7 +19,7 @@ function Footer() {
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid contacto p-0">
               <p><img className="ubication mr-3" src={CO} alt="Colombia" /> Valle de Aburrá, Antioquia, CO</p>
-              <a className="correo mb-3" href="mailto:contacto@procrastinapp.co" target="_blank" rel="noopener noreferrer" ><i className="far fa-envelope mr-3"></i>contacto@procrastinapp.com</a>
+              <a className="correo mb-3" href="mailto:contacto@procrastinapp.co" target="_blank" rel="noopener noreferrer" ><i className="far fa-envelope mr-3"></i>contacto@procrastinapp.co</a>
               <a className="ruta mb-3" href="#https://www.ProcrastinApp.co" rel="noopener noreferrer" target="_blank"><i className="fas fa-globe mr-3"></i> www.ProcrastinApp.co</a>
             </div>
           </div>
