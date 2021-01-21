@@ -6,23 +6,22 @@ import axios from 'axios'
 
 export default function Checklist(props) {
   // const id_user = 1
-
   const db = `https://api-fake-procrastin-app.vercel.app/users`
 
-  /* const [user, setUser] = useState({
-    id: "1",
-    nombre: "Gisell Mazo",
-    correo: "gisellmazo@gmail.com",
-    usuario: "gisellmazo13",
-    contraseña: "1214743656",
-    tareas:
-    {
-      tarea1: "Hacer tarea de Historia",
-      tarea2: "Estudiar Inglés",
-      tarea3: "Ejercitarme",
-      tarea4: "Leer libro pendiente"
-    }
-  }) */
+  /*  const [user, setUser] = useState({
+       id : "1",
+       nombre : "Gisell Mazo",
+       correo : "gisellmazo@gmail.com",
+       usuario : "gisellmazo13",
+       contraseña : "1214743656",
+       tareas : 
+           {
+               tarea1 : "Hacer tarea de Historia",
+               tarea2 : "Estudiar Inglés",
+               tarea3 : "Ejercitarme",
+               tarea4 : "Leer libro pendiente"
+           }
+   }) */
 
   const [data, setData] = useState([]);
 

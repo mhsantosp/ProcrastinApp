@@ -13,6 +13,7 @@ export default class Login extends Component {
   }
 
   state = {
+    usuario: localStorage.getItem('user'),
     form: {
       username: '',
       password: ''
@@ -31,25 +32,39 @@ export default class Login extends Component {
 
   handleSubmit = async e => {
     e.preventDefault()
-    let rta = await axios.get(`${apiBD}?email=${this.state.form.username}&password=${this.state.form.password}`)
-    if (rta.data.length > 0) {
-      this.props.history.push('/Welcome') //Ruta de redirección
-      //alert('usuario correcto')
-    } else {
-      alert('Usuario y/o Password incorrecto')
-    }
-    console.log(rta);
+    axios.get(`${apiBD}?user=${this.state.form.username}&password=${this.state.form.password}`)
+      .then(res => {
+        console.log(res.data);
+        return res.data;
+      })
+      .then(res => {
+        if (res.length > 0) {
+          var respuesta = res[0];
+          localStorage.setItem('id', respuesta.id, { path: "/" });
+          localStorage.setItem('name', respuesta.name, { path: "/" });
+          localStorage.setItem('lastname', respuesta.lastname, { path: "/" });
+          localStorage.setItem('email', respuesta.email, { path: "/" });
+          localStorage.setItem('user', respuesta.user, { path: "/" });
+          window.location.href = './inicio'; //Ruta de redirección
+          console.log(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
+        } else {
+          console.log('Usuario y/o Password incorrecto');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   render() {
     return (
-      <section className="container-fluid">
+      <section className="container-fluid registros">
         <article className="authenticateIdentity">
           <div className="card">
             <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
             <div className="form">
               <div className="form-log-in">
-                <form className="card-body" onSubmit={this.handleSubmit}>
+                <form className="card-body" onSubmit={this.handleSubmit} id="form">
                   <div className="form-row">
                     <div className="form-group col-12">
                       <label>Usuario</label>
@@ -72,16 +87,36 @@ export default class Login extends Component {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn-form">Iniciar sesión</button>
+                  <button type="submit" className="btn btn-form">Iniciar sesión</button>
                 </form>
                 <div className="card-footer">
                   <p className="card-text text-right">
-                    Estas registrado? <Link to="/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
+                    No estas registrado? <Link to="/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Modal HTML
+          <div id="myModal" className="modal fade">
+            <div className="modal-dialog modal-confirm">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <div className="icon-box">
+                    <i className="material-icons">&#xE876;</i>
+                  </div>
+                  <h4 className="modal-title w-100">Awesome!</h4>
+                </div>
+                <div className="modal-body">
+                  <p className="text-center">Your booking has been confirmed. Check your email for detials.</p>
+                </div>
+                <div className="modal-footer">
+                  <button className="btn btn-success btn-block" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </article>
       </section>
     );

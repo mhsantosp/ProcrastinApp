@@ -13,8 +13,9 @@ import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/Section
 import SectionMusic from "./components/contents/sectionMusic/SectionMusic";
 import SectionPodcasts from "./components/contents/sectionPodcasts/SectionPodcasts";
 import SectionMoreInfo from "./components/contents/sectionMoreInfo/SectionMoreInfo";
+import Somos from "./components/Somos/Somos";
 
-export default class Layout extends Component {
+export default class App extends Component {
   render() {
     return (
       <BrowserRouter>
@@ -24,6 +25,7 @@ export default class Layout extends Component {
             <Switch>
               <Route exact path="/" component={ProcrastinApp} />
               <Route exact path="/ProcrastinApp" component={ProcrastinApp} />
+              <Route exact path="/quienes-somos" component={Somos} />
 
               <Route exact path="/inicio-sesion" render={(props) => <IniSecion {...props} />} />
               <Route exact path="/registro-usuario" component={Registros} />

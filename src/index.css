@@ -17,8 +17,8 @@ code {
 }
 
 @font-face {
-  font-family: 'Love Story Rough';
-  src: local('Love Story Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
+  font-family: 'Love-Story-Rough';
+  src: local('Love-Story-Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
 }
 
 @font-face {
