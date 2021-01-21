@@ -45,7 +45,7 @@ export default class FormSignUp extends Component {
         console.log(res);
         console.log(res.data);
         alert('Correcto');
-        this.props.history.push('/')
+        this.props.history.push('/Welcome')
       })
       .catch(err =>
         console.log(err),
@@ -55,7 +55,7 @@ export default class FormSignUp extends Component {
 
   render() {
     return (
-      <section className="container-fluid">
+      <section className="container-fluid registros">
         <article className="authenticateIdentity">
           <div className="card">
             <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />

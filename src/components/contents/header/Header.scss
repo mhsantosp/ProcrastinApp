@@ -1,14 +1,37 @@
 @import "./../../../sass/colors";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 
 body {
   #root {
     header {
       nav.navbar {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.65);
+        @include media-breakpoint-down(xl) {
+          height: 80px;
+        }
+        @include media-breakpoint-down(lg) {
+          height: 75px;
+        }
+        @include media-breakpoint-down(md) {
+          height: 73px;
+        }
+        @include media-breakpoint-down(sm) {
+          height: 115px;
+        }
+
         a.navbar-brand {
-          height: 6vh;
+          height: 56px;
           padding: 0;
           margin: 0;
+          @include media-breakpoint-down(md) {
+            margin-right: 0;
+          }
+          @include media-breakpoint-down(sm) {
+            margin: auto;
+          }
+
           img#nameLogo {
             height: 100%;
           }
@@ -18,7 +41,8 @@ body {
           padding-top: 0.3125rem;
           padding-bottom: 0.3125rem;
 
-          a {
+          a,
+          .btn-perfil {
             display: inline-block;
             font-family: "Microsoft New Tai Lue Bold";
             font-size: 1rem;
@@ -28,22 +52,85 @@ body {
             color: $fondoDark;
             border: 1px solid $fondoDark;
             line-height: 1.5;
-            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-              box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
           }
 
-          a.btn-sign-up:hover,
           a.btn-sign-in:hover,
+          .btn-perfil:hover,
           a.btn-prueba:hover {
             background-color: $fondoDark;
             color: white;
           }
-          a.btn-sign-up:focus,
+
           a.btn-sign-in:focus,
+          .btn-perfil:focus,
           a.btn-prueba:focus {
             outline: none;
             box-shadow: none;
           }
+
+          #perfil {
+            display: flex;
+            align-items: center;
+
+            .avatar {
+              width: 25px;
+              height: 25px;
+            }
+
+            span {
+              padding-left: 12px;
+              font-family: "Microsoft New Tai Lue Bold";
+              font-size: 1rem;
+            }
+          }
+
+          .dropdown {
+            height: 38px;
+            display: flex;
+            align-items: center;
+
+            button {
+              height: 38px;
+              width: max-content;
+              text-transform: capitalize;
+            }
+
+            img {
+              width: 35px;
+              position: relative;
+              z-index: 5;
+            }
+
+            .dropdown-menu {
+              .dropdown-item {
+                border: none;
+                font-family: "Microsoft New Tai Lue Bold";
+                font-size: 1rem;
+                padding: 0.375rem 0.75rem;
+                text-align: center;
+                color: #804be4;
+                margin: auto;
+                width: 100%;
+
+                &:hover {
+                  background-color: $fondoDark;
+                  color: white;
+                  //border-radius: 0.25rem;
+                }
+
+                &:focus {
+                  outline: none;
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+
+          // .dropdown:hover .btn-perfil,
+          // .dropdown:hover .dropdown-menu {
+          //   display: block;
+          // }
         }
       }
     }

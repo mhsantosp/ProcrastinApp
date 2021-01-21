@@ -24,13 +24,21 @@ export default function WelcomeView(props) {
             </div>
             <div className="col">
               <p className="p-WV text-center">Te damos información sobre la procrastinación</p>
-              <button className="mt-3 button-WV">Más Información</button>
+              <Link to="/MasInformacion">
+                <button className="mt-3 button-WV">Más Información</button>
+              </Link>
+
             </div>
 
           </div>
           <div className="row mt-5 buttons-2">
-            <button className="col-3 mt-4 mx-5 button-WV">Música</button>
-            <button className="col-3 mt-4 mx-5 button-WV">Podcasts</button>
+            <Link to="/Musica" className="col-3 mt-4 mx-5">
+              <button className="button-WV">Música</button>
+            </Link>
+            <Link to="/Podcasts" className="col-3 mt-4 mx-5">
+              <button className="button-WV">Podcasts</button>
+            </Link>
+
           </div>
         </div>
         <div className="col-3">
@@ -38,5 +46,6 @@ export default function WelcomeView(props) {
         </div>
       </div>
     </section>
+
   )
 }

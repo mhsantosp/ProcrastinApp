@@ -1,55 +1,77 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import axios from 'axios'
 
 
-export default class ButtonsChecklist extends Component {
+export default function ButtonsChecklist() {
 
-    state = {
-        modalNueva: false,
-    }
+  const db = `https://api-fake-procrastin-app.vercel.app/users`
 
-    modalNueva = () => {
-        this.setState({ modalNueva: !this.state.modalNueva })
-    }
+  let keys = Object.entries(db).length;
+  console.log('Keys', keys)
 
-    render() {
-        return (<div>
-            <div className="col mt-5 buttons">
-                <button
-                    className="btn-newTask mt-4"
-                    onClick={() => this.modalNueva()}>Nueva Tarea</button>
-            </div>
+  const [isModalNewOpen, setIsModalNewOpen] = useState(false)
 
-            {/*Modal Nueva*/}
+  const [data, setData] = useState([]);
 
-            <Modal isOpen={this.state.modalNueva}>
-                <ModalHeader className="modalHeader">
-                    <div className="row">
-                        <h2 className="modalTitle col">Nueva Tarea</h2>
-                        <button
-                            type="button"
-                            className="btn-close col"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                            onClick={() => this.modalNueva()}></button>
-                    </div>
-                </ModalHeader>
-                <ModalBody>
-                    <p>Ingresa nueva tarea:</p>
-                    <input className="form-control input" type="text" />
-                </ModalBody>
-                <ModalFooter>
-                    <button
-                        type="button"
-                        className="btn-volver"
-                        data-bs-dismiss="modal"
-                        onClick={() => this.modalNueva()}>Volver</button>
-                    <button type="button" className="btn-done">¡Hecho!</button>
-                </ModalFooter>
-            </Modal>
+  const [selectedItem, setSelectedItem] = useState({
+    tarea: ""
+  })
 
-        </div>
-        
-        )
-    }
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setSelectedItem(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+
+    console.log(selectedItem)
+  }
+
+  const peticionPost = async () => {
+    await axios.post(db, selectedItem)
+      .then(response => {
+        setData(data.concat(response.data));
+        setIsModalNewOpen(false)
+      })
+  }
+
+  return (
+    <div>
+      <div className="col mt-5 buttons">
+        <button
+          className="btn-newTask mt-4"
+          onClick={() => setIsModalNewOpen(true)}>Nueva Tarea</button>
+      </div>
+
+
+      {/*Modal Nueva*/}
+
+      <Modal isOpen={isModalNewOpen}>
+        <ModalHeader className="modalHeader">
+          <div className="row">
+            <h2 className="modalTitle col">Nueva Tarea</h2>
+            <button
+              type="button"
+              className="btn-close col"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              onClick={() => setIsModalNewOpen(false)}></button>
+          </div>
+        </ModalHeader>
+        <ModalBody>
+          <p>Ingresa nueva tarea:</p>
+          <input name="tarea" onChange={handleChange} className="form-control input" type="text" />
+        </ModalBody>
+        <ModalFooter>
+          <button
+            type="button"
+            className="btn-volver"
+            data-bs-dismiss="modal"
+            onClick={() => setIsModalNewOpen(false)}>Volver</button>
+          <button type="button" onClick={peticionPost} className="btn-done">¡Hecho!</button>
+        </ModalFooter>
+      </Modal>
+    </div>
+  )
 }

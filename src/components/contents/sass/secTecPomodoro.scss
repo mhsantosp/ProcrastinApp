@@ -1,20 +1,27 @@
-.secPomodoro {
-  background-color: $fondoDark;
-  width: 100%;
-  // height: 160vh;
-  .titlePomodoro {
+.secPomodoro{
+    background-color: $fondoDark;
+    width: 100%;
+    .titlePomodoro{
+        color: white;
+        font-family: LoveStory;
+        text-align: center;
+        font-size: 4em;
+    }
+}
+
+
+.titleWorkTime{
     color: white;
     font-family: LoveStory;
     text-align: center;
     font-size: 4em;
   }
-}
 
-.titleWorkTime {
-  color: white;
-  font-family: LoveStory;
-  font-size: 3em;
-  margin-left: 160px;
+.imgreloj{
+    width: 275px;
+    height: 250px;
+    margin-left: 164px;
+    margin-top: 30px;
 }
 
 .imgreloj {
@@ -34,18 +41,27 @@
   margin-top: 15px;
 }
 
-.btn-time:hover {
-  background-color: white;
-  color: $fondoDark;
-  border: 2px solid $fondoDark;
-}
-
 .time {
   padding-left: 65px;
   background-color: white;
   color: $fondoDark;
   font-family: LoveStory;
   font-size: 3em;
+}
+
+.btn-time:hover {
+  background-color: white;
+  color: $fondoDark;
+  border: 2px solid $fondoDark;
+}
+
+.textState{
+    text-align: center;
+    color: white;
+    font-family: LoveStory;
+    margin-top: 30px;
+    font-size: 6em;
+    width: 100%;
 }
 
 .textState {
@@ -93,8 +109,39 @@
   border: 2px solid $fondoDark;
 }
 
-.btnReset:hover {
-  background-color: white;
-  color: $fondoDark;
-  border: 2px solid $fondoDark;
+.btnReset:hover{
+    background-color: white;
+    color: $fondoDark;
+    border: 2px solid $fondoDark;
 }
+
+@media (max-width: 500px) {
+
+    .titleWorkTime{
+        margin-top:50px ;
+      margin-left: 100px;
+    }
+
+    .imgreloj{
+        margin-left: 160px;
+    }
+
+    .time{
+        padding-left: 30px;
+    }
+
+    .buttonsTime {
+      margin-left:0px;
+    }
+
+    .btnReset{
+        width: 200px;
+        margin-left: 150px;
+        margin-top:10px;
+    }
+
+    .btnPlay{
+        width: 200px;
+        margin-left: 150px;
+    }
+  }

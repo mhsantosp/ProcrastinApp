@@ -5,14 +5,14 @@ import AlarmMessage from './AlarmMessage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function SectionTecPomodoro(props) {
+export default function SectionTecPomodoro() {
 
   const [displayTime, setDisplayTime] = useState(25 * 60);
   const [breakTime, setBreakTime] = useState(5 * 60);
   const [workTime, setWorkTime] = useState(25 * 60);
   const [timerOn, setTimerOn] = useState(false);
   const [onBreak, setOnBreak] = useState(false);
-  const [breakAudio, setBreakAudio] = React.useState(new Audio('./breakAlarm.mp3'))
+  const [breakAudio, setBreakAudio] = React.useState(new Audio('../../images/breakAlarm.mp3'))
 
   const playBreakSound = () => {
     breakAudio.currentTime = 0;
