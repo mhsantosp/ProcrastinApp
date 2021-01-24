@@ -8,13 +8,13 @@ function Footer() {
       <div className="container-fluid pt-5 pb-3">
         <hr className="lineFooter mb-4 mt-0 mx-auto" />
         <div className="row justify-content-md-around">
-          <div className="col col-lg-3 py-3">
+          <div className="col-sm-12 col-md-4 col-lg-3 py-3">
             <h6 className="text-uppercase font-weight-bold">Acerda de</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <p>PROCRASTINAPP es una iniciativa para facilitar la creación de un ambiente adecuado que ayude a la concentración y el cumplimiento de las actividades diarias.</p>
           </div>
 
-          <div className="col col-lg-4 py-3">
+          <div className="col-sm-12 col-md-4 col-lg-4 py-3">
             <h6 className="text-uppercase font-weight-bold">Contacto</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid contacto p-0">
