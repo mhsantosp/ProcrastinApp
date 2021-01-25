@@ -4,7 +4,7 @@ import logo2 from './../../images/logo2.svg';
 import './LoginSignup.scss';
 import axios from "axios";
 
-const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
+const apiBD = 'https://api-fake-procrastin-app.vercel.app/users';
 
 export default class Login extends Component {
   constructor(props) {
