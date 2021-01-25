@@ -15,7 +15,7 @@ export default class Header extends Component {
     localStorage.removeItem('lastname', { path: "/" });
     localStorage.removeItem('email', { path: "/" });
     localStorage.removeItem('user', { path: "/" });
-    window.location.href = '/';
+    window.location.href = './ProcrastinApp';
   }
 
   render() {
