@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/ProcrastinApp/static/css/main.f3fab8d1.chunk.css",
-    "main.js": "/ProcrastinApp/static/js/main.190c6161.chunk.js",
-    "main.js.map": "/ProcrastinApp/static/js/main.190c6161.chunk.js.map",
-    "runtime-main.js": "/ProcrastinApp/static/js/runtime-main.db1ac2fb.js",
-    "runtime-main.js.map": "/ProcrastinApp/static/js/runtime-main.db1ac2fb.js.map",
-    "static/js/2.98f03fb8.chunk.js": "/ProcrastinApp/static/js/2.98f03fb8.chunk.js",
-    "static/js/2.98f03fb8.chunk.js.map": "/ProcrastinApp/static/js/2.98f03fb8.chunk.js.map",
-    "static/js/3.c3706e24.chunk.js": "/ProcrastinApp/static/js/3.c3706e24.chunk.js",
-    "static/js/3.c3706e24.chunk.js.map": "/ProcrastinApp/static/js/3.c3706e24.chunk.js.map",
+    "main.js": "/ProcrastinApp/static/js/main.41827242.chunk.js",
+    "main.js.map": "/ProcrastinApp/static/js/main.41827242.chunk.js.map",
+    "runtime-main.js": "/ProcrastinApp/static/js/runtime-main.b9304417.js",
+    "runtime-main.js.map": "/ProcrastinApp/static/js/runtime-main.b9304417.js.map",
+    "static/js/2.a432ffff.chunk.js": "/ProcrastinApp/static/js/2.a432ffff.chunk.js",
+    "static/js/2.a432ffff.chunk.js.map": "/ProcrastinApp/static/js/2.a432ffff.chunk.js.map",
+    "static/js/3.6c210186.chunk.js": "/ProcrastinApp/static/js/3.6c210186.chunk.js",
+    "static/js/3.6c210186.chunk.js.map": "/ProcrastinApp/static/js/3.6c210186.chunk.js.map",
     "index.html": "/ProcrastinApp/index.html",
     "static/css/main.f3fab8d1.chunk.css.map": "/ProcrastinApp/static/css/main.f3fab8d1.chunk.css.map",
-    "static/js/2.98f03fb8.chunk.js.LICENSE.txt": "/ProcrastinApp/static/js/2.98f03fb8.chunk.js.LICENSE.txt",
+    "static/js/2.a432ffff.chunk.js.LICENSE.txt": "/ProcrastinApp/static/js/2.a432ffff.chunk.js.LICENSE.txt",
     "static/media/styles.scss": "/ProcrastinApp/static/media/ntailu.4519c8a5.ttf",
     "static/media/index.css": "/ProcrastinApp/static/media/Microsoft-New-Tai-Lue.4519c8a5.ttf",
     "static/media/acousticCovers.6d8e0c1c.JPG": "/ProcrastinApp/static/media/acousticCovers.6d8e0c1c.JPG",
@@ -31,7 +31,6 @@
     "static/media/latinasSiempre.27be95af.JPG": "/ProcrastinApp/static/media/latinasSiempre.27be95af.JPG",
     "static/media/logo2.6812bb08.svg": "/ProcrastinApp/static/media/logo2.6812bb08.svg",
     "static/media/logo_name.9cf60f4f.svg": "/ProcrastinApp/static/media/logo_name.9cf60f4f.svg",
-    "static/media/logo_perfil.4bce254b.png": "/ProcrastinApp/static/media/logo_perfil.4bce254b.png",
     "static/media/meditacion.1e1c7116.JPG": "/ProcrastinApp/static/media/meditacion.1e1c7116.JPG",
     "static/media/metodoArjona.4d6d39dd.JPG": "/ProcrastinApp/static/media/metodoArjona.4d6d39dd.JPG",
     "static/media/musicForConcentration.13f74aae.JPG": "/ProcrastinApp/static/media/musicForConcentration.13f74aae.JPG",
@@ -46,9 +45,9 @@
     "static/media/tvPodcast.54d8afb3.JPG": "/ProcrastinApp/static/media/tvPodcast.54d8afb3.JPG"
   },
   "entrypoints": [
-    "static/js/runtime-main.db1ac2fb.js",
-    "static/js/2.98f03fb8.chunk.js",
+    "static/js/runtime-main.b9304417.js",
+    "static/js/2.a432ffff.chunk.js",
     "static/css/main.f3fab8d1.chunk.css",
-    "static/js/main.190c6161.chunk.js"
+    "static/js/main.41827242.chunk.js"
   ]
 }
