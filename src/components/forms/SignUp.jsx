@@ -108,7 +108,7 @@ export default class FormSignUp extends Component {
                 </form>
                 <div className="card-footer">
                   <p className="card-text forgot-password text-right">
-                    Si ya estas registrado <Link to="/ProcrastinApp/inicio-sesion" rel="noopener noreferrer">Inicia sesión</Link>
+                    Si ya estas registrado <Link to="/inicio-sesion" rel="noopener noreferrer">Inicia sesión</Link>
                   </p>
                 </div>
               </div>
