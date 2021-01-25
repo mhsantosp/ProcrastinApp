@@ -7,7 +7,7 @@ import ImgRelojArena from '../../images/relojdearena.gif'
 export default function BreakTime({ title, changeTime, type, time, formatTime }) {
   return (
     <div>
-      <div>
+      <div className="d-flex flex-column align-items-center">
         <h2 className="titleWorkTime">{title}</h2>
         <img className="imgreloj" src={ImgRelojArena} alt="Reloj de Arena" />
       </div>

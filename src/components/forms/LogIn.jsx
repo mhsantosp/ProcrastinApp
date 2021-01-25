@@ -45,7 +45,7 @@ export default class Login extends Component {
           localStorage.setItem('lastname', respuesta.lastname, { path: "/" });
           localStorage.setItem('email', respuesta.email, { path: "/" });
           localStorage.setItem('user', respuesta.user, { path: "/" });
-          window.location.href = './inicio'; //Ruta de redirección
+          window.location.href = './ProcrastinApp/inicio'; //Ruta de redirección
           console.log(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
         } else {
           console.log('Usuario y/o Password incorrecto');
@@ -91,7 +91,7 @@ export default class Login extends Component {
                 </form>
                 <div className="card-footer">
                   <p className="card-text text-right">
-                    No estas registrado? <Link to="/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
+                    No estas registrado? <Link to="/ProcrastinApp/registro-usuario" rel="noopener noreferrer">Regístrate</Link>
                   </p>
                 </div>
               </div>

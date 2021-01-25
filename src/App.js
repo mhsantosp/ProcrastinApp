@@ -25,17 +25,17 @@ export default class App extends Component {
             <Switch>
               <Route exact path="/" component={ProcrastinApp} />
               <Route exact path="/ProcrastinApp" component={ProcrastinApp} />
-              <Route exact path="/quienes-somos" component={Somos} />
+              <Route exact path="/ProcrastinApp/quienes-somos" component={Somos} />
 
-              <Route exact path="/inicio-sesion" render={(props) => <IniSecion {...props} />} />
-              <Route exact path="/registro-usuario" component={Registros} />
+              <Route exact path="/ProcrastinApp/inicio-sesion" render={(props) => <IniSecion {...props} />} />
+              <Route exact path="/ProcrastinApp/registro-usuario" component={Registros} />
 
-              <Route exact path="/inicio" component={Home} />
-              <Route exact path="/Checklist" component={SectionChecklist} />
-              <Route exact path="/TecnicaPomodoro" component={SectionTecPomodoro} />
-              <Route exact path="/Musica" component={SectionMusic} />
-              <Route exact path="/Podcasts" component={SectionPodcasts} />
-              <Route exact path="/MasInformacion" component={SectionMoreInfo} />
+              <Route exact path="/ProcrastinApp/inicio" component={Home} />
+              <Route exact path="/ProcrastinApp/Checklist" component={SectionChecklist} />
+              <Route exact path="/ProcrastinApp/TecnicaPomodoro" component={SectionTecPomodoro} />
+              <Route exact path="/ProcrastinApp/Musica" component={SectionMusic} />
+              <Route exact path="/ProcrastinApp/Podcasts" component={SectionPodcasts} />
+              <Route exact path="/ProcrastinApp/MasInformacion" component={SectionMoreInfo} />
             </Switch>
           </main>
           <Footer />

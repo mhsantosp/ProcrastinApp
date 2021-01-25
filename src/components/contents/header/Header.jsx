@@ -15,21 +15,21 @@ export default class Header extends Component {
     localStorage.removeItem('lastname', { path: "/" });
     localStorage.removeItem('email', { path: "/" });
     localStorage.removeItem('user', { path: "/" });
-    window.location.href = './inicio-sesion';
+    window.location.href = './ProcrastinApp/inicio-sesion';
   }
 
   render() {
     return (
       <header className="header">
         <nav className="navbar fixed-top bg-white justify-content-center justify-content-sm-between">
-          <Link className="navbar-brand" to="/inicio" rel="noopener noreferrer">
+          <Link className="navbar-brand" to="/ProcrastinApp/inicio" rel="noopener noreferrer">
             <img src={logo} className="img-fluid" alt="Nombre App" loading="lazy" id="nameLogo" />
           </Link>
           <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
             {
               this.state.usuario == null
                 ?
-                  <Link className="btn rounded btn-sign-in" to="/inicio-sesion" role="button" rel="noopener noreferrer">Regístrate / Iniciar Sesión</Link>
+                  <Link className="btn rounded btn-sign-in" to="/ProcrastinApp/inicio-sesion" role="button" rel="noopener noreferrer">Regístrate / Iniciar Sesión</Link>
                 :
                   <div className="dropdown">
                       <img src={Avatar} alt="Avatar" className="img-fluid mr-2 avatar" />
@@ -38,8 +38,8 @@ export default class Header extends Component {
                     </button>
                     
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
-                      <Link className="dropdown-item" to="/inicio">Inicio</Link>
-                      <Link className="dropdown-item" to="/quienes-somos">Quienes Somos</Link>
+                      <Link className="dropdown-item" to="/ProcrastinApp/inicio">Inicio</Link>
+                      <Link className="dropdown-item" to="/ProcrastinApp/quienes-somos">Quienes Somos</Link>
                       <button className="dropdown-item" onClick={() => this.cerrarSesion()}>Cerrar Sesión</button >
                     </div>
                   </div>
