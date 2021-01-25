@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios'
+import axios from 'axios';
 
 export default function ButtonsEditDelete(props) {
   const id_user = localStorage.getItem('id')
@@ -10,7 +10,6 @@ export default function ButtonsEditDelete(props) {
 
   let keys = Object.entries(db).length;
   console.log(props.user)
-
 
   const [newTask, setNewTask] = useState('');
 
@@ -20,35 +19,33 @@ export default function ButtonsEditDelete(props) {
   const handleChange = e => {
     const { value } = e.target;
     setNewTask(value)
-    
   }
 
-  const handleOnClick = async(event) => {
+  const handleOnClick = async (event) => {
     event.preventDefault();
     event.target.disabled = true;
-    
-    const lastTask = props.user.tasks[props.user.tasks.length-1]
-    if(lastTask.id== undefined){
+
+    const lastTask = props.user.tasks[props.user.tasks.length - 1]
+    if (lastTask.id == undefined) {
       lastTask = {
         id: 0
       }
     }
     const task = {
-      id: parseInt(lastTask.id)+1,
+      id: parseInt(lastTask.id) + 1,
       task: newTask
     }
 
-props.user.tasks.push(task)
+    props.user.tasks.push(task)
 
-
-  axios.put(db, props.user)
+    axios.put(db, props.user)
       .then(response => {
         props.peticionGet()
         setIsModalEditOpen(false)
-})
+      })
 
-console.log(props.user)
-};
+    console.log(props.user)
+  };
 
 
   return (
@@ -70,7 +67,7 @@ console.log(props.user)
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalDeleteOpen(false)}></button>
+              onClick={() => setIsModalDeleteOpen(false)}><i className="fas fa-times"></i></button>
           </div>
         </ModalHeader>
         <ModalBody>
@@ -97,7 +94,7 @@ console.log(props.user)
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalEditOpen(false)}></button>
+              onClick={() => setIsModalEditOpen(false)}><i className="fas fa-times"></i></button>
           </div>
         </ModalHeader>
         <ModalBody>
