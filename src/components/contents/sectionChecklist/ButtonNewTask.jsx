@@ -23,7 +23,6 @@ export default function ButtonsChecklist(props) {
   }
 
 
-
   const handleOnClick = async(event) => {
     event.preventDefault();
     event.target.disabled = true;
