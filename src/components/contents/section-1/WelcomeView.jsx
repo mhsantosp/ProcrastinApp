@@ -14,13 +14,13 @@ export default function WelcomeView(props) {
               <div className="col">
                 <p className="p-WV text-center">Hacer tarea en un<br></br> tiempo determinado</p>
                 <Link to="/TecnicaPomodoro">
-                  <button className="mt-3  button-WV">Técnica Pomodoro</button>
+                  <button className="mt-3  button-WV">Programa tu tiempo</button>
                 </Link>
               </div>
               <div className="col">
                 <p className="p-WV text-center">Organizar tu tiempo<br></br> y tareas a realizar</p>
                 <Link to="/Checklist">
-                  <button className="mt-3 button-WV">Haz tu Checklist</button>
+                  <button className="mt-3 button-WV">Organiza tus tareas</button>
                 </Link>
               </div>
               <div className="col">
