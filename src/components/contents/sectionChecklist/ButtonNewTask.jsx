@@ -19,7 +19,6 @@ export default function ButtonsChecklist(props) {
   const handleChange = e => {
     const { value } = e.target;
     setNewTask(value)
-
   }
 
 
@@ -31,7 +30,10 @@ export default function ButtonsChecklist(props) {
       lastTask = {
         id: 0
       }
+    } else {
+      
     }
+
     const task = {
       id: parseInt(lastTask.id) + 1,
       task: newTask

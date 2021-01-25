@@ -9,7 +9,7 @@ const apiBD = 'http://api-fake-procrastin-app.vercel.app/users';
 export default class Login extends Component {
   constructor(props) {
     super()
-    console.log(props);
+    // console.log(props);
   }
 
   state = {

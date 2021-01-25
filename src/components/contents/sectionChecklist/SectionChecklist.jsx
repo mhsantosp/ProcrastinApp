@@ -24,14 +24,17 @@ export default function SectionChecklist(props) {
   }, [])
 
   return (
-    <section className="row">
-      <article className="col-6 py-3">
-        <Checklist {...data}/>
-        <ButtonNewTask  user={data} peticionGet={peticionGet}/>
+    <section className="container-fluid tareas">
+      <article className="row">
+        <div className="col-6 py-3">
+          <Checklist {...data} />
+          <ButtonNewTask user={data} peticionGet={peticionGet} />
+        </div>
+        <div className="col-6 py-3 characterSC">
+          <Character />
+        </div>
       </article>
-      <article className="col-6 py-3 characterSC">
-        <Character />
-      </article>
+
     </section>
 
   )

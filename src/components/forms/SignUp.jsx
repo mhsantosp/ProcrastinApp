@@ -44,12 +44,12 @@ export default class FormSignUp extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
-        alert('Correcto');
-        this.props.history.push('/Welcome')
+        // alert('Correcto');
+        this.props.history.push('/inicio-sesion')
       })
       .catch(err =>
         console.log(err),
-        alert('Incorrecto')
+        // alert('Incorrecto')
       );
   }
 
