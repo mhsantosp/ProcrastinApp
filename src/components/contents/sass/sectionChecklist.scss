@@ -9,7 +9,7 @@
 .checklistBox {
   background-color: $fondoLight;
   width: 450px;
-  height: 400px;
+  min-height: 400px;
   margin-left: 95px;
   border-radius: 20px;
   box-shadow: 5px 8px 11px -3px $sombras;
