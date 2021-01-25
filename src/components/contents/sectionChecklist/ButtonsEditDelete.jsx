@@ -1,26 +1,52 @@
-import React, { useState } from 'react'
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-// import axios from 'axios'
+import axios from 'axios';
 
-export default function ButtonsEditDelete() {
+export default function ButtonsEditDelete(props) {
+  const id_user = localStorage.getItem('id')
+  const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
-  const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false)
-  const [isModalEditOpen, setIsModalEditOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState({
+  let keys = Object.entries(db).length;
+  console.log(props.user)
 
-  })
+  const [newTask, setNewTask] = useState('');
+
+  const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
+  const [isModalEditOpen, setIsModalEditOpen] = useState(false);
 
   const handleChange = e => {
-    const { name, value } = e.target;
-    setSelectedItem(prevState => ({
-      ...prevState,
-      [name]: value
-    }))
-
-    console.log(selectedItem)
+    const { value } = e.target;
+    setNewTask(value)
   }
+
+  const handleOnClick = async (event) => {
+    event.preventDefault();
+    event.target.disabled = true;
+
+    const lastTask = props.user.tasks[props.user.tasks.length - 1]
+    if (lastTask.id == undefined) {
+      lastTask = {
+        id: 0
+      }
+    }
+    const task = {
+      id: parseInt(lastTask.id) + 1,
+      task: newTask
+    }
+
+    props.user.tasks.push(task)
+
+    axios.put(db, props.user)
+      .then(response => {
+        props.peticionGet()
+        setIsModalEditOpen(false)
+      })
+
+    console.log(props.user)
+  };
+
 
   return (
     <div className="col-4 mt-3">
@@ -41,7 +67,7 @@ export default function ButtonsEditDelete() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalDeleteOpen(false)}></button>
+              onClick={() => setIsModalDeleteOpen(false)}><i className="fas fa-times"></i></button>
           </div>
         </ModalHeader>
         <ModalBody>
@@ -68,7 +94,7 @@ export default function ButtonsEditDelete() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalEditOpen(false)}></button>
+              onClick={() => setIsModalEditOpen(false)}><i className="fas fa-times"></i></button>
           </div>
         </ModalHeader>
         <ModalBody>
@@ -83,7 +109,7 @@ export default function ButtonsEditDelete() {
             onClick={() => setIsModalEditOpen(false)}>Volver</button>
           <button
             type="button"
-            className="btn-done">¡Hecho!</button>
+            className="btn-done" onClick={handleOnClick}>¡Hecho!</button>
         </ModalFooter>
       </Modal>
     </div>

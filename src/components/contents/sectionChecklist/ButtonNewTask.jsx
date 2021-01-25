@@ -1,40 +1,54 @@
-import React, { useState } from 'react'
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import axios from 'axios';
 
 
-export default function ButtonsChecklist() {
+export default function ButtonsChecklist(props) {
 
-  const db = `https://api-fake-procrastin-app.vercel.app/users`
+  const id_user = localStorage.getItem('id')
+  const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
   let keys = Object.entries(db).length;
-  console.log('Keys', keys)
+  console.log(props.user)
 
-  const [isModalNewOpen, setIsModalNewOpen] = useState(false)
+  const [isModalNewOpen, setIsModalNewOpen] = useState(false);
 
-  const [data, setData] = useState([]);
+  const [newTask, setNewTask] = useState('');
 
-  const [selectedItem, setSelectedItem] = useState({
-    tarea: ""
-  })
 
   const handleChange = e => {
-    const { name, value } = e.target;
-    setSelectedItem(prevState => ({
-      ...prevState,
-      [name]: value
-    }))
+    const { value } = e.target;
+    setNewTask(value)
 
-    console.log(selectedItem)
   }
 
-  const peticionPost = async () => {
-    await axios.post(db, selectedItem)
+
+  const handleOnClick = async (event) => {
+    event.preventDefault();
+    event.target.disabled = true;
+    const lastTask = props.user.tasks[props.user.tasks.length - 1]
+    if (lastTask.id == undefined) {
+      lastTask = {
+        id: 0
+      }
+    }
+    const task = {
+      id: parseInt(lastTask.id) + 1,
+      task: newTask
+    }
+
+    props.user.tasks.push(task)
+
+
+    axios.put(db, props.user)
       .then(response => {
-        setData(data.concat(response.data));
+        props.peticionGet()
         setIsModalNewOpen(false)
       })
-  }
+
+    console.log(props.user)
+  };
+
 
   return (
     <div>
@@ -56,12 +70,13 @@ export default function ButtonsChecklist() {
               className="btn-close col"
               data-bs-dismiss="modal"
               aria-label="Close"
-              onClick={() => setIsModalNewOpen(false)}></button>
+              onClick={() => setIsModalNewOpen(false)}><i className="fas fa-times"></i></button>
           </div>
         </ModalHeader>
         <ModalBody>
           <p>Ingresa nueva tarea:</p>
-          <input name="tarea" onChange={handleChange} className="form-control input" type="text" />
+          <input name="task" value={newTask.task}
+            onChange={handleChange} className="form-control input" type="text" />
         </ModalBody>
         <ModalFooter>
           <button
@@ -69,7 +84,8 @@ export default function ButtonsChecklist() {
             className="btn-volver"
             data-bs-dismiss="modal"
             onClick={() => setIsModalNewOpen(false)}>Volver</button>
-          <button type="button" onClick={peticionPost} className="btn-done">¡Hecho!</button>
+          <button type="button"
+            onClick={handleOnClick} className="btn-done">¡Hecho!</button>
         </ModalFooter>
       </Modal>
     </div>
