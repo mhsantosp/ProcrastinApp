@@ -28,7 +28,6 @@ export default function WelcomeView(props) {
                 <Link to="/mas-informacion">
                   <button className="mt-3 button-WV">Más Información</button>
                 </Link>
-
               </div>
 
             </div>
