@@ -13,19 +13,19 @@ export default function WelcomeView(props) {
             <div className="row buttons-1">
               <div className="col">
                 <p className="p-WV text-center">Hacer tarea en un<br></br> tiempo determinado</p>
-                <Link to="/TecnicaPomodoro">
+                <Link to="/tiempos">
                   <button className="mt-3  button-WV">Programa tu tiempo</button>
                 </Link>
               </div>
               <div className="col">
                 <p className="p-WV text-center">Organizar tu tiempo<br></br> y tareas a realizar</p>
-                <Link to="/Checklist">
+                <Link to="/tareas">
                   <button className="mt-3 button-WV">Organiza tus tareas</button>
                 </Link>
               </div>
               <div className="col">
                 <p className="p-WV text-center">Te damos información sobre la procrastinación</p>
-                <Link to="/MasInformacion">
+                <Link to="/mas-informacion">
                   <button className="mt-3 button-WV">Más Información</button>
                 </Link>
 
@@ -33,10 +33,10 @@ export default function WelcomeView(props) {
 
             </div>
             <div className="row mt-5 buttons-2">
-              <Link to="/Musica" className="col-3 mt-4 mx-5">
+              <Link to="/musica" className="col-3 mt-4 mx-5">
                 <button className="button-WV">Música</button>
               </Link>
-              <Link to="/Podcasts" className="col-3 mt-4 mx-5">
+              <Link to="/podcasts" className="col-3 mt-4 mx-5">
                 <button className="button-WV">Podcasts</button>
               </Link>
 
