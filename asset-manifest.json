@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ProcrastinApp/static/css/main.f3fab8d1.chunk.css",
-    "main.js": "/ProcrastinApp/static/js/main.97f6f0d2.chunk.js",
-    "main.js.map": "/ProcrastinApp/static/js/main.97f6f0d2.chunk.js.map",
+    "main.js": "/ProcrastinApp/static/js/main.f29d6af8.chunk.js",
+    "main.js.map": "/ProcrastinApp/static/js/main.f29d6af8.chunk.js.map",
     "runtime-main.js": "/ProcrastinApp/static/js/runtime-main.b9304417.js",
     "runtime-main.js.map": "/ProcrastinApp/static/js/runtime-main.b9304417.js.map",
     "static/js/2.a432ffff.chunk.js": "/ProcrastinApp/static/js/2.a432ffff.chunk.js",
@@ -48,6 +48,6 @@
     "static/js/runtime-main.b9304417.js",
     "static/js/2.a432ffff.chunk.js",
     "static/css/main.f3fab8d1.chunk.css",
-    "static/js/main.97f6f0d2.chunk.js"
+    "static/js/main.f29d6af8.chunk.js"
   ]
 }
