@@ -20,7 +20,6 @@ export default function SectionTecPomodoro() {
   }
 
   const formatTime = (time) => {
-
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     return (
@@ -48,7 +47,6 @@ export default function SectionTecPomodoro() {
   }
 
   const controlTime = () => {
-
     let second = 1000;
     let date = new Date().getTime();
     let nextDate = new Date().getTime() + second;
@@ -56,7 +54,6 @@ export default function SectionTecPomodoro() {
 
     if (!timerOn) {
       let interval = setInterval(() => {
-
         date = new Date().getTime();
         if (date > nextDate) {
           setDisplayTime(prev => {
@@ -73,10 +70,8 @@ export default function SectionTecPomodoro() {
             }
             return prev - 1;
           })
-
           nextDate += second;
         }
-
       }, 30);
       localStorage.clear();
       localStorage.setItem('interval-id', interval);
@@ -87,6 +82,7 @@ export default function SectionTecPomodoro() {
     }
     setTimerOn(!timerOn)
   }
+
   const resetTime = () => {
     setDisplayTime(25 * 60);
     setBreakTime(5 * 60);

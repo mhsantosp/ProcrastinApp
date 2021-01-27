@@ -31,6 +31,7 @@ export default function ButtonsEditDelete(props) {
         id: 0
       }
     }
+
     const task = {
       id: parseInt(lastTask.id) + 1,
       task: newTask
@@ -49,7 +50,7 @@ export default function ButtonsEditDelete(props) {
 
 
   return (
-    <div className="col-4 mt-3">
+    <div className="container-fluid mr-0 p-0" id="botones">
       <button className="btn-edit"
         onClick={() => setIsModalEditOpen(true)}><FontAwesomeIcon icon={faEdit} /></button>
       <button className="btn-delete"

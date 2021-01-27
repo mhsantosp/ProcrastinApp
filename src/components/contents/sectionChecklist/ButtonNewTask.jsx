@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import axios from 'axios';
 
-
 export default function ButtonsChecklist(props) {
-
   const id_user = localStorage.getItem('id')
   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
@@ -20,7 +18,6 @@ export default function ButtonsChecklist(props) {
     const { value } = e.target;
     setNewTask(value)
   }
-
 
   const handleOnClick = async (event) => {
     event.preventDefault();
@@ -41,7 +38,6 @@ export default function ButtonsChecklist(props) {
 
     props.user.tasks.push(task)
 
-
     axios.put(db, props.user)
       .then(response => {
         props.peticionGet()
@@ -53,10 +49,10 @@ export default function ButtonsChecklist(props) {
 
 
   return (
-    <div>
-      <div className="col mt-5 buttons">
+    <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-center mt-5 buttons">
         <button
-          className="btn-newTask mt-4"
+          className="btn-newTask"
           onClick={() => setIsModalNewOpen(true)}>Nueva Tarea</button>
       </div>
 
