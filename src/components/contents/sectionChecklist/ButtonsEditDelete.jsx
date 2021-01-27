@@ -50,7 +50,7 @@ export default function ButtonsEditDelete(props) {
 
 
   return (
-    <div className="container-fluid mr-0 p-0" id="botones">
+    <div className="container-fluid m-0 p-0" id="botones">
       <button className="btn-edit"
         onClick={() => setIsModalEditOpen(true)}><FontAwesomeIcon icon={faEdit} /></button>
       <button className="btn-delete"

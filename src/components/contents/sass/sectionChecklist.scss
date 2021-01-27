@@ -1,31 +1,72 @@
 section.tareas {
-  padding-top: 4.5rem !important;
   padding-bottom: 0 !important;
+  @include media-breakpoint-down(xl) {
+    padding-top: 5rem !important;
+  }
+  @include media-breakpoint-down(lg) {
+    padding-top: 4.7rem !important;
+  }
+  @include media-breakpoint-down(md) {
+    padding-top: 4.5rem !important;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 7rem !important;
+  }
 
   .titleList {
     color: $titleH1;
     font-family: LoveStory;
     font-size: 2.3em;
     text-align: left;
-    // margin-left: 95px;
   }
 
   .checklistBox {
     background-color: $fondoLight;
-    // width: 450px;
-    // min-height: 400px;
-    // margin-left: 95px;
+    max-width: 600px;
     border-radius: 20px;
     box-shadow: 5px 8px 11px -3px $sombras;
     ul {
-      // margin-top: 40px;
       li {
-        font-size: 1.1em;
         text-align: left;
+        background-color: transparent;
+        border: none;
+        span {
+          font-weight: normal;
+          margin-right: 5px;
+          font-size: 1.3rem;
+          color: black;
+          @include media-breakpoint-down(xl) {
+            width: 100%;
+          }
+          @include media-breakpoint-down(lg) {
+            width: 270px;
+          }
+          @include media-breakpoint-down(md) {
+            width: 215px;
+          }
+          @include media-breakpoint-down(sm) {
+            width: 155px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            border: 0.5em solid white;
+            border-radius: 50%;
+            left: 0.1em;
+            top: 50%;
+            margin-top: -0.5em;
+            transition: all 0.3s ease-out;
+            font-size: 0.8rem;
+          }
+        }
+
         .checkbox {
           width: 30px;
           height: 30px;
-          margin: 0 15px;
+          margin-right: 15px;
         }
         #botones {
           max-width: max-content;
@@ -40,14 +81,12 @@ section.tareas {
 
   //Button Checklist
   .buttons {
-    // margin-left: 50px;
     .buttonsChecklist {
       margin: 30px;
     }
   }
 
   //Botones Editar y Borrar
-
   .btn-edit {
     background-color: rgb(142, 248, 142);
     color: white;
@@ -67,7 +106,6 @@ section.tareas {
     color: white;
     border: none;
     border-radius: 10px;
-    // margin-right: 10px;
     width: 50px;
     height: 40px;
   }
@@ -77,12 +115,10 @@ section.tareas {
   }
 
   //Character
-
   .characterSC {
     background-color: $fondoDark;
     display: flex;
     align-items: center;
-    // height: 100vh;
   }
 
   .anuncios {
@@ -92,15 +128,11 @@ section.tareas {
   }
 
   .p-checklist {
-    // margin-top: 20px;
     color: white;
     font-size: 1.5em;
-    // text-align: center;
   }
 
   .checklistCharacter {
-    // margin-left: 215px;
-    // margin-top: 30px;
     width: 200px;
     height: 500px;
   }
