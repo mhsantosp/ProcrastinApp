@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/procrastinapp/static/css/main.f3b17cce.chunk.css",
-    "main.js": "/procrastinapp/static/js/main.75f14b82.chunk.js",
-    "main.js.map": "/procrastinapp/static/js/main.75f14b82.chunk.js.map",
+    "main.css": "/procrastinapp/static/css/main.3f4caa89.chunk.css",
+    "main.js": "/procrastinapp/static/js/main.0622d828.chunk.js",
+    "main.js.map": "/procrastinapp/static/js/main.0622d828.chunk.js.map",
     "runtime-main.js": "/procrastinapp/static/js/runtime-main.4a6ff5fa.js",
     "runtime-main.js.map": "/procrastinapp/static/js/runtime-main.4a6ff5fa.js.map",
     "static/js/2.a432ffff.chunk.js": "/procrastinapp/static/js/2.a432ffff.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.6c210186.chunk.js": "/procrastinapp/static/js/3.6c210186.chunk.js",
     "static/js/3.6c210186.chunk.js.map": "/procrastinapp/static/js/3.6c210186.chunk.js.map",
     "index.html": "/procrastinapp/index.html",
-    "static/css/main.f3b17cce.chunk.css.map": "/procrastinapp/static/css/main.f3b17cce.chunk.css.map",
+    "static/css/main.3f4caa89.chunk.css.map": "/procrastinapp/static/css/main.3f4caa89.chunk.css.map",
     "static/js/2.a432ffff.chunk.js.LICENSE.txt": "/procrastinapp/static/js/2.a432ffff.chunk.js.LICENSE.txt",
     "static/media/styles.scss": "/procrastinapp/static/media/ntailu.4519c8a5.ttf",
     "static/media/index.css": "/procrastinapp/static/media/Microsoft-New-Tai-Lue.4519c8a5.ttf",
@@ -47,7 +47,7 @@
   "entrypoints": [
     "static/js/runtime-main.4a6ff5fa.js",
     "static/js/2.a432ffff.chunk.js",
-    "static/css/main.f3b17cce.chunk.css",
-    "static/js/main.75f14b82.chunk.js"
+    "static/css/main.3f4caa89.chunk.css",
+    "static/js/main.0622d828.chunk.js"
   ]
 }
