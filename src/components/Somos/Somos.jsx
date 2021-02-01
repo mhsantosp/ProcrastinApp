@@ -24,7 +24,7 @@ export default class QuienesSomos extends Component {
                       <NavLink href="https://www.linkedin.com/in/msantospineda" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin-in"></i></NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href="https://daiclover.com/" rel="noopener noreferrer" target="_blank"><i className="fas fa-briefcase"></i></NavLink>
+                      <NavLink href="https://mhsantosp.github.io/dai_clover/" rel="noopener noreferrer" target="_blank"><i className="fas fa-briefcase"></i></NavLink>
                     </NavItem>
                   </Nav>
                 </CardBody>
