@@ -20,7 +20,6 @@ export default function SectionTecPomodoro() {
   }
 
   const formatTime = (time) => {
-
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     return (
@@ -48,7 +47,6 @@ export default function SectionTecPomodoro() {
   }
 
   const controlTime = () => {
-
     let second = 1000;
     let date = new Date().getTime();
     let nextDate = new Date().getTime() + second;
@@ -56,7 +54,6 @@ export default function SectionTecPomodoro() {
 
     if (!timerOn) {
       let interval = setInterval(() => {
-
         date = new Date().getTime();
         if (date > nextDate) {
           setDisplayTime(prev => {
@@ -73,10 +70,8 @@ export default function SectionTecPomodoro() {
             }
             return prev - 1;
           })
-
           nextDate += second;
         }
-
       }, 30);
       localStorage.clear();
       localStorage.setItem('interval-id', interval);
@@ -87,6 +82,7 @@ export default function SectionTecPomodoro() {
     }
     setTimerOn(!timerOn)
   }
+
   const resetTime = () => {
     setDisplayTime(25 * 60);
     setBreakTime(5 * 60);
@@ -95,50 +91,57 @@ export default function SectionTecPomodoro() {
 
 
   return (
-    <section className="secPomodoro py-4">
-      <h1 className="titlePomodoro">Técnica Pomodoro</h1>
-      <div className="row mt-5">
-        <div className="col-6">
-          <WorkTime
-            title={"Tiempo de Trabajo"}
-            changeTime={changeTime}
-            type={"Trabajo"}
-            time={workTime}
-            formatTime={formatTime} />
-        </div>
-        <div className="col-6">
-          <BreakTime
-            title={"Tiempo de Descanso"}
-            changeTime={changeTime}
-            type={"Descanso"}
-            time={breakTime}
-            formatTime={formatTime} />
-        </div>
-
-      </div>
-      <div>
-        <div className="col">
-          <h3 className="textState">{onBreak ? "Descanso" : "Trabajo"}</h3>
-          <h1 className="time2">{formatTime(displayTime)}</h1>
-        </div>
-
+    <section className="container-fluid secPomodoro">
+      <article>
+        <h1 className="titlePomodoro">Técnica Pomodoro</h1>
         <div className="row">
-          <div className="col-12 buttonsTime">
-            <button className="btnPlay" onClick={controlTime}>
-              {timerOn ? (
-                <h3><FontAwesomeIcon icon={faPauseCircle} /> Pausar</h3>
-              ) : (
-                  <h3><FontAwesomeIcon icon={faPlayCircle} /> Play</h3>
-                )}
-            </button>
-            <button className="btnReset" onClick={resetTime}>
-              <h3>Reiniciar</h3>
-            </button>
+          <div className="col-sm-12 col-md-6">
+            <WorkTime
+              title={"Tiempo de Trabajo"}
+              changeTime={changeTime}
+              type={"Trabajo"}
+              time={workTime}
+              formatTime={formatTime} />
+          </div>
+          <div className="col-sm-12 col-md-6">
+            <BreakTime
+              title={"Tiempo de Descanso"}
+              changeTime={changeTime}
+              type={"Descanso"}
+              time={breakTime}
+              formatTime={formatTime} />
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="container-fluid">
+            <h3 className="textState mt-3">{onBreak ? "Descanso" : "Trabajo"}</h3>
+            <h1 className="time2">{formatTime(displayTime)}</h1>
           </div>
 
+          <div className="container-fluid">
+            <div className="buttonsTime">
+              <button className="btnPlay" onClick={controlTime}>
+                {
+                  timerOn 
+                  ? 
+                    (
+                      <h3><FontAwesomeIcon icon={faPauseCircle} /> Pausar</h3>
+                    )
+                  : 
+                    (
+                      <h3><FontAwesomeIcon icon={faPlayCircle} /> Play</h3>
+                    )
+                }
+              </button>
+              <button className="btnReset" onClick={resetTime}>
+                <h3>Reiniciar</h3>
+              </button>
+            </div>
+          </div>
+          <AlarmMessage />
         </div>
-        <AlarmMessage />
-      </div>
+      </article>
     </section>
   )
 }

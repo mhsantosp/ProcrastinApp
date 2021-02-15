@@ -24,18 +24,18 @@ export default class App extends Component {
           <main className="container-fluid p-0">
             <Switch>
               <Route exact path="/" component={ProcrastinApp} />
-              <Route exact path="/ProcrastinApp" component={ProcrastinApp} />
+              <Route exact path="/procrastinapp" component={ProcrastinApp} />
               <Route exact path="/quienes-somos" component={Somos} />
 
               <Route exact path="/inicio-sesion" render={(props) => <IniSecion {...props} />} />
               <Route exact path="/registro-usuario" component={Registros} />
 
               <Route exact path="/inicio" component={Home} />
-              <Route exact path="/Checklist" component={SectionChecklist} />
-              <Route exact path="/TecnicaPomodoro" component={SectionTecPomodoro} />
-              <Route exact path="/Musica" component={SectionMusic} />
-              <Route exact path="/Podcasts" component={SectionPodcasts} />
-              <Route exact path="/MasInformacion" component={SectionMoreInfo} />
+              <Route exact path="/tareas" component={SectionChecklist} />
+              <Route exact path="/tiempos" component={SectionTecPomodoro} />
+              <Route exact path="/musica" component={SectionMusic} />
+              <Route exact path="/podcasts" component={SectionPodcasts} />
+              <Route exact path="/mas-informacion" component={SectionMoreInfo} />
             </Switch>
           </main>
           <Footer />

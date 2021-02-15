@@ -1,34 +1,26 @@
-.secPomodoro{
-    background-color: $fondoDark;
-    width: 100%;
-    .titlePomodoro{
-        color: white;
-        font-family: LoveStory;
-        text-align: center;
-        font-size: 4em;
-    }
-}
-
-
-.titleWorkTime{
+.secPomodoro {
+  background-color: $fondoDark;
+  width: 100%;
+  padding-top: 8rem !important;
+  padding-bottom: 4rem !important;
+  .titlePomodoro {
     color: white;
     font-family: LoveStory;
     text-align: center;
     font-size: 4em;
   }
+}
 
-.imgreloj{
-    width: 275px;
-    height: 250px;
-    margin-left: 164px;
-    margin-top: 30px;
+.titleWorkTime {
+  color: white;
+  font-family: LoveStory;
+  text-align: center;
+  font-size: 2.7em;
 }
 
 .imgreloj {
   width: 170px;
   height: 250px;
-  margin-left: 220px;
-  margin-top: 30px;
 }
 
 .btn-time {
@@ -37,16 +29,15 @@
   font-weight: bold;
   border-radius: 10px;
   color: white;
-  margin-left: 40px;
-  margin-top: 15px;
+  padding: 8px;
 }
 
 .time {
-  padding-left: 65px;
+  text-align: center;
   background-color: white;
   color: $fondoDark;
   font-family: LoveStory;
-  font-size: 3em;
+  font-size: 2.6em;
 }
 
 .btn-time:hover {
@@ -55,21 +46,12 @@
   border: 2px solid $fondoDark;
 }
 
-.textState{
-    text-align: center;
-    color: white;
-    font-family: LoveStory;
-    margin-top: 30px;
-    font-size: 6em;
-    width: 100%;
-}
-
 .textState {
   text-align: center;
   color: white;
   font-family: LoveStory;
-  margin-top: 30px;
-  font-size: 6em;
+  font-size: 4.5em;
+  width: 100%;
 }
 
 .time2 {
@@ -81,7 +63,9 @@
 }
 
 .buttonsTime {
-  margin-left: 300px;
+  //   margin-left: 300px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .btnPlay {
@@ -89,7 +73,7 @@
   color: white;
   background-color: $fondoDark;
   border-radius: 10px;
-  width: 300px;
+  width: 250px;
   height: 50px;
 }
 
@@ -100,7 +84,7 @@
   border-radius: 10px;
   width: 250px;
   height: 50px;
-  margin-left: 150px;
+  // margin-left: 150px;
 }
 
 .btnPlay:hover {
@@ -109,39 +93,31 @@
   border: 2px solid $fondoDark;
 }
 
-.btnReset:hover{
-    background-color: white;
-    color: $fondoDark;
-    border: 2px solid $fondoDark;
+.btnReset:hover {
+  background-color: white;
+  color: $fondoDark;
+  border: 2px solid $fondoDark;
 }
 
 @media (max-width: 500px) {
-
-    .titleWorkTime{
-        margin-top:50px ;
-      margin-left: 100px;
-    }
-
-    .imgreloj{
-        margin-left: 160px;
-    }
-
-    .time{
-        padding-left: 30px;
-    }
-
-    .buttonsTime {
-      margin-left:0px;
-    }
-
-    .btnReset{
-        width: 200px;
-        margin-left: 150px;
-        margin-top:10px;
-    }
-
-    .btnPlay{
-        width: 200px;
-        margin-left: 150px;
-    }
+  .titleWorkTime {
+    margin-top: 50px;
   }
+
+  .buttonsTime {
+    margin-left: 0px;
+    display: block;
+    text-align: center;
+  }
+
+  .btnReset {
+    width: 200px;
+    // margin-left: 150px;
+    margin-top: 10px;
+  }
+
+  .btnPlay {
+    width: 200px;
+    // margin-left: 150px;
+  }
+}
