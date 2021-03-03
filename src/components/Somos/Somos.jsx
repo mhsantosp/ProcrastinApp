@@ -15,7 +15,7 @@ export default class QuienesSomos extends Component {
                 <CardBody className="text-center">
                   <CardTitle tag="h4">Maria Helena Santos Pineda</CardTitle>
                   <CardTitle tag="h5">Ingeniera de Sistemas</CardTitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br/> con énfasis  en React</CardSubtitle>
+                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br /> con énfasis  en React</CardSubtitle>
                   <Nav className="justify-content-center">
                     <NavItem>
                       <NavLink href="https://github.com/mhsantosp" rel="noopener noreferrer" target="_blank"><i className="fab fa-github-alt"></i></NavLink>
@@ -24,7 +24,7 @@ export default class QuienesSomos extends Component {
                       <NavLink href="https://www.linkedin.com/in/msantospineda" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin-in"></i></NavLink>
                     </NavItem>
                     <NavItem>
-                      <NavLink href="https://daiclover.com/" rel="noopener noreferrer" target="_blank"><i className="fas fa-briefcase"></i></NavLink>
+                      <NavLink href="https://mhsantosp.github.io/dai_clover/" rel="noopener noreferrer" target="_blank"><i className="fas fa-briefcase"></i></NavLink>
                     </NavItem>
                   </Nav>
                 </CardBody>
@@ -37,7 +37,7 @@ export default class QuienesSomos extends Component {
                 <CardBody className="text-center">
                   <CardTitle tag="h4">Gisell Mazo Rúa</CardTitle>
                   <CardTitle tag="h5">Productora De Multimedia</CardTitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br/> con énfasis  en React</CardSubtitle>
+                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br /> con énfasis  en React</CardSubtitle>
                   <Nav className="justify-content-center">
                     <NavItem>
                       <NavLink href="https://github.com/gisellmazo" rel="noopener noreferrer" target="_blank"><i className="fab fa-github-alt"></i></NavLink>

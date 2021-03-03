@@ -5,6 +5,7 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export default function ButtonsEditDelete(props) {
+  
   const id_user = localStorage.getItem('id')
   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
@@ -31,6 +32,7 @@ export default function ButtonsEditDelete(props) {
         id: 0
       }
     }
+
     const task = {
       id: parseInt(lastTask.id) + 1,
       task: newTask
@@ -49,7 +51,7 @@ export default function ButtonsEditDelete(props) {
 
 
   return (
-    <div className="col-4 mt-3">
+    <div className="container-fluid m-0 p-0" id="botones">
       <button className="btn-edit"
         onClick={() => setIsModalEditOpen(true)}><FontAwesomeIcon icon={faEdit} /></button>
       <button className="btn-delete"

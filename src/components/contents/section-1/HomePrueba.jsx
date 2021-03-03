@@ -3,6 +3,7 @@ import './HomePrueba.scss';
 import { Link } from "react-router-dom";
 import Personaje from '../../images/personajeBienvenida.png';
 
+
 export default class Home extends Component {
   render() {
     return (
@@ -26,8 +27,8 @@ export default class Home extends Component {
               <div className="btn-group w-100 text-center" role="group">
                 <div className="row w-100 m-0">
                   <div className="col-12 mb-5 d-block d-md-flex justify-content-md-around">
-                    <Link to="/TecnicaPomodoro" className="btn-home mb-3" rel="noopener noreferrer">Técnica Pomodoro</Link>
-                    <Link to="/Checklist" className="btn-home mb-3 mx-md-3" rel="noopener noreferrer">Haz tu Checklist</Link>
+                    <Link to="/TecnicaPomodoro" className="btn-home mb-3" rel="noopener noreferrer">Programa tu tiempo</Link>
+                    <Link to="/Checklist" className="btn-home mb-3 mx-md-3" rel="noopener noreferrer">Organizar tu tiempo</Link>
                     <Link to="/" className="btn-home mb-3" rel="noopener noreferrer">Más Información</Link>
                   </div>
                   <div className="col-12 d-block d-md-flex justify-content-md-around">

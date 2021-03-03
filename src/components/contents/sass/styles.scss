@@ -1,5 +1,10 @@
 @import "../../../sass/colors.scss";
 
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
 @import "./buttonsChecklist.scss";
 @import "./sectionMusic.scss";
 @import "./sectionPodcasts.scss";
@@ -30,6 +35,7 @@
     font-style: normal;
   }
 }
+
 
 @include font("LoveStory", "../../fonts/Love\ Story\ Rough.ttf");
 @include font2("MicrosoftTL", "../../fonts/ntailu.ttf");

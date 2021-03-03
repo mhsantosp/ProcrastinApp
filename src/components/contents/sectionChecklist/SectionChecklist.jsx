@@ -5,7 +5,7 @@ import Character from './Character'
 import axios from 'axios'
 
 export default function SectionChecklist(props) {
-
+  
   const id_user = localStorage.getItem('id')
   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
@@ -26,16 +26,14 @@ export default function SectionChecklist(props) {
   return (
     <section className="container-fluid tareas">
       <article className="row">
-        <div className="col-6 py-3">
+        <div className="col-sm-12 col-md-6 py-3 order-2 order-md-1">
           <Checklist {...data} />
           <ButtonNewTask user={data} peticionGet={peticionGet} />
         </div>
-        <div className="col-6 py-3 characterSC">
+        <div className="col-sm-12 col-md-6 py-5 characterSC order-1 order-md-2">
           <Character />
         </div>
       </article>
-
     </section>
-
   )
 }

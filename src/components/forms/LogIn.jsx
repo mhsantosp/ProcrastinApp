@@ -45,7 +45,7 @@ export default class Login extends Component {
           localStorage.setItem('lastname', respuesta.lastname, { path: "/" });
           localStorage.setItem('email', respuesta.email, { path: "/" });
           localStorage.setItem('user', respuesta.user, { path: "/" });
-          window.location.href = './inicio'; //Ruta de redirección
+          window.location.href = '/inicio'; //Ruta de redirección
           console.log(`Usuario correcto: Bienbenid@ ${respuesta.name} ${respuesta.lastname}`);
         } else {
           console.log('Usuario y/o Password incorrecto');
