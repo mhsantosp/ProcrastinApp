@@ -13,6 +13,8 @@ import SectionTecPomodoro from "./components/contents/sectionTecPomodoro/Section
 import SectionMusic from "./components/contents/sectionMusic/SectionMusic";
 import SectionPodcasts from "./components/contents/sectionPodcasts/SectionPodcasts";
 import SectionMoreInfo from "./components/contents/sectionMoreInfo/SectionMoreInfo";
+import Multimedia from "./components/contents/sectionMultimedia/Multimedia";
+import ContactUs from "./components/contents/sectionContactUs/SectionContactUs";
 import Somos from "./components/Somos/Somos";
 
 export default class App extends Component {
@@ -36,6 +38,8 @@ export default class App extends Component {
               <Route exact path="/musica" component={SectionMusic} />
               <Route exact path="/podcasts" component={SectionPodcasts} />
               <Route exact path="/mas-informacion" component={SectionMoreInfo} />
+              <Route exact path="/multimedia" component={Multimedia} />
+              <Route exact path="/contactanos" component={ContactUs} />
             </Switch>
           </main>
           <Footer />
