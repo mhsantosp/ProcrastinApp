@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Proyecto realizado para dar solución a la problemática llamada Procrastinación, y el objetivo de esta solución es mejorar el uso y control de los tiempos al momento de realizar una actividad. Al igual, con este proyecto se pone en práctica los conocimientos adquiridos durante el Bootcamp de Back End que se realizó con Academia Geek.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-version": "babel --version",
+    "build": "babel src --out-dir build",
+    "start": "node build/index.js",
+    "dev": "nodemon --exec babel-node src/index.js"
+  },
+  "keywords": [],
+  "author": "Maria Helena Santos Pineda",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/node": "^7.13.0",
+    "@babel/preset-env": "^7.13.0",
+    "nodemon": "^2.0.7"
+  }
+}
