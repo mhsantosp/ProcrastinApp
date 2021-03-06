@@ -1,16 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# production
-build
-
 # dependencies
-.vscode
-node_modules
+/.eslintcache
+/.vscode
+/node_modules
 /.pnp
 .pnp.js
+/build
 
 # testing
 /coverage
+
 
 # misc
 .DS_Store
@@ -22,3 +22,4 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+debug.log*
