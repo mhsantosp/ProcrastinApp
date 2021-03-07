@@ -5,7 +5,6 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export default function ButtonsEditDelete(props) {
-  
   const id_user = localStorage.getItem('id')
   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 

@@ -15,7 +15,7 @@ export default class QuienesSomos extends Component {
                 <CardBody className="text-center">
                   <CardTitle tag="h4">Maria Helena Santos Pineda</CardTitle>
                   <CardTitle tag="h5">Ingeniera de Sistemas</CardTitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br /> con énfasis  en React</CardSubtitle>
+                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br/> con énfasis  en React</CardSubtitle>
                   <Nav className="justify-content-center">
                     <NavItem>
                       <NavLink href="https://github.com/mhsantosp" rel="noopener noreferrer" target="_blank"><i className="fab fa-github-alt"></i></NavLink>
@@ -37,7 +37,7 @@ export default class QuienesSomos extends Component {
                 <CardBody className="text-center">
                   <CardTitle tag="h4">Gisell Mazo Rúa</CardTitle>
                   <CardTitle tag="h5">Productora De Multimedia</CardTitle>
-                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br /> con énfasis  en React</CardSubtitle>
+                  <CardSubtitle tag="h6" className="mb-2 text-muted">Desarrolladora Front Ent <br/> con énfasis  en React</CardSubtitle>
                   <Nav className="justify-content-center">
                     <NavItem>
                       <NavLink href="https://github.com/gisellmazo" rel="noopener noreferrer" target="_blank"><i className="fab fa-github-alt"></i></NavLink>

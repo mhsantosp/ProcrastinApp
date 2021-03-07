@@ -5,7 +5,6 @@ import Character from './Character'
 import axios from 'axios'
 
 export default function SectionChecklist(props) {
-  
   const id_user = localStorage.getItem('id')
   const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 

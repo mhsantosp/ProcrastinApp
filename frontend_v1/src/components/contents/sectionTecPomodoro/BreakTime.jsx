@@ -4,7 +4,6 @@ import {faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import ImgRelojArena from '../../images/relojdearena.gif'
 // import SecTecPomodoro from './SectionTecPomodoro'
 
-
 export default function BreakTime({ title, changeTime, type, time, formatTime }) {
   return (
     <div>

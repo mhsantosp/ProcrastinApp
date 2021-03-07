@@ -1,7 +1,6 @@
 import React from 'react'
 import PersonajeInicial from '../../images/checklist1.png'
 
-
 export default function Character(props) {
   return (
     <div className="container-fluid text-center p-0">

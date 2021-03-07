@@ -13,6 +13,7 @@ export default function ButtonsChecklist(props) {
 
   const [newTask, setNewTask] = useState('');
 
+
   const handleChange = e => {
     const { value } = e.target;
     setNewTask(value)

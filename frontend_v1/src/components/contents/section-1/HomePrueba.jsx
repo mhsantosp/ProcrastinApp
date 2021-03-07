@@ -3,7 +3,6 @@ import './HomePrueba.scss';
 import { Link } from "react-router-dom";
 import Personaje from '../../images/personajeBienvenida.png';
 
-
 export default class Home extends Component {
   render() {
     return (

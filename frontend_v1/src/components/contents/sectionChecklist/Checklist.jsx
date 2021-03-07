@@ -1,7 +1,6 @@
 import React from 'react'
 import ButtonsEditDelete from './ButtonsEditDelete'
 
-
 export default function Checklist(props) {
   return (
     <div className="d-flex flex-column align-items-center">

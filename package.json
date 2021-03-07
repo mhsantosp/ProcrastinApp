@@ -1,0 +1,11 @@
+{
+  "name": "procrastinapp",
+  "version": "2.0.0",
+  "description": "Proyecto realizado para dar solución a una problematica identificada y llamada Procrastinación, además el objetivo de este proyecto es el de validar los conocimientos adquiridos durante el Bootcamp de Front End y Back End realizado con Academia Geek",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maria Helena Santos Pineda && Gisell Mazo Rúa",
+  "license": "ISC"
+}

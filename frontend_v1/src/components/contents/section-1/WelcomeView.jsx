@@ -32,11 +32,11 @@ export default function WelcomeView(props) {
 
             </div>
             <div className="row mt-5 buttons-2">
-              <Link to="/multimedia" className="col-3 mt-4 mx-5">
-                <button className="button-WV">Contenido Multimedia</button>
+              <Link to="/musica" className="col-3 mt-4 mx-5">
+                <button className="button-WV">Música</button>
               </Link>
-              <Link to="/contactanos" className="col-3 mt-4 mx-5">
-                <button className="button-WV">Contáctanos</button>
+              <Link to="/podcasts" className="col-3 mt-4 mx-5">
+                <button className="button-WV">Podcasts</button>
               </Link>
 
             </div>
