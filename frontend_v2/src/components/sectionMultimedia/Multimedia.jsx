@@ -8,19 +8,20 @@ export default function Multimedia(props) {
     <section className="container-fluid sectionMultimedia">
       <nav>
         <div className="nav nav-tabs" id="nav-tab" role="tablist">
-          <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Spotify Playlists</button>
-          <button className="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Podcasts</button>
-          <button className="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Youtube Playlists</button>
+          <a className="nav-link active" id="spotifyPlaylists-tab" data-toggle="tab" href="#spotifyPlaylists" role="tab" aria-controls="spotifyPlaylists" aria-selected="true">Spotify Playlists</a>
+          <a className="nav-link" id="podcasts-tab" data-toggle="tab" href="#podcasts" role="tab" aria-controls="podcasts" aria-selected="false">Podcasts</a>
+          <a className="nav-link" id="youtubePlaylists-tab" data-toggle="tab" href="#youtubePlaylists" role="tab" aria-controls="youtubePlaylists" aria-selected="false">Youtube Playlists</a>
         </div>
       </nav>
+
       <div className="tab-content" id="nav-tabContent">
-        <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div className="tab-pane fade show active" id="spotifyPlaylists" role="tabpanel" aria-labelledby="spotifyPlaylists-tab">
           <Music />
         </div>
-        <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div className="tab-pane fade" id="podcasts" role="tabpanel" aria-labelledby="podcasts-tab">
           <Podcasts />
         </div>
-        <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div className="tab-pane fade" id="youtubePlaylists" role="tabpanel" aria-labelledby="youtubePlaylists-tab">
           <YoutubeVideos />
         </div>
       </div>

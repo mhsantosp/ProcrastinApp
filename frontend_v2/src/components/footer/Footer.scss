@@ -50,6 +50,11 @@ footer {
       color: $email;
       font-size: 1.2rem;
     }
+    .correo, .ruta {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .redes {
@@ -149,6 +154,19 @@ footer {
         #5c6cb3
       );
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd776",endColorstr="#5c6cb3",GradientType=1);
+    }
+  }
+
+  .aliados {
+    a {
+      margin: auto;
+      .acGeek {
+        width: auto;
+        height: 70px;
+      }
+      .ag {
+        width: 85px;
+      }
     }
   }
 

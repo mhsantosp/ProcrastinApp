@@ -1,59 +1,55 @@
-.sectionYoutubeVideos{
-    background-color: $sombras;
-    .titleYoutube{
-        color: white;
-        font-family: LoveStory;
-        font-size: 4em;
-        text-align: center;
-    }
-    .pYoutube{
-        color: white;
-        font-size: 1em;
-        text-align: center;
-        width: 80%;
-        margin: 0 auto;
-        font-family: MicrosoftTL;
-    }
+.sectionYoutubeVideos {
+  background-color: $sombras;
+  .titleYoutube {
+    color: white;
+    font-family: LoveStory;
+    font-size: 4em;
+    text-align: center;
+  }
+  .pYoutube {
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    font-family: MicrosoftTL;
+  }
 }
 
-.youtubeVideos{
-    display: flex;
-    flex-direction:column;
-        .titleVideos{
-            font-family: LoveStory;
-            font-size: 2.5em;
-            color: white;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .videos{
-            margin-left: 50px;
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-        .btn-seemore{
-            margin-left: 580px;
-            width: 110px;
-            background-color: #c187df;
-            color: white;
-            font-family: LoveStory;
-            font-size: 1.5em;
-        }
+.youtubeVideos {
+  display: flex;
+  flex-direction: column;
+  .titleVideos {
+    font-family: LoveStory;
+    font-size: 2.5em;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .videos {
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .btn-seemore {
+    width: 110px;
+    background-color: #c187df;
+    color: white;
+    font-family: LoveStory;
+    font-size: 1.5em;
+  }
 }
 
-.btn-seemore:hover{
-    
-    background-color: #522d64;
+.btn-seemore:hover {
+  background-color: #522d64;
 }
 
 @media (max-width: 500px) {
-    .youtubeVideos {
-      display: flex;
-      flex-direction: column;
-      .btn-seemore{
-        margin-left: 155px;
+  .youtubeVideos {
+    display: flex;
+    flex-direction: column;
+    .btn-seemore {
+      margin-left: 155px;
     }
-    }
-    
-
   }
+}

@@ -12,7 +12,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" title="video de youtube instrumental para meditar o relajarse" height="180" src="https://www.youtube.com/embed/FjHGZj2IjBk?list=WL" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -29,7 +28,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12 collapse multi-collapse" id="multiCollapseExample2">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para meditar o relajarse" src="https://www.youtube.com/embed/JbSKfvO8u_M" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -44,7 +42,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12 collapse multi-collapse" id="multiCollapseExample2">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para meditar o relajarse" src="https://www.youtube.com/embed/ETnLewwT2qQ" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -58,8 +55,8 @@ export default function SectionYoutube(props) {
 
           {/* NOT VISIBLE */}
 
-          <p>
-            <button className="btn btn-seemore" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Ver Más</button>
+          <p className="text-center">
+            <button className="btn btn-seemore" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Ver Más</button>
           </p>
         </div>
 
@@ -68,7 +65,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para escuchar mientras estudias" src="https://www.youtube.com/embed/-FlxM_0S2lA" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -85,7 +81,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12 collapse multi-collapse" id="multiCollapseExample3">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para escuchar mientras estudias" src="https://www.youtube.com/embed/mUeZDu9rBH8?list=WL" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -100,7 +95,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12 collapse multi-collapse" id="multiCollapseExample3">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para escuchar mientras estudias" src="https://www.youtube.com/embed/8-6ltMNZsZU" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -114,10 +108,9 @@ export default function SectionYoutube(props) {
 
           {/* NOT VISIBLE */}
 
-          <p>
-            <button className="btn btn-seemore" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Ver Más</button>
+          <p className="text-center">
+            <button className="btn btn-seemore" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Ver Más</button>
           </p>
-
         </div>
 
         <div className="youtubeVideos">
@@ -125,7 +118,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para escuchar mientras programas" src="https://www.youtube.com/embed/f02mOEt11OQ" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -141,7 +133,6 @@ export default function SectionYoutube(props) {
           <div className="row videos col-sm-12 collapse multi-collapse" id="multiCollapseExample4">
             <div className="col-lg-4 col-sm-12 video">
               <iframe width="253" height="180" title="video de youtube instrumental para escuchar mientras programas" src="https://www.youtube.com/embed/0uhwPOquByE" frameBorder="0" allow="accelerometer; controls; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
             </div>
 
             <div className="col-lg-4 col-sm-12 video">
@@ -154,14 +145,10 @@ export default function SectionYoutube(props) {
           </div>
 
           {/* NOT VISIBLE */}
-          <p>
-            <button className="btn btn-seemore" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Ver Más</button>
+          <p className="text-center">
+            <button className="btn btn-seemore" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Ver Más</button>
           </p>
-
         </div>
-
-
-
       </div>
     </section>
   )
