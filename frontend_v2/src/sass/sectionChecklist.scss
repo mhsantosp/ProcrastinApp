@@ -1,0 +1,139 @@
+section.tareas {
+  padding-bottom: 0 !important;
+  @include media-breakpoint-down(xl) {
+    padding-top: 5rem !important;
+  }
+  @include media-breakpoint-down(lg) {
+    padding-top: 4.7rem !important;
+  }
+  @include media-breakpoint-down(md) {
+    padding-top: 4.5rem !important;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 7rem !important;
+  }
+
+  .titleList {
+    color: $titleH1;
+    font-family: LoveStory;
+    font-size: 2.3em;
+    text-align: left;
+  }
+
+  .checklistBox {
+    background-color: $fondoLight;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 11px -3px $sombras;
+    ul {
+      li {
+        text-align: left;
+        background-color: transparent;
+        border: none;
+        span {
+          font-weight: normal;
+          margin-right: 5px;
+          font-size: 1.3rem;
+          color: black;
+          @include media-breakpoint-down(xl) {
+            width: 100%;
+          }
+          @include media-breakpoint-down(lg) {
+            width: 270px;
+          }
+          @include media-breakpoint-down(md) {
+            width: 215px;
+          }
+          @include media-breakpoint-down(sm) {
+            width: 155px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          &:after {
+            position: absolute;
+            content: "";
+            border: 0.5em solid white;
+            border-radius: 50%;
+            left: 0.1em;
+            top: 50%;
+            margin-top: -0.5em;
+            transition: all 0.3s ease-out;
+            font-size: 0.8rem;
+          }
+        }
+
+        .checkbox {
+          width: 30px;
+          height: 30px;
+          margin-right: 15px;
+        }
+        #botones {
+          max-width: max-content;
+        }
+      }
+      ::marker {
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  //Button Checklist
+  .buttons {
+    .buttonsChecklist {
+      margin: 30px;
+    }
+  }
+
+  //Botones Editar y Borrar
+  .btn-edit {
+    background-color: rgb(142, 248, 142);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 50px;
+    height: 40px;
+  }
+
+  .btn-edit:hover {
+    background-color: rgb(115, 223, 115);
+  }
+
+  .btn-delete {
+    background-color: rgba(255, 101, 101, 0.911);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+  }
+
+  .btn-delete:hover {
+    background-color: rgba(218, 75, 75, 0.911);
+  }
+
+  //Character
+  .characterSC {
+    background-color: $fondoDark;
+    display: flex;
+    align-items: center;
+  }
+
+  .anuncios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .p-checklist {
+    color: white;
+    font-size: 1.5em;
+  }
+
+  .checklistCharacter {
+    width: 200px;
+    height: 500px;
+  }
+}

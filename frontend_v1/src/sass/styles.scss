@@ -1,0 +1,39 @@
+@import "./colors";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+body {
+  #root {
+    .layout {
+      main {
+        @include media-breakpoint-down(xl) {
+          min-height: calc(100% - 328px);
+        }
+        @include media-breakpoint-down(lg) {
+          min-height: calc(100% - 389px);
+        }
+        @include media-breakpoint-down(md) {
+          min-height: calc(100% - 341px);
+        }
+        @include media-breakpoint-down(sm) {
+          min-height: calc(100% - 588px);
+        }
+
+        section {
+          padding-top: 10rem;
+          padding-bottom: 5rem;
+        }
+      }
+    }
+  }
+}
