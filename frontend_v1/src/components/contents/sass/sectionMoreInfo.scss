@@ -1,0 +1,25 @@
+.sectionMoreInfo{
+    background-color: $sombras;
+    .titleMoreInfo{
+        color: white;
+        font-family: LoveStory;
+        font-size: 4em;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .tipTitle{
+        font-family: MicrosoftTL;
+        font-weight: bold;
+        color: white;
+        font-size: 1.5em;
+        margin: 50px 50px 0px 50px;
+    }
+    .tipInfo{
+        color: white;
+        font-size: 1em;
+        text-align: left;
+        width: 90%;
+        font-family: MicrosoftTL;
+        margin: 10px 50px;
+    }
+}

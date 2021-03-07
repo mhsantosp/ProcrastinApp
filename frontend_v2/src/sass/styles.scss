@@ -1,0 +1,75 @@
+@import "./colors";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+
+@import "./buttonsChecklist.scss";
+@import "./sectionMusic.scss";
+@import "./sectionPodcasts.scss";
+@import "./welcomeView.scss";
+@import "./sectionChecklist.scss";
+@import "./secTecPomodoro.scss";
+@import "./sectionMoreInfo.scss";
+@import "./multimedia.scss";
+@import "./sectionYoutube.scss";
+@import "./sectionContactUs.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+@mixin font($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url("../fonts/Love-Story-Rough.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@mixin font2($font-family, $font-file) {
+  @font-face {
+    font-family: $font-family;
+    src: url("../fonts/ntailu.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@include font("LoveStory", "../fonts/Love-Story-Rough.ttf");
+@include font2("MicrosoftTL", "../fonts/ntailu.ttf");
+
+
+body {
+  #root {
+    .layout {
+      main {
+        @include media-breakpoint-down(xl) {
+          min-height: calc(100% - 328px);
+        }
+        @include media-breakpoint-down(lg) {
+          min-height: calc(100% - 389px);
+        }
+        @include media-breakpoint-down(md) {
+          min-height: calc(100% - 341px);
+        }
+        @include media-breakpoint-down(sm) {
+          min-height: calc(100% - 588px);
+        }
+
+        section {
+          padding-top: 10rem;
+          padding-bottom: 5rem;
+        }
+      }
+    }
+  }
+}

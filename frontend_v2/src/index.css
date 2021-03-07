@@ -1,0 +1,32 @@
+html, body, #root, .layout {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Love-Story-Rough';
+  src: local('Love-Story-Rough'), url(./fonts/Love-Story-Rough.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Microsoft New Tai Lue';
+  src: local('Microsoft New Tai Lue'), url(./fonts/Microsoft-New-Tai-Lue.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Microsoft New Tai Lue Bold';
+  src: local('Microsoft New Tai Lue Bold'), url(./fonts/Microsoft-New-Tai-Lue-Bold.ttf) format('truetype');
+}
