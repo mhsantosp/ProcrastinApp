@@ -1,6 +1,10 @@
 import React from 'react';
 import './Footer.scss'
 import CO from '../../images/colombia.svg'
+import AcademiaGeek from '../../images/AcademiaGeek.png'
+import Makaia from '../../images/makaia.png'
+import agileInnova from '../../images/agileInnova.png'
+import evolution from '../../images/evolution.png'
 
 function Footer() {
   return (
@@ -8,13 +12,13 @@ function Footer() {
       <div className="container-fluid pt-5 pb-3">
         <hr className="lineFooter mb-4 mt-0 mx-auto" />
         <div className="row justify-content-md-around">
-          <div className="col-sm-12 col-md-4 col-lg-3 py-3">
+          <div className="col-sm-12 col-md-3 col-lg-3 py-3">
             <h6 className="text-uppercase font-weight-bold">Acerda de</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <p>PROCRASTINAPP es una iniciativa para facilitar la creación de un ambiente adecuado que ayude a la concentración y el cumplimiento de las actividades diarias.</p>
           </div>
 
-          <div className="col-sm-12 col-md-4 col-lg-4 py-3">
+          <div className="col-sm-12 col-md-3 col-lg-3 py-3">
             <h6 className="text-uppercase font-weight-bold">Contacto</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
             <div className="container-fluid contacto p-0">
@@ -27,11 +31,26 @@ function Footer() {
           <div className="col-md-auto py-3">
             <h6 className="text-uppercase font-weight-bold">Redes Sociales</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
-            <div className="container-fluid d-flex redes p-0">
+            <div className="container-fluid d-flex d-md-block redes p-0">
               <a href="#@ProcrastinApp" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook-f white-text"> </i></a>
               <a href="#@ProcrastinApp" rel="noopener noreferrer" target="_blank"><i className="fab fa-twitter white-text"> </i></a>
               <a href="#@ProcrastinApp" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin-in white-text"> </i></a>
               <a href="#@ProcrastinApp" rel="noopener noreferrer" target="_blank"><i className="fab fa-instagram white-text"> </i></a>
+            </div>
+          </div>
+
+          <div className="col-sm-12 col-md-auto col-lg-auto py-3">
+            <h6 className="text-uppercase font-weight-bold">Aliados</h6>
+            <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
+            <div className="container-fluid aliados p-0">
+              <div className="d-flex">
+                <a className="mt-0" href="https://makaia.org/portfolio/academia-geek/" rel="noopener noreferrer" target="_blank"><img className="acGeek" src={AcademiaGeek} alt="Academia Geek" /></a>
+                <a href="https://agileinnova.org/" rel="noopener noreferrer" target="_blank"><img className="ag" src={agileInnova} alt="Agile Innova" /></a>
+              </div>
+              <div className="d-flex">
+                <a href="https://makaia.org/" rel="noopener noreferrer" target="_blank"><img className="ag" src={Makaia} alt="Makaia" /></a>
+                <a href="https://www.e-volution.co/" rel="noopener noreferrer" target="_blank"><img className="ag" src={evolution} alt="evolution" /></a>
+              </div>
             </div>
           </div>
         </div>
@@ -39,7 +58,7 @@ function Footer() {
 
       <div className="container-fluid copyright text-center mt-auto py-3" >
         <p className="m-0">
-          © 2020 Copyright: 
+          © 2021 Copyright: 
           <a className="rutaFooter" href="#https://www.procrastinapp.co" rel="noopener noreferrer" target="_blank"> ProcrastinApp </a>
         </p>
       </div>
