@@ -159,7 +159,13 @@ export default function NuevoUsuario() {
                     </div>
                   </div>
                 </Form.Row>
-                <Button type="submit" variant="info" className="btn-form" disabled={isSubmitting}>Registrarse</Button>
+
+                <Button
+                  type="submit"
+                  variant="info"
+                  className="btn-form"
+                  disabled={isSubmitting}
+                >Registrarse</Button>
               </Form>
               <div className="card-footer">
                 <p className="card-text text-right">

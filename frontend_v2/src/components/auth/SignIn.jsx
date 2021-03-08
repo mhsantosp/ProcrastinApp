@@ -7,7 +7,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import Axios from "axios";
 
-export default function Prueba() {
+export default function InicioSesion() {
   // const [show, setShow] = useState(true);
   const URL = 'http://localhost:4000/auth/signin';
 
