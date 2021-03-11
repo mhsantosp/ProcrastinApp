@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose';
-import bcrypt from 'bcryptjs';
+import { Schema, model } from "mongoose";
+import bcrypt from "bcryptjs";
 
 const userSchema = new Schema(
   {
@@ -23,30 +23,33 @@ const userSchema = new Schema(
       type: String,
       unique: true,
     },
-    imgPerfil: {
-      type: String,
-      unique: true,
-    },
+    imgPerfil: [
+      {
+        fileName: { type: String },
+        urlFile: { type: String },
+        dateUpload: { type: Date, default: Date.now() },
+      },
+    ],
     roles: [
       {
         ref: "Role",
         type: Schema.Types.ObjectId,
-      }
-    ]
+      },
+    ],
   },
   {
     timestamps: true, //fecha de creación y actualización
-    versionKey: false //para quitar el __v
+    versionKey: false, //para quitar el __v
   }
 );
 
 userSchema.statics.encryptPassword = async (password) => {
   const salt = await bcrypt.genSalt(10);
   return await bcrypt.hash(password, salt);
-}
+};
 
 userSchema.statics.comparePassword = async (password, receivedPassword) => {
   return await bcrypt.compare(password, receivedPassword);
-}
+};
 
-export default model('User', userSchema);
+export default model("User", userSchema);

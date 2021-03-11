@@ -3,6 +3,8 @@ import express from 'express';
 import config from "./config";
 import cors from "cors";
 import morgan from 'morgan';
+const path = require('path');
+
 import pkg from '../package.json';
 
 import {createRoles} from './libs/initialSetup';
@@ -24,7 +26,14 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(morgan('dev'));
+// Para enviar nombre peronalizado de una imagen
+app.use(express.urlencoded({extended: true}));
 app.use(express.json()); //entender que datos que llegan en formato json
+
+
+// Static Files == ruta que guarda las imagenes
+app.use(express.static(path.join(__dirname, '/src/upload')))
+
 
 app.get('/', (req, res) => {
   res.json({
@@ -39,5 +48,7 @@ app.get('/', (req, res) => {
 app.use('/users', usuariosRoutes);
 app.use('/tasks', tareasRoutes);
 app.use('/auth', authRoutes);
+
+//app.use('/image', require('./routes/images.routes'))
 
 export default app;
