@@ -62,45 +62,70 @@ main {
                 box-shadow: none;
               }
 
-              .fileImg {
-                background-color: white;
-                border-radius: 4px;
-                display: flex;
+              .selectImg {
+                width: 150px;
+                height: 150px;
                 padding: 0;
-                border: 1px solid #804be4;
-                align-items: center;
+                display: flex;
+                justify-content: flex-end;
 
-                label {
-                  margin: 0;
+                .imgPerfil {
+                  // background-color: deeppink;
+                  border: 1px dotted black;
+                }
 
-                  span {
-                    border-top-left-radius: 4px;
-                    border-bottom-left-radius: 4px;
-                    border-right: 1px solid #804be4;
-                    padding: 0.375rem 0.75rem;
-                    display: block;
+                .fileImg {
+                  background-color: white;
+                  border-radius: 4px;
+                  border: 1px solid $fondoDark;
+                  display: flex;
+                  align-items: center;
+                  width: 32px;
+                  height: 32px;
+                  padding: 0;
+                  position: absolute;
+                  bottom: 0;
 
-                    &:hover {
-                      background-color: #e9ecef;
+                  label {
+                    margin: 0;
+
+                    span {
+                      border-top-left-radius: 4px;
+                      border-bottom-left-radius: 4px;
+                      padding: 0.35rem;
+                      display: flex;
+
+                      &:hover {
+                        background-color: $fondoDark;
+                        border-radius: 4px;
+                        color: white;
+                        cursor: pointer;
+                        box-shadow: 0 0.4rem 0.7rem 0.1rem #a33bca91;
+                      }
+
+                      i {
+                        font-size: 1.2rem;
+                      }
                     }
                   }
-                }
 
-                input#imgPerfil {
-                  width: 100%;
-                  border-left: none;
-                  border: none;
-                  border-radius: 4px;
-                  border-top-left-radius: initial;
-                  border-bottom-left-radius: initial;
-                  padding-left: 5px;
-                  padding-right: 5px;
-                  outline: none;
-                }
+                  input#imgPerfil {
+                    width: 100%;
+                    border-left: none;
+                    border: none;
+                    border-radius: 4px;
+                    border-top-left-radius: initial;
+                    border-bottom-left-radius: initial;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    outline: none;
+                    display: none;
+                  }
 
-                // Pseudo-elemento  CSS { ::-webkit-file-upload-button } representa el botón de los elementos <input> de  type="file".
-                input[type=file]::-webkit-file-upload-button {
-                  display: none;
+                  // Pseudo-elemento  CSS { ::-webkit-file-upload-button } representa el botón de los elementos <input> de  type="file".
+                  input[type=file]::-webkit-file-upload-button {
+                    display: none;
+                  }
                 }
               }
             }

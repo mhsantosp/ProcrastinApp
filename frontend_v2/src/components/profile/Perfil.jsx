@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import './Perfil.scss';
 import { Form, InputGroup, Button, Col, Card, Image } from 'react-bootstrap';
 import Avatar from './../../images/avatar.svg';

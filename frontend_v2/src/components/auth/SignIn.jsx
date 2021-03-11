@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './LoginSignup.scss';
 import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
@@ -8,7 +8,6 @@ import * as Yup from 'yup';
 import Axios from "axios";
 
 export default function InicioSesion() {
-  // const [show, setShow] = useState(true);
   const URL = 'http://localhost:4000/auth/signin';
 
   const formSchema = Yup.object().shape({

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from '../../images/logo_name.svg';
 // import Avatar from './../../../images/logo_perfil.png';
 import './Header.scss';
+import SolicitudInfo from '../buttons/Solicitar';
 
 export default class Header extends Component {
   state = {

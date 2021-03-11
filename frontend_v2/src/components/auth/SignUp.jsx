@@ -1,13 +1,35 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import './LoginSignup.scss';
 import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
-import { Form, InputGroup, Button, Col } from 'react-bootstrap';
+import { Form, InputGroup, Button, Col, Image } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
+import avatar from '../../images/avatar.svg'
 
 export default function NuevoUsuario() {
   const URL = 'http://localhost:4000/auth/signup';
+
+  const [imgPerfil, setImgPerfil] = useState();
+  console.log('file: ', imgPerfil);
+  const [pathImgPerfil, setPathImgPerfil] = useState(`${avatar}`);
+  const onFileChange = e => {
+    console.log('length: ', e.target.files.length)
+    if (e.target.files && e.target.files.length > 0) {
+      console.log('length-2: ',e.target.files.length)
+      const file = e.target.files[0]
+      if (file.type.includes('image')) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function load() {
+          setPathImgPerfil(reader.result)
+        }
+      }
+      setImgPerfil(file);
+    } else {
+      console.log("Error, no encuentro la imagen !!")
+    }
+  }
 
   const { values, isSubmitting, handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
@@ -143,19 +165,27 @@ export default function NuevoUsuario() {
 
                   <div className="form-group col-sm-12 col-md-12 imPerfil">
                     <Form.Label>Imagen de perfil</Form.Label>
-                    <div className="fileImg">
-                      <label htmlFor="imgPerfil">
-                        <span color="primary" aria-label="upload picture" >
-                          <i className="fas fa-camera-retro" />
-                        </span>
-                      </label>
-                      <Form.Control
-                        type="file"
-                        accept="image/*"
-                        id="imgPerfil"
-                        value={values.imgPerfil}
-                        onChange={handleChange}
+                    <div className="container-fluid selectImg">
+                      <Image
+                        className="img-fluid card-img-top p-1 imgPerfil rounded-circle"
+                        src={pathImgPerfil}
+                        alt="Avatar"
+                        loading="lazy"
                       />
+                      <div className="fileImg">
+                        <label htmlFor="imgPerfil">
+                          <span color="primary" aria-label="upload picture" >
+                            <i className="fas fa-camera-retro" />
+                          </span>
+                        </label>
+                        <Form.Control
+                          type="file"
+                          accept="image/*"
+                          id="imgPerfil"
+                          value={values.imgPerfil}
+                          onChange={onFileChange}
+                        />
+                      </div>
                     </div>
                   </div>
                 </Form.Row>
