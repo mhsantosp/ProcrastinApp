@@ -23,13 +23,9 @@ const userSchema = new Schema(
       type: String,
       unique: true,
     },
-    imgPerfil: [
-      {
-        fileName: { type: String },
-        urlFile: { type: String },
-        dateUpload: { type: Date, default: Date.now() },
-      },
-    ],
+    // imgPerfil: {
+    //   type: String
+    // },
     roles: [
       {
         ref: "Role",

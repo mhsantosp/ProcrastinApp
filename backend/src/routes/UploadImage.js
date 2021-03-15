@@ -1,8 +1,10 @@
-import config from "./config";
-const router = require("express").Router();
-const Image = require("../models/Images.js");
+import {Router} from 'express';
+import multer from 'multer';
+
+const router = Router();
+const Image = require("../models/Image");
 const storage = require("../multer");
-const multer = require("multer");
+
 const uploader = multer({ storage });
 
 router.post("/upload", uploader.single("file"), async (req, res) => {
@@ -10,12 +12,17 @@ router.post("/upload", uploader.single("file"), async (req, res) => {
 
   if (file && body) {
     const newImage = new Image({
-      fileName: body.name, // Pasa el nombre personalizado que viene desde React
-      urlFile: `http://localhost:4500/${file.filename}`,
+      filName: body.name,
+      urlFile: `http://localhost:5000/imagen/${file.filName}`,
     });
 
     await newImage.save();
-    res.json({ newImage: newImage });
+
+    res.json({
+      newImage: newImage,
+    });
+  } else {
+    console.log('Error')
   }
 });
 
@@ -24,4 +31,4 @@ router.get("/download", async (req, res) => {
   res.json(images);
 });
 
-module.exports = router;
+export default router;

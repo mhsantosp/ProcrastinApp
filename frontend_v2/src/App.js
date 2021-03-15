@@ -14,6 +14,7 @@ import ContactUs from "./components/sectionContactUs/SectionContactUs";
 import SectionMoreInfo from "./components/sectionMoreInfo/SectionMoreInfo";
 import Somos from "./components/Somos/Somos";
 import Perfil from "./components/profile/Perfil";
+import FotoPerfil from "./components/auth/Upload";
 
 export default class App extends Component {
   render() {
@@ -30,6 +31,7 @@ export default class App extends Component {
 
               <Route exact path="/inicio-sesion" render={(props) => <IniSecion {...props} />} />
               <Route exact path="/registro-usuario" component={Registros} />
+              <Route exact path="/foto-usuario" component={FotoPerfil} />
 
               <Route exact path="/inicio" component={Home} />
               <Route exact path="/tareas" component={SectionChecklist} />
