@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "homepage": "https://mhsantosp.github.io/procrastinapp/",
+  "proxy": "http://localhost:3004",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

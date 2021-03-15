@@ -1,16 +1,16 @@
-import { Schema, model } from 'mongoose';
+const mongoose= require('mongoose');
+const {Schema} = mongoose;
 
-const taskSchema = new Schema(
+const TaskSchema = new Schema(
   {
-    imgTarea: String,
-    nameTarea: String,
-    prioridadTarea: String,
-    fechaVencimiento: Date
+    nameTarea: {type: String, required:true},
+    prioridadTarea: {type:String, required:false},
+    fechaVencimiento: {type: Date, required:false},
+    categoria: {type:String, required:false}
   },
   {
     timestamps: true, //fecha de creación y actualización
     versionKey: false //para quitar el __v
   }
 )
-
-export default model('Tasks', taskSchema);
+module.exports = mongoose.model('Task', TaskSchema)

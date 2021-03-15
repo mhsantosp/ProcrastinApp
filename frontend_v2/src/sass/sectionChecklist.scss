@@ -1,5 +1,6 @@
 section.tareas {
   padding-bottom: 0 !important;
+  background-color: $fondoLight;
   @include media-breakpoint-down(xl) {
     padding-top: 5rem !important;
   }
@@ -13,21 +14,126 @@ section.tareas {
     padding-top: 7rem !important;
   }
 
-  .titleList {
-    color: $titleH1;
+  .options{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    justify-content: space-between;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  .divNewTask{
+    display: flex;
+    flex-direction: row;
+  }
+  .taskFilter{
+    display: flex;
+    flex-direction: row;
+    .filterText{
+      color: white;
+      font-size:1.3em;
+      margin-left: 15px;
+      font-family: LoveStory;
+    }
+    .container {
+      display: block;
+      position: relative;
+      font-size: 1.6em;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+    
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+    .container input:checked ~ .checkmark {
+      background-color: #876bad;
+    }
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+
+  .newTaskText{
     font-family: LoveStory;
-    font-size: 2.3em;
+    color: white;
+    font-size: 1.6em;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
+  .btnNewTask{
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #876bad;
+    font-size: 1.1em;
+    background-color: white;
+  }
+  .btnNewTask:hover{
+    color: white;
+    background-color: #876bad;
+  }
+
+ 
+  .titleList {
+    color: white;
+    font-family: LoveStory;
+    font-size: 2.8em;
     text-align: left;
   }
 
   .checklistBox {
-    background-color: $fondoLight;
-    max-width: 600px;
+    background-color: white;
+    max-width: 1100px;
     border-radius: 20px;
     box-shadow: 5px 8px 11px -3px $sombras;
+    margin-bottom: 40px;
     ul {
       li {
         text-align: left;
+        margin-top: 10px;
         background-color: transparent;
         border: none;
         span {
@@ -78,6 +184,8 @@ section.tareas {
       }
     }
   }
+
+
 
   //Button Checklist
   .buttons {
@@ -135,5 +243,66 @@ section.tareas {
   .checklistCharacter {
     width: 200px;
     height: 500px;
+  }
+}
+
+.tableheader{
+  padding-top: 0px !important;
+  margin: -1px -15px;
+  width: 1100px;
+}
+
+.list-group{
+  display: flex !important;
+  flex-direction: row !important;
+  list-style: none !important;
+  justify-content: space-between;
+}
+
+.liheader{
+  background-color: #876bad;
+  height: 45px;
+  padding: 10px;
+  height:45px;
+  font-size: 1.2em;
+  font-family: MicrosoftTL;
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+td{
+  margin: 15px;
+}
+
+.liTitle{
+  font-weight: bold;
+}
+
+.taskCategory{
+  font-weight: bold;
+  color: #876bad;
+}
+
+.btnCheck{
+  background-color: #c7a9e6;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.btnCheck:hover{
+  background-color: #876bad;
+}
+
+.socialmedia{
+  display: flex;
+  flex-direction: row;
+  .socialMediaIcon{
+    color: #876bad;
+    font-size: 2em;
+    margin-right: 10px;
   }
 }

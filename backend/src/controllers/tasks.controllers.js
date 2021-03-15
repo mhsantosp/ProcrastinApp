@@ -3,8 +3,8 @@ import Task from '../models/Tasks';
 // Nueva Tarea
 export const createTask = async (req, res) => {
   //datos que se extraen del body
-  const { imgTarea, nameTarea, prioridadTarea, fechaVencimiento } = req.body
-  const newTask = new Task({imgTarea, nameTarea, prioridadTarea, fechaVencimiento});
+  const { nameTarea, prioridadTarea, fechaVencimiento, categoria } = req.body
+  const newTask = new Task({nameTarea, prioridadTarea, fechaVencimiento, categoria});
   const taskSaved = await newTask.save();
   res.status(201).json(taskSaved);
 }
