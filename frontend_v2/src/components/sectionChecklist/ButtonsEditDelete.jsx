@@ -18,11 +18,11 @@ export default function ButtonsEditDelete(props) {
     prioridadTarea: '',
     fechaVencimiento: '',
     categoria: '',
-    _id: ''
+    _id: localStorage.getItem('_id')
   });
 
   const deleteTask = (id) => {
-    fetch(`/tasks/${id}`, {
+    fetch(`http://localhost:4001/tasks/${id}`, {
       method: 'DELETE',
       header: {
         'Accept': 'application/json',
@@ -45,10 +45,10 @@ export default function ButtonsEditDelete(props) {
       .then(data => {
         console.log(data)
         setDatos({
-          taskName: datos.taskName,
-          taskImge: datos.taskImge,
-          taskPriority: datos.taskPriority,
-          limitDate: datos.limitDate,
+          nameTarea: datos.nameTarea,
+          prioridadTarea: datos.prioridadTarea,
+          fechaVencimiento: datos.fechaVencimiento,
+          categoria: datos.categoria,
           _id: datos._id
         })
       })
@@ -78,7 +78,6 @@ export default function ButtonsEditDelete(props) {
       {/*Modal Borrar*/}
 
       <Modal isOpen={isModalDeleteOpen}>
-      
         <ModalHeader className="modalHeader">
               <div className="row">
                 <h3 className="modalTitle col">Borrar Tarea</h3>
@@ -88,22 +87,18 @@ export default function ButtonsEditDelete(props) {
                   data-bs-dismiss="modal"
                   aria-label="Close"
                   onClick={() => setIsModalDeleteOpen(false)}><i className="fas fa-times"></i></button>
-
-
               </div>
-          
         </ModalHeader>
         <ModalBody>
           <p>¿Estas seguro de borrar esta tarea?</p>
         </ModalBody>
         <ModalFooter>
-        
           <button type="button"
             className="btn-no"
             data-bs-dismiss="modal"
             onClick={() => setIsModalDeleteOpen(false)}>No</button>
           <button type="button" className="btn-yes">Si</button>
-
+         
         </ModalFooter>
       </Modal>
 

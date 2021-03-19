@@ -20,9 +20,10 @@ app.set('pkgBack', pkg); /* asignar un nombre y valor a la variable, guardarlo e
 
 // Middlewares == se ejecutan antes de llegar a las rutas
 const corsOptions = {
-  // origin: "http://localhost:3000",
+  //origin: "http://localhost:3000/tareas",
 };
 app.use(cors(corsOptions));
+
 app.use(morgan('dev'));
 app.use(express.json()); //entender que datos que llegan en formato json
 

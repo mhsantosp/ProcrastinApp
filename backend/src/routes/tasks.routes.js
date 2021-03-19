@@ -6,6 +6,8 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/Tasks')
 
+
+
 router.get('/', async(req,res)=>{
     const tasks = await Task.find();
     console.log(tasks)
@@ -19,10 +21,13 @@ router.get('/:id', async(req, res)=>{
 });
 
 router.post('/', async (req, res)=>{
+     console.log(req.body);
      const {nameTarea, prioridadTarea, fechaVencimiento, categoria} = req.body;
+     
      const task = new Task({nameTarea, prioridadTarea, fechaVencimiento, categoria});
      console.log(task);
      await task.save();
+     
      res.json({status:'Tarea guardada'});
 });
 
