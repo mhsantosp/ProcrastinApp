@@ -14,6 +14,12 @@ router.get('/', async(req,res)=>{
     res.json(tasks);
 });
 
+// router.get('/categoria', async (req, res) => {
+//     const { categoria } = req.params 
+//     let tasks = await Task.find({categoria: new RegExp(value)})
+//     res.json(tasks)
+// })
+
 router.get('/:id', async(req, res)=>{
    const task = await Task.findById(req.params.id);
    res.json(task);

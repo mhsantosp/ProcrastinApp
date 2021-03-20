@@ -297,12 +297,26 @@ td{
   background-color: #876bad;
 }
 
+.textChecked{
+    color: #876bad;
+    font-family: LoveStory;
+    text-align: center;
+    font-size: 2em;
+}
+
+.textShare{
+  font-size: 1.1em;
+  text-align: center;
+}
+  
 .socialmedia{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   .socialMediaIcon{
     color: #876bad;
     font-size: 2em;
     margin-right: 10px;
   }
+  
 }
