@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 import config from "./config";  
 
- mongoose.set('useFindAndModify', false);
+mongoose.set('useFindAndModify', false);
 mongoose.connect(config.MONGODB_URI,{
     useCreateIndex: true,
     useFindAndModify: false,
