@@ -4,7 +4,6 @@ import CO from '../../images/colombia.svg'
 import AcademiaGeek from '../../images/AcademiaGeek.png'
 import Makaia from '../../images/makaia.png'
 import agileInnova from '../../images/agileInnova.png'
-import evolution from '../../images/evolution.png'
 
 function Footer() {
   return (
@@ -42,15 +41,16 @@ function Footer() {
           <div className="col-sm-12 col-md-auto col-lg-auto py-3">
             <h6 className="text-uppercase font-weight-bold">Aliados</h6>
             <hr className="lineHR mb-4 mt-0 d-inline-block mx-auto" />
-            <div className="container-fluid aliados p-0">
-              <div className="d-flex">
-                <a className="mt-0" href="https://makaia.org/portfolio/academia-geek/" rel="noopener noreferrer" target="_blank"><img className="acGeek" src={AcademiaGeek} alt="Academia Geek" /></a>
-                <a href="https://agileinnova.org/" rel="noopener noreferrer" target="_blank"><img className="ag" src={agileInnova} alt="Agile Innova" /></a>
-              </div>
-              <div className="d-flex">
-                <a href="https://makaia.org/" rel="noopener noreferrer" target="_blank"><img className="ag" src={Makaia} alt="Makaia" /></a>
-                <a href="https://www.e-volution.co/" rel="noopener noreferrer" target="_blank"><img className="ag" src={evolution} alt="evolution" /></a>
-              </div>
+            <div className="container-fluid d-flex d-md-block aliados p-0">
+              <a className="mt-0" href="https://makaia.org/portfolio/academia-geek/" rel="noopener noreferrer" target="_blank">
+                <img className="acGeek" src={AcademiaGeek} alt="Academia Geek" />
+              </a>
+              <a href="https://agileinnova.org/" rel="noopener noreferrer" target="_blank">
+                <img className="ag" src={agileInnova} alt="Agile Innova" />
+              </a>
+              <a href="https://makaia.org/" rel="noopener noreferrer" target="_blank">
+                <img className="ag" src={Makaia} alt="Makaia" />
+              </a>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ function Footer() {
 
       <div className="container-fluid copyright text-center mt-auto py-3" >
         <p className="m-0">
-          © 2021 Copyright: 
+          © 2021 Copyright:
           <a className="rutaFooter" href="#https://www.procrastinapp.co" rel="noopener noreferrer" target="_blank"> ProcrastinApp </a>
         </p>
       </div>

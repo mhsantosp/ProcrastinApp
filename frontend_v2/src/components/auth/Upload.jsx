@@ -1,82 +1,79 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import './LoginSignup.scss';
-import UploadService from "../../services/upload.service";
-import Avatar from "../../images/avatar.svg";
-import { Form, Card, Image } from 'react-bootstrap';
+import md5 from 'md5';
 
-const Upload = ({ setImages, images }) => {
-  const [file, setFile] = useState();
-  console.log('file antes de useFormik: ', file);
-  const [pathImage, setPathImage] = useState(`${Avatar}`); // previsualiza la imagen antes de enviarla a la base de datos
-  console.log('pathImgPerfil antes de useFormik: ', pathImage);
+class TextInput extends Component {
+  constructor(props) {
+    super(props);
 
-  // función para enviar imagen
-  const sendImage = (e) => {
-    e.preventDefault();
-    UploadService.sendImages(file).then((result) => {
-      console.log('El resultado es: ', result);
-    })
+    this.state = {
+      value: this.props.value
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+  3
+  handleChange(event) {
+    this.setState({ value: event.target.value })
+    this.props.onChange(event.target.value)
   }
 
-  // función para leer imagen y previsualiza la imagen
-  const onFileChange = e => {
-    console.log('length: ', e.target.files.length)
-    if (e.target.files && e.target.files.length > 0) {
-      console.log('length-2: ', e.target.files.length)
-      const file = e.target.files[0]
-      if (file.type.includes('image')) {
-        const reader = new FileReader(); // lee la imagen
-        reader.readAsDataURL(file); // leer la img como url
-        reader.onload = function load() { // manda estado del resultado de la lectura anterior
-          setPathImage(reader.result)
-        }
-      }
-      setFile('esta es la img leida', file);
+  render() {
+    const { value, ...props } = this.props;
+
+    return (
+      <input
+        {...props}
+        type='text'
+        value={this.state.value}
+        onChange={this.handleChange} />
+    )
+  }
+}
+
+TextInput.defaultProps = ({ email: '' });
+
+class Profile extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: this.props.email
+    }
+
+    this.onChange = this.onChange.bind(this)
+  }
+
+  getGravatarUrl(size = 130) {
+    const lowerCaseEmail = this.state.email.toLowerCase()
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(lowerCaseEmail)) {
+      return `https://www.gravatar.com/avatar/${md5(lowerCaseEmail)}?s=${size}`;
     } else {
-      console.log("Error, no encuentro la imagen !!")
+      return 'https://cdn.apk-cloud.com/detail/image/company.yak.reactjsdocumentation-w130.png';
     }
   }
 
-  return (
-    <section className="container-fluid registros">
-      <article className="authenticateIdentity">
-        <Card>
-          <div className="form">
-            <div className="form-log-in">
-              <Form>
-                <Form.Row>
-                  <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <div className="container-fluid selectImg">
-                      <Image
-                        className="img-fluid card-img-top p-1 imgPerfil rounded-circle"
-                        src={pathImage}
-                        alt="Image"
-                        loading="lazy"
-                      />
-                      <div className="fileImg">
-                        <label htmlFor="imgPerfil">
-                          <span color="primary" aria-label="upload picture" >
-                            <i className="fas fa-camera-retro" />
-                          </span>
-                        </label>
-                        <Form.Control
-                          type="file"
-                          accept="image/*"
-                          id="imgPerfil"
-                          onChange={onFileChange}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Form.Row>
-                <button type="submit" className="btn btn-primary" onClick={sendImage}>enviar</button>
-              </Form>
-            </div>
-          </div>
-        </Card>
-      </article>
-    </section>
-  )
-}
+  onChange(newValue) {
+    this.setState({ email: newValue })
+  }
 
-export default Upload
+  render() {
+    return (
+      <div className='box'>
+        <div>
+          <TextInput
+            name="email"
+            placeholder="Correo electrónico"
+            type="email"
+            value={this.props.email}
+            onChange={this.onChange} />
+        </div>
+        <img src={this.getGravatarUrl()} />
+      </div>
+    );
+  }
+};
+
+Profile.defaultProps = ({ email: '' });
+
+
+export default Profile

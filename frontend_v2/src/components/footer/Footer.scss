@@ -160,10 +160,14 @@ footer {
   .aliados {
     a {
       margin: auto;
+      display: block;
+      text-align: center;
+
       .acGeek {
         width: auto;
-        height: 70px;
+        height: 60px;
       }
+
       .ag {
         width: 85px;
       }

@@ -2,13 +2,13 @@ import React from "react";
 import './LoginSignup.scss';
 import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
-import { InputGroup, Button, Image, Alert } from 'react-bootstrap';
+import { InputGroup, Button, Image } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import Axios from "axios";
 
 export default function InicioSesion() {
-  const URL = 'http://localhost:4500/auth/signin';
+  const URL = 'http://localhost:4000/auth/signin';
 
   const formSchema = Yup.object().shape({
     email: Yup.string().required("Campo requerido").email("Correo Electronico Invalido"),

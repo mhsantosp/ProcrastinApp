@@ -21,6 +21,10 @@ main {
             text-align: left;
 
             .form-group {
+              small {
+                color: red;
+              }
+              
               label {
                 color: $fondoDark;
                 font-family: "Microsoft New Tai Lue Bold";

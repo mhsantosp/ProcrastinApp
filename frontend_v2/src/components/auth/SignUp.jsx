@@ -1,47 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import './LoginSignup.scss';
+import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
 import { Form, InputGroup, Button, Col, Image } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
-import avatar from '../../images/avatar.svg';
-import ImagenPerfil from "./Upload";
-import UploadService from "../../services/upload.service";
+import Avatar from "../../images/avatar.svg";
+import Profile from "./Upload"
 
 export default function NuevoUsuario() {
-  const URL = 'http://localhost:5000/auth/signup';
-  const urlPhoto = 'http://localhost:5000/imagen';
+  const URL = 'http://localhost:4000/auth/signup';
 
-  const [file, setFile] = useState();
-  // console.log('file antes de useFormik: ', file);
-  // const [pathImgPerfil, setPathImgPerfil] = useState(`${avatar}`);
-  // console.log('pathImgPerfil antes de useFormik: ', pathImgPerfil);
-
-  // función para enviar imagen
-  const sendImage = (e) => {
-    e.preventDefault();
-    UploadService.sendImages(file).then((result) => {
-      console.log('El resultado es: ', result);
-    })
-  }
-
-  const { values, isSubmitting, handleSubmit, handleChange, errors } = useFormik({
+  const { values, errors, handleChange, handleBlur, handleSubmit, setFieldValue, isSubmitting } = useFormik({
     initialValues: {
-      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: '',
+      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: `${Avatar}`,
     },
     onSubmit: values => {
       console.log(values);
+      alert(JSON.stringify(values, null, 2));
+
       // Enviar los valores a la Base de Datos
-      Axios.all([
-        Axios.post(urlPhoto, { imgPerfil: values.imgPerfil }),
-        Axios.post(URL, {
+      Axios.post(URL, /*formData,*/
+        {
           names: values.names,
           lastNames: values.lastNames,
           email: values.email,
           nameUser: values.nameUser,
           password: values.password,
-        })
-      ])
+          imgPerfil: values.imgPerfil
+        }
+      )
         .then(res => {
           console.log(res);
           window.location.href = '/inicio-sesion'; //redirecciona al inicio de sesión
@@ -75,21 +63,45 @@ export default function NuevoUsuario() {
     }
   });
   // console.log(errors);
+  console.log(values);
   return (
     <section className="container-fluid registros">
       <article className="authenticateIdentity">
         <div className="card">
+          <Image roundedCircle className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
           <div className="form">
             <div className="form-log-in">
-              {/* Para enviar archivos debe especificarse el valor del atributo enctype */}
-              <Form className="card-body" onSubmit={handleSubmit} encType="multipart/form-data">
+              {/* Para enviar archivos debe especificarse el valor del atributo encType="multipart/form-data" */}
+              <Form className="card-body" onSubmit={handleSubmit} >
                 <Form.Row>
-                  <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <ImagenPerfil
-                      value={values.imgPerfil}
-                      onChange={handleChange}
-                    />
-                  </div>
+                  {/* <div className="form-group col-sm-12 col-md-12 imPerfil">
+                    <Profile onChange={handleChange} />
+                    <div>
+                      <div className="container-fluid selectImg">
+                        <Image
+                          className="img-fluid card-img-top p-1 imgPerfil rounded-circle"
+                          name="imgPerfil"
+                          src={values.imgPerfil}
+                          alt="Imagen"
+                          loading="lazy"
+                        />
+                        <div className="fileImg">
+                          <label htmlFor="imgPerfil">
+                            <span color="primary" aria-label="upload picture" >
+                              <i className="fas fa-camera-retro" />
+                            </span>
+                          </label>
+                          <Form.Control
+                            type="file"
+                            name="imgPerfil"
+                            id="imgPerfil"
+                            accept="image/*"
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div> */}
 
                   <Form.Group as={Col} sm="12" md="6">
                     <Form.Label>Nombres</Form.Label>
@@ -172,16 +184,16 @@ export default function NuevoUsuario() {
                   variant="info"
                   className="btn-form"
                   disabled={isSubmitting}
-                  onClick={sendImage}
+                // onClick={sendImage}
                 >Registrarse</Button>
               </Form>
               <div className="card-footer">
                 <p className="card-text text-right">
                   Si ya estas registrado <Link to="/inicio-sesion" rel="noopener noreferrer">Inicia sesión</Link>
                 </p>
-                <p className="card-text text-right">
+                {/* <p className="card-text text-right">
                   Foto Perfil <Link to="/foto-usuario" rel="noopener noreferrer">Foto</Link>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
