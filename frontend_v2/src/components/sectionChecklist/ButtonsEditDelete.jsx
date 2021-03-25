@@ -1,52 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 export default function ButtonsEditDelete(props) {
-  const id_user = localStorage.getItem('id')
-  const db = `https://api-fake-procrastin-app.vercel.app/users/${id_user}`
 
-  let keys = Object.entries(db).length;
-  console.log(props.user)
 
   const [newTask, setNewTask] = useState('');
 
   const [isModalDeleteOpen, setIsModalDeleteOpen] = useState(false);
   const [isModalEditOpen, setIsModalEditOpen] = useState(false);
+  const [tasks, setTasks] = useState([]);
 
-  const handleChange = e => {
-    const { value } = e.target;
-    setNewTask(value)
+  const [datos, setDatos] = useState({
+    nameTarea: '',
+    prioridadTarea: '',
+    fechaVencimiento: '',
+    categoria: '',
+    _id: localStorage.getItem('_id')
+  });
+
+  const deleteTask = (id) => {
+    fetch(`http://localhost:4001/tasks/${id}`, {
+      method: 'DELETE',
+      header: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setIsModalDeleteOpen(false)
+        showTask();
+
+
+      })
   }
 
-  const handleOnClick = async (event) => {
-    event.preventDefault();
-    event.target.disabled = true;
-
-    const lastTask = props.user.tasks[props.user.tasks.length - 1]
-    if (lastTask.id == undefined) {
-      lastTask = {
-        id: 0
-      }
-    }
-
-    const task = {
-      id: parseInt(lastTask.id) + 1,
-      task: newTask
-    }
-
-    props.user.tasks.push(task)
-
-    axios.put(db, props.user)
-      .then(response => {
-        props.peticionGet()
-        setIsModalEditOpen(false)
+  const editTask = (id) => {
+    fetch(`/tasks/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setDatos({
+          nameTarea: datos.nameTarea,
+          prioridadTarea: datos.prioridadTarea,
+          fechaVencimiento: datos.fechaVencimiento,
+          categoria: datos.categoria,
+          _id: datos._id
+        })
       })
-
-    console.log(props.user)
-  };
+  }
+  const showTask = () => {
+    fetch('http://localhost:3004/tasks')
+      .then(res => res.json())
+      .then(data => setTasks(data),
+        console.log(tasks))
+  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDatos({
+      [name]: value
+    })
+  }
 
 
   return (
@@ -61,15 +79,15 @@ export default function ButtonsEditDelete(props) {
 
       <Modal isOpen={isModalDeleteOpen}>
         <ModalHeader className="modalHeader">
-          <div className="row">
-            <h3 className="modalTitle col">Borrar Tarea</h3>
-            <button
-              type="button"
-              className="btn-close col"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              onClick={() => setIsModalDeleteOpen(false)}><i className="fas fa-times"></i></button>
-          </div>
+              <div className="row">
+                <h3 className="modalTitle col">Borrar Tarea</h3>
+                <button
+                  type="button"
+                  className="btn-close col"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onClick={() => setIsModalDeleteOpen(false)}><i className="fas fa-times"></i></button>
+              </div>
         </ModalHeader>
         <ModalBody>
           <p>¿Estas seguro de borrar esta tarea?</p>
@@ -80,6 +98,7 @@ export default function ButtonsEditDelete(props) {
             data-bs-dismiss="modal"
             onClick={() => setIsModalDeleteOpen(false)}>No</button>
           <button type="button" className="btn-yes">Si</button>
+         
         </ModalFooter>
       </Modal>
 
@@ -87,31 +106,45 @@ export default function ButtonsEditDelete(props) {
       {/*Modal Editar*/}
 
       <Modal isOpen={isModalEditOpen}>
-        <ModalHeader className="modalHeader">
-          <div className="row">
-            <h2 className="modalTitle col">Editar Tarea</h2>
+        <form>
+          <ModalHeader className="modalHeader">
+            <div className="row">
+              <h2 className="modalTitle col">Editar Tarea</h2>
+              <button
+                type="button"
+                className="btn-close col"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                onClick={() => setIsModalEditOpen(false)}><i className="fas fa-times"></i></button>
+            </div>
+          </ModalHeader>
+          <ModalBody>
+            <label htmlFor="nameTarea" className="labelname">Nuevo nombre de la tarea:</label>
+            <input onChange={handleChange} name="nameTarea" type="text" className="form-control input" />
+            <label htmlFor="prioridadTarea" className="labelname">Nueva prioridad de la tarea:</label>
+            <select className="inputNewTask form-control input" onChange={handleChange} name="prioridadTarea">
+              <option value="baja">Baja</option>
+              <option value="media">Media</option>
+              <option value="alta">Alta</option>
+            </select>
+            <label htmlFor="prioridadTarea" className="labelname">Nueva categoría:</label>
+            <select className="inputNewTask form-control input" onChange={handleChange} name="prioridadTarea">
+              <option value="diaria">Diria</option>
+              <option value="trabajo">Trabajo</option>
+            </select>
+            <label htmlFor="fechaVencimiento" className="labelname">Nueva fecha limite para la tarea:</label>
+            <input className="inputNewTask form-control input" onChange={handleChange} name="fechaVencimiento" type="date" />
+          </ModalBody>
+          <ModalFooter>
             <button
               type="button"
-              className="btn-close col"
+              className="btn-volver"
               data-bs-dismiss="modal"
-              aria-label="Close"
-              onClick={() => setIsModalEditOpen(false)}><i className="fas fa-times"></i></button>
-          </div>
-        </ModalHeader>
-        <ModalBody>
-          <p>Ingresa nuevo nombre de tarea:</p>
-          <input onChange={handleChange} className="form-control input" type="text" />
-        </ModalBody>
-        <ModalFooter>
-          <button
-            type="button"
-            className="btn-volver"
-            data-bs-dismiss="modal"
-            onClick={() => setIsModalEditOpen(false)}>Volver</button>
-          <button
-            type="button"
-            className="btn-done" onClick={handleOnClick}>¡Hecho!</button>
-        </ModalFooter>
+              onClick={() => setIsModalEditOpen(false)}>Volver</button>
+            <button type="submit" onClick={() => setIsModalEditOpen(false)} className="btn-done">¡Hecho!</button>
+
+          </ModalFooter>
+        </form>
       </Modal>
     </div>
   )

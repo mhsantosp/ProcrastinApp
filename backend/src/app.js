@@ -1,5 +1,5 @@
-//configurarciones palicación express
-import express from "express";
+//configurarciones aplicación express
+import express from 'express';
 import config from "./config";
 import cors from "cors";
 import morgan from "morgan";

@@ -1,8 +1,5 @@
-// import { config } from "dotenv";
-// config();
-
 export default {
-  MONGODB_URI: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/procrastinapp",
-  PORT: process.env.PORT || 4000,
+  MONGODB_URI: process.env.MONGODB_URI || "mongodb+srv://gisellmazo:1214743656@cluster0.flrhc.mongodb.net/procrastinapp-db?retryWrites=true&w=majority",
+  PORT: process.env.PORT || 4001,
   SECRET: 'prueba-back'
 }

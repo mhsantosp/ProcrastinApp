@@ -1,24 +1,17 @@
-// import { Schema, model } from "mongoose";
-import * as mongoose from 'mongoose';
+const mongoose= require('mongoose');
+const {Schema} = mongoose;
 
-export const taskSchema = new Schema(
+const TaskSchema = new Schema(
   {
-    imgTarea: { type: String },
-    nameTarea: { type: String },
-    prioridadTarea: { type: String },
-    fechaVencimiento: { type: Date },
-    idUser: [
-      {
-        type: Schema.ObjectId,
-        ref: "User",
-        autopopulate: true,
-      },
-    ],
+    idUser: { type: Schema.ObjectId, ref: "User" },
+    imgTarea: String,
+    nameTarea: String,
+    prioridadTarea: String,
+    fechaVencimiento: Date
   },
   {
     timestamps: true, //fecha de creación y actualización
     versionKey: false, //para quitar el __v
   }
-);
-
-taskSchema.plugin(require('mongoose-autopopulate'));
+)
+module.exports = mongoose.model('Task', TaskSchema)
