@@ -11,3 +11,5 @@ router.put('/:userId', userCtrl.updateUserById);
 router.delete('/:userId', userCtrl.deleteUserById);
 
 export default router;
+
+module.exports = router;

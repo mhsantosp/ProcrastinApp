@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "homepage": "https://mhsantosp.github.io/procrastinapp/",
+  "proxy": "http://localhost:4001",
   "dependencies": {
     "@agney/react-avatar": "^1.1.2",
     "@fortawesome/fontawesome-free": "^5.15.1",
@@ -30,6 +31,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-share": "^4.4.0",
     "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "video-react": "^0.14.1",
