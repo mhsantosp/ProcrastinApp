@@ -35,7 +35,7 @@ export default class App extends Component {
               <Route exact path="/tareas" component={SectionChecklist} />
               <Route exact path="/tiempos" component={SectionTecPomodoro} />
               <Route exact path="/multimedia" component={Multimedia} />
-              <Route exact path="/contactanos" component={ContactUs} />
+              <Route exact path="/contactanos" component={Somos} />
               <Route exact path="/mas-informacion" component={SectionMoreInfo} />
             </Switch>
           </main>

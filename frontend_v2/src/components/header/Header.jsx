@@ -4,6 +4,7 @@ import logo from '../../images/logo_name.svg';
 // import Avatar from './../../../images/logo_perfil.png';
 import './Header.scss';
 
+
 export default class Header extends Component {
   state = {
     nameUser: localStorage.getItem('nameUser')
@@ -11,8 +12,8 @@ export default class Header extends Component {
 
   cerrarSesion = () => {
     localStorage.removeItem('_id', { path: "/" });
-    localStorage.removeItem('nombres', { path: "/" });
-    localStorage.removeItem('apellidos', { path: "/" });
+    localStorage.removeItem('names', { path: "/" });
+    localStorage.removeItem('lastNames', { path: "/" });
     localStorage.removeItem('email', { path: "/" });
     localStorage.removeItem('nameUser', { path: "/" });
     window.location.href = '/'; // redireciona al inicio de sesión

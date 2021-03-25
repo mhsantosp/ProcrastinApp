@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import './LoginSignup.scss';
 import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
-import { InputGroup, Button, Image, Alert } from 'react-bootstrap';
+import { InputGroup, Button, Image } from 'react-bootstrap';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import Axios from "axios";
 
-export default function Prueba() {
-  // const [show, setShow] = useState(true);
-  const URL = 'http://localhost:4000/auth/signin';
+export default function InicioSesion() {
+  const URL = 'http://localhost:4001/auth/signin';
 
   const formSchema = Yup.object().shape({
     email: Yup.string().required("Campo requerido").email("Correo Electronico Invalido"),
@@ -81,7 +80,7 @@ export default function Prueba() {
                               <InputGroup.Text><i className="fas fa-user-lock"></i></InputGroup.Text>
                             </InputGroup.Prepend>
                             <Field className="form-control"
-                              placeholder="**********"
+                              placeholder="****"
                               type="password"
                               name="password"
                               id="password"

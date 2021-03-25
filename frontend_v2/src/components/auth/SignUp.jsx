@@ -1,29 +1,35 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import './LoginSignup.scss';
-import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
 import { Form, InputGroup, Button, Col } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
+import Gravatar from 'react-gravatar';
+import $ from "jquery";
 
 export default function NuevoUsuario() {
-  const URL = 'http://localhost:4000/auth/signup';
+  const URL = 'http://localhost:4001/auth/signup';
+  const [avatar, setAvatar] = useState('hola');
 
-  const { values, isSubmitting, handleSubmit, handleChange, errors } = useFormik({
+  const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
     initialValues: {
-      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: '',
+      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: null,
     },
     onSubmit: values => {
       console.log(values);
+      // alert(JSON.stringify(values, null, 2));
+
       // Enviar los valores a la Base de Datos
-      Axios.post(URL, {
-        names: values.names,
-        lastNames: values.lastNames,
-        email: values.email,
-        nameUser: values.nameUser,
-        password: values.password,
-        imgPerfil: values.imgPerfil,
-      })
+      Axios.post(URL,
+        {
+          names: values.names,
+          lastNames: values.lastNames,
+          email: values.email,
+          nameUser: values.nameUser,
+          password: values.password,
+          imgPerfil: values.imgPerfil
+        }
+      )
         .then(res => {
           console.log(res);
           window.location.href = '/inicio-sesion'; //redirecciona al inicio de sesión
@@ -57,15 +63,35 @@ export default function NuevoUsuario() {
     }
   });
   // console.log(errors);
+  // console.log(values);
+  // console.log(document.getElementById('imgPerfil'));
+  // console.log($(document.getElementsByName('imgPerfil')[0]));
+  // console.log('values.imgPerfil=avatar ', values.imgPerfil);
   return (
     <section className="container-fluid registros">
       <article className="authenticateIdentity">
         <div className="card">
-          <img className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
           <div className="form">
             <div className="form-log-in">
-              <Form className="card-body" onSubmit={handleSubmit}>
+              {/* Para enviar archivos debe especificarse el valor del atributo encType="multipart/form-data" */}
+              <Form className="card-body" onSubmit={handleSubmit} >
                 <Form.Row>
+                  <div className="form-group col-sm-12 col-md-12 imPerfil">
+                    <div className="container-fluid selectImg">
+                      <Gravatar
+                        name="imgPerfil"
+                        id="imgPerfil"
+                        email={values.email}
+                        size={150}
+                        rating="pg"
+                        default="monsterid"
+                        className="CustomAvatar-image imgPerfil rounded-circle"
+                        value={values.imgPerfil}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
                   <Form.Group as={Col} sm="12" md="6">
                     <Form.Label>Nombres</Form.Label>
                     <Form.Control
@@ -134,32 +160,20 @@ export default function NuevoUsuario() {
                         value={values.password}
                         onChange={handleChange}
                         name="password"
-                        placeholder="**********"
+                        placeholder="****"
                         type="password"
                       />
                     </InputGroup>
                     <Form.Text>{errors.password ? errors.password : ''}</Form.Text>
                   </Form.Group>
-
-                  <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <Form.Label>Imagen de perfil</Form.Label>
-                    <div className="fileImg">
-                      <label htmlFor="imgPerfil">
-                        <span color="primary" aria-label="upload picture" >
-                          <i className="fas fa-camera-retro" />
-                        </span>
-                      </label>
-                      <Form.Control
-                        type="file"
-                        accept="image/*"
-                        id="imgPerfil"
-                        value={values.imgPerfil}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
                 </Form.Row>
-                <Button type="submit" variant="info" className="btn-form" disabled={isSubmitting}>Registrarse</Button>
+
+                <Button
+                  type="submit"
+                  variant="info"
+                  className="btn-form"
+                  disabled={isSubmitting}
+                >Registrarse</Button>
               </Form>
               <div className="card-footer">
                 <p className="card-text text-right">
