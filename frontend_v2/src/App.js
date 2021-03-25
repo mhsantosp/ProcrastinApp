@@ -14,7 +14,7 @@ import ContactUs from "./components/sectionContactUs/SectionContactUs";
 import SectionMoreInfo from "./components/sectionMoreInfo/SectionMoreInfo";
 import Somos from "./components/Somos/Somos";
 import Perfil from "./components/profile/Perfil";
-import FotoPerfil from "./components/auth/Upload";
+import FotoPerfil from "./components/auth/Avatar";
 
 export default class App extends Component {
   render() {

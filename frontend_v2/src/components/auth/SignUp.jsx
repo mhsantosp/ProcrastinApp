@@ -1,26 +1,25 @@
 import React from "react";
 import './LoginSignup.scss';
-import logo2 from './../../images/logo2.svg';
 import { Link } from "react-router-dom";
-import { Form, InputGroup, Button, Col, Image } from 'react-bootstrap';
+import { Form, InputGroup, Button, Col } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
-import Avatar from "../../images/avatar.svg";
-import Profile from "./Upload"
+import Gravatar from 'react-gravatar';
 
 export default function NuevoUsuario() {
   const URL = 'http://localhost:4000/auth/signup';
+  const avatar = 'hola' /*`${document.getElementById('imgPerfil').src }`*/;
 
-  const { values, errors, handleChange, handleBlur, handleSubmit, setFieldValue, isSubmitting } = useFormik({
+  const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
     initialValues: {
-      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: `${Avatar}`,
+      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: `${avatar}`,
     },
     onSubmit: values => {
       console.log(values);
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
 
       // Enviar los valores a la Base de Datos
-      Axios.post(URL, /*formData,*/
+      Axios.post(URL,
         {
           names: values.names,
           lastNames: values.lastNames,
@@ -64,44 +63,31 @@ export default function NuevoUsuario() {
   });
   // console.log(errors);
   console.log(values);
+  console.log('values.imgPerfil=avatar ', values.imgPerfil);
   return (
     <section className="container-fluid registros">
       <article className="authenticateIdentity">
         <div className="card">
-          <Image roundedCircle className="img-fluid card-img-top p-3" src={logo2} alt="Logo" loading="lazy" id="logo2" />
           <div className="form">
             <div className="form-log-in">
               {/* Para enviar archivos debe especificarse el valor del atributo encType="multipart/form-data" */}
               <Form className="card-body" onSubmit={handleSubmit} >
                 <Form.Row>
-                  {/* <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <Profile onChange={handleChange} />
-                    <div>
+                  <div className="form-group col-sm-12 col-md-12 imPerfil">
                       <div className="container-fluid selectImg">
-                        <Image
-                          className="img-fluid card-img-top p-1 imgPerfil rounded-circle"
+                        <Gravatar
                           name="imgPerfil"
-                          src={values.imgPerfil}
-                          alt="Imagen"
-                          loading="lazy"
+                          id="imgPerfil"
+                          email={values.email}
+                          size={150}
+                          rating = "pg"
+                          default="monsterid"
+                          className="CustomAvatar-image imgPerfil rounded-circle"
+                          value={values.imgPerfil}
+                          onChange={handleChange}
                         />
-                        <div className="fileImg">
-                          <label htmlFor="imgPerfil">
-                            <span color="primary" aria-label="upload picture" >
-                              <i className="fas fa-camera-retro" />
-                            </span>
-                          </label>
-                          <Form.Control
-                            type="file"
-                            name="imgPerfil"
-                            id="imgPerfil"
-                            accept="image/*"
-                            onChange={handleChange}
-                          />
-                        </div>
                       </div>
-                    </div>
-                  </div> */}
+                  </div>
 
                   <Form.Group as={Col} sm="12" md="6">
                     <Form.Label>Nombres</Form.Label>
