@@ -4,6 +4,7 @@ import { faPlus, faCheck, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg
 import { faFacebookSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
+import Push from 'push.js'
 import axios from 'axios';
 
 export default function Checklist(props) {
@@ -209,6 +210,19 @@ export default function Checklist(props) {
 
   //   setChecked()
   // }
+
+
+  //Notificacion
+
+  Push.create("Tarea pendiente", {
+    body: "'Reunión' esta programada para mañana",
+    icon: "https://i.imgur.com/s6E0Kvn.png",
+    timeout: 60000,
+    onClick: function (){
+      window.location="https://procrastinapp.netlify.app";
+      this.close();
+    }
+  })
 
 
   return (
