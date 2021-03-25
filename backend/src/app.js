@@ -1,4 +1,4 @@
-//configurarciones palicación express
+//configurarciones aplicación express
 import express from 'express';
 import config from "./config";
 import cors from "cors";
