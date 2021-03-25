@@ -1,16 +1,21 @@
 import React from "react";
 import './Perfil.scss';
 import { Form, InputGroup, Button, Col, Card, Image } from 'react-bootstrap';
-import Avatar from './../../images/avatar.svg';
 import { useFormik } from "formik";
 import Axios from "axios";
+import Gravatar from 'react-gravatar';
 
 export default function PerfilUsuario() {
   const URL = 'http://localhost:4000/users';
 
   const { values, isSubmitting, handleSubmit, handleChange, errors } = useFormik({
     initialValues: {
-      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: '', terms: false
+      names: `${localStorage.getItem('names')}`,
+      lastNames: `${localStorage.getItem('lastNames')}`,
+      email: `${localStorage.getItem('email')}`,
+      nameUser: `${localStorage.getItem('nameUser')}`,
+      password: '',
+      terms: false
     },
     onSubmit: values => {
       console.log(values);
@@ -21,7 +26,6 @@ export default function PerfilUsuario() {
         email: values.email,
         nameUser: values.nameUser,
         password: values.password,
-        imgPerfil: values.imgPerfil,
       })
         .then(res => {
           console.log(res);
@@ -71,12 +75,25 @@ export default function PerfilUsuario() {
         <div className="card">
           <Card.Header className="text-center" as="h4">Perfil de usuario</Card.Header>
           <div className="form">
-            <div id="avatar">
-              <Image className="img-fluid card-img-top p-3" src={Avatar} alt="Logo" loading="lazy" />
-            </div>
             <div className="datosPerfil">
               <Form className="card-body" onSubmit={handleSubmit}>
                 <Form.Row>
+                  <div className="form-group col-sm-12 col-md-12 imPerfil">
+                    <div className="container-fluid selectImg">
+                      <Gravatar
+                        name="imgPerfil"
+                        id="imgPerfil"
+                        email={values.email}
+                        size={150}
+                        rating="pg"
+                        default="monsterid"
+                        className="CustomAvatar-image imgPerfil rounded-circle"
+                        value={values.imgPerfil}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
                   <Form.Group as={Col} sm="12" md="6">
                     <Form.Label>Nombres</Form.Label>
                     <Form.Control
@@ -151,26 +168,6 @@ export default function PerfilUsuario() {
                     </InputGroup>
                     <Form.Text>{errors.password ? errors.password : ''}</Form.Text>
                   </Form.Group>
-
-                  <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <Form.Label>Imagen de perfil</Form.Label>
-                    <div className="fileImg">
-                      <label htmlFor="imgPerfil">
-                        <span color="primary" aria-label="upload picture" >
-                          <i className="fas fa-camera-retro" />
-                        </span>
-                      </label>
-                      <Form.Control
-                        type="file"
-                        name="imgPerfil"
-                        accept="image/*"
-                        id="imgPerfil"
-                        value={values.imgPerfil}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <Form.Text>{errors.file ? errors.file: ''}</Form.Text>
-                  </div>
 
                   <Form.Group className="mx-auto">
                     <Form.Check

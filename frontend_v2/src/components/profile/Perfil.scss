@@ -37,6 +37,18 @@ main {
             }
 
             .form-group {
+              .selectImg {
+                width: 150px;
+                height: 150px;
+                padding: 0;
+                display: flex;
+                justify-content: flex-end;
+
+                .imgPerfil {
+                  border: 1px dotted black;
+                }
+              }
+
               label {
                 color: $fondoDark;
                 font-family: "Microsoft New Tai Lue Bold";
