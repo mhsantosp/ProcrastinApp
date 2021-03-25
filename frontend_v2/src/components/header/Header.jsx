@@ -12,8 +12,8 @@ export default class Header extends Component {
 
   cerrarSesion = () => {
     localStorage.removeItem('_id', { path: "/" });
-    localStorage.removeItem('names', { path: "/" });
-    localStorage.removeItem('lastNames', { path: "/" });
+    localStorage.removeItem('nombres', { path: "/" });
+    localStorage.removeItem('apellidos', { path: "/" });
     localStorage.removeItem('email', { path: "/" });
     localStorage.removeItem('nameUser', { path: "/" });
     window.location.href = '/'; // redireciona al inicio de sesión

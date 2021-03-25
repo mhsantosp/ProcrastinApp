@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import './LoginSignup.scss';
 import { Link } from "react-router-dom";
 import { Form, InputGroup, Button, Col } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
 import Gravatar from 'react-gravatar';
-import $ from "jquery";
 
 export default function NuevoUsuario() {
   const URL = 'http://localhost:4000/auth/signup';
-  const [avatar, setAvatar] = useState('hola') /*`${document.getElementById('imgPerfil').src }`*/;
+  const avatar = 'hola' /*`${document.getElementById('imgPerfil').src }`*/;
 
   const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
     initialValues: {
-      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: null,
+      names: '', lastNames: '', email: '', nameUser: '', password: '', imgPerfil: `${avatar}`,
     },
     onSubmit: values => {
       console.log(values);
@@ -63,10 +62,8 @@ export default function NuevoUsuario() {
     }
   });
   // console.log(errors);
-  // console.log(values);
-  // console.log(document.getElementById('imgPerfil'));
-  // console.log($(document.getElementsByName('imgPerfil')[0]));
-  // console.log('values.imgPerfil=avatar ', values.imgPerfil);
+  console.log(values);
+  console.log('values.imgPerfil=avatar ', values.imgPerfil);
   return (
     <section className="container-fluid registros">
       <article className="authenticateIdentity">
@@ -77,19 +74,19 @@ export default function NuevoUsuario() {
               <Form className="card-body" onSubmit={handleSubmit} >
                 <Form.Row>
                   <div className="form-group col-sm-12 col-md-12 imPerfil">
-                    <div className="container-fluid selectImg">
-                      <Gravatar
-                        name="imgPerfil"
-                        id="imgPerfil"
-                        email={values.email}
-                        size={150}
-                        rating="pg"
-                        default="monsterid"
-                        className="CustomAvatar-image imgPerfil rounded-circle"
-                        value={values.imgPerfil}
-                        onChange={handleChange}
-                      />
-                    </div>
+                      <div className="container-fluid selectImg">
+                        <Gravatar
+                          name="imgPerfil"
+                          id="imgPerfil"
+                          email={values.email}
+                          size={150}
+                          rating = "pg"
+                          default="monsterid"
+                          className="CustomAvatar-image imgPerfil rounded-circle"
+                          value={values.imgPerfil}
+                          onChange={handleChange}
+                        />
+                      </div>
                   </div>
 
                   <Form.Group as={Col} sm="12" md="6">
