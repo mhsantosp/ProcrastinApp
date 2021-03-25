@@ -9,7 +9,7 @@ import $ from "jquery";
 
 export default function NuevoUsuario() {
   const URL = 'http://localhost:4000/auth/signup';
-  const [avatar, setAvatar] = useState('hola') /*`${document.getElementById('imgPerfil').src }`*/;
+  const [avatar, setAvatar] = useState('hola');
 
   const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
     initialValues: {
@@ -173,16 +173,12 @@ export default function NuevoUsuario() {
                   variant="info"
                   className="btn-form"
                   disabled={isSubmitting}
-                // onClick={sendImage}
                 >Registrarse</Button>
               </Form>
               <div className="card-footer">
                 <p className="card-text text-right">
                   Si ya estas registrado <Link to="/inicio-sesion" rel="noopener noreferrer">Inicia sesión</Link>
                 </p>
-                {/* <p className="card-text text-right">
-                  Foto Perfil <Link to="/foto-usuario" rel="noopener noreferrer">Foto</Link>
-                </p> */}
               </div>
             </div>
           </div>
