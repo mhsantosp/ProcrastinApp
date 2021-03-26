@@ -12,7 +12,7 @@ import { createRoles } from "./libs/initialSetup";
 import usuariosRoutes from "./routes/user.routes";
 import tareasRoutes from "./routes/tasks.routes";
 import authRoutes from "./routes/auth.routes";
-import imagen from "./routes/UploadImage";
+// import imagen from "./routes/UploadImage";
 
 const app = express(); // Este es mi servidor
 createRoles();
@@ -28,11 +28,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 // Para enviar nombre peronalizado de una imagen
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //entender que datos que llegan en formato json
 
 // Static Files == ruta que guarda las imagenes
-app.use(express.static(path.join(__dirname, '/src/upload')))
+// app.use(express.static(path.join(__dirname, '/src/upload')))
 
 app.get("/", (req, res) => {
   res.json({
@@ -47,6 +47,6 @@ app.get("/", (req, res) => {
 app.use("/users", usuariosRoutes);
 app.use("/tasks", tareasRoutes);
 app.use("/auth", authRoutes);
-app.use("/imagen", imagen)
+// app.use("/imagen", imagen);
 
 export default app;
