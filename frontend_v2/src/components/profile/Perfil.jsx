@@ -1,6 +1,6 @@
 import React from "react";
 import './Perfil.scss';
-import { Form, InputGroup, Button, Col, Card, Image } from 'react-bootstrap';
+import { Form, InputGroup, Button, Col, Card } from 'react-bootstrap';
 import { useFormik } from "formik";
 import Axios from "axios";
 import Gravatar from 'react-gravatar';
