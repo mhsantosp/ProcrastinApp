@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import logo from '../../images/logo_name.svg';
-// import Avatar from './../../../images/logo_perfil.png';
 import './Header.scss';
-import SolicitudInfo from '../buttons/Solicitar';
+// import SolicitudInfo from '../buttons/Solicitar';
 
 export default class Header extends Component {
   state = {
@@ -12,8 +11,8 @@ export default class Header extends Component {
 
   cerrarSesion = () => {
     localStorage.removeItem('_id', { path: "/" });
-    localStorage.removeItem('nombres', { path: "/" });
-    localStorage.removeItem('apellidos', { path: "/" });
+    localStorage.removeItem('names', { path: "/" });
+    localStorage.removeItem('lastNames', { path: "/" });
     localStorage.removeItem('email', { path: "/" });
     localStorage.removeItem('nameUser', { path: "/" });
     window.location.href = '/'; // redireciona al inicio de sesión
