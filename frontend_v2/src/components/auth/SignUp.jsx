@@ -7,8 +7,8 @@ import Axios from "axios";
 import Gravatar from 'react-gravatar';
 
 export default function NuevoUsuario() {
-  const URL = 'http://localhost:4000/auth/signup';
-  const avatar = '' /*`${document.getElementById('imgPerfil').src }`*/;
+  const URL = 'http://localhost:4001/auth/signup';
+  const avatar = 'hola' /*`${document.getElementById('imgPerfil').src }`*/;
 
   const { values, errors, handleChange, handleSubmit, isSubmitting } = useFormik({
     initialValues: {
@@ -62,8 +62,8 @@ export default function NuevoUsuario() {
     }
   });
   // console.log(errors);
-  console.log(values);
-  console.log('values.imgPerfil=avatar ', values.imgPerfil);
+  // console.log(values);
+  // console.log('values.imgPerfil=avatar ', values.imgPerfil);
   return (
     <section className="container-fluid registros">
       <article className="authenticateIdentity">

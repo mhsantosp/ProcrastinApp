@@ -2,80 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faCheck, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
 import axios from 'axios';
 
 export default function Checklist(props) {
-
-  //Google calendar configuration
-
-  // let gapi = window.gapi;
-  //   let CLIENT_ID = "777338621702-f9as6dj9dh0imj7f8led4s69h5bee5qn.apps.googleusercontent.com";
-  //   let API_KEY = "AIzaSyA_mvZK1V_bZK4hkvDCcvp0VzJuS4YeA-8";
-  //   let DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-  //   let SCOPES = "https://www.googleapis.com/auth/calendar.events"
-
-  //   const handleClick = () =>{
-  //       gapi.load('client:auth2', ()=>{
-  //           console.log('loaded client')
-
-  //           gapi.client.init({
-  //               apiKey: API_KEY,
-  //               clientId: CLIENT_ID,
-  //               discoveryDocs: DISCOVERY_DOCS,
-  //               scopes: SCOPES
-  //           })
-
-  //           gapi.client.load('calendar', 'v3', ()=> console.log('calendar'))
-
-  //           gapi.auth2.getAuthInstance().signIn()
-  //           .then(()=>{
-  //               var event = {
-  //                   'summary': 'Google I/O 2015',
-  //                   'location': '800 Howard St., San Francisco, CA 94103',
-  //                   'description': 'A chance to hear more about Google\'s developer products.',
-  //                   'start': {
-  //                     'dateTime': '2015-05-28T09:00:00-07:00',
-  //                     'timeZone': 'America/Los_Angeles',
-  //                   },
-  //                   'end': {
-  //                     'dateTime': '2015-05-28T17:00:00-07:00',
-  //                     'timeZone': 'America/Los_Angeles',
-  //                   },
-  //                   'recurrence': [
-  //                     'RRULE:FREQ=DAILY;COUNT=2'
-  //                   ],
-  //                   'attendees': [
-  //                     {'email': 'lpage@example.com'},
-  //                     {'email': 'sbrin@example.com'},
-  //                   ],
-  //                   'reminders': {
-  //                     'useDefault': false,
-  //                     'overrides': [
-  //                       {'method': 'email', 'minutes': 24 * 60},
-  //                       {'method': 'popup', 'minutes': 10},
-  //                     ],
-  //                   },
-  //                 };
-
-
-  //                 let request = gapi.client.calendar.events.insert({
-  //                     'calendarId': 'primary',
-  //                     'resource': event,
-  //                 })
-
-  //                 request.execute(event =>{
-  //                     window.open(event.htmlLink)
-  //                 })
-  //           })
-  //       })
-  //   setIsModalNewOpen(false)
-  //   }
-
   //End of google calendar configuration
-
-
   const [datos, setDatos] = useState({
     nameTarea: '',
     prioridadTarea: '',
@@ -176,40 +108,6 @@ export default function Checklist(props) {
     }))
     console.log(datos)
   }
-
-  // const filterCategory = (checkbox) =>{
-  //   const filterData = Object.values(datos).filter(task => task.categoria === 'Diaria')
-  //   if(filterData){
-
-  //   }
-
-  // }
-
-  // const getfiltro = async () =>{
-  //   const res = await axios.get('http://localhost:4001/tasks/'+datos.categoria)
-  //   setData(res.data)
-  // }
-
-  // function filtro (){
-  //   return Object.values(datos).filter((task) =>
-  //          task.categoria ===  'Diaria')   
-  // }
-
-  // const [checked, setChecked] = useState([])
-
-  // const handleFilter = (task) =>{
-  //   const currentIndex = checked.indexOf(task);
-  //   const newChecked = {...checked};
-
-  //   if(currentIndex === -1){
-  //     newChecked.push(task)
-  //   }else{
-  //     newChecked.splice(currentIndex, 1)
-  //   }
-
-  //   setChecked()
-  // }
-
 
   return (
 

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React/*, { useState, useEffect }*/ from 'react'
 import Checklist from './Checklist'
-import Character from './Character'
-import axios from 'axios'
+// import Character from './Character'
+// import axios from 'axios'
 
 export default function SectionChecklist(props) {
 

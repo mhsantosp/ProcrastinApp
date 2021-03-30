@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import Axios from "axios";
 
 export default function InicioSesion() {
-  const URL = 'http://localhost:4000/auth/signin';
+  const URL = 'http://localhost:4001/auth/signin';
 
   const formSchema = Yup.object().shape({
     email: Yup.string().required("Campo requerido").email("Correo Electronico Invalido"),
@@ -26,7 +26,7 @@ export default function InicioSesion() {
                 initialValues={{ email: '', password: '' }}
                 validationSchema={formSchema}
                 onSubmit={(values) => {
-                  console.log(values);
+                  // console.log(values);
                   // Enviar los valores a la Base de Datos
                   const dataInicio = { email: values.email, password: values.password }
                   Axios.post(URL, dataInicio)
